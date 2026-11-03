@@ -1,0 +1,38 @@
+{
+  "task_sha256": "37e29a70ca6ae4f4d53c0dcf61fbf227fdc0eb93ed938bb4b1c920df9a8c6786",
+  "trials": {
+    "demo": {
+      "score": 1.0,
+      "steps": 337,
+      "wall_seconds": 118.5276055029999,
+      "seed": 0,
+      "instruction": "Unload the spring fixture without allowing its platform to snap upward. Support the blue platform before withdrawing the orange retaining bar. Keep platform speed below 80 mm per second. Let it rise to its unloaded position under control. Put the bar on the white return pad. Finish with both grippers open. This is an unpowered test fixture.",
+      "environment_revision": "37e29a70ca6a",
+      "policy": "yam_scripted",
+      "checkpoint": null
+    },
+    "dream": {
+      "score": 0.0,
+      "steps": 1200,
+      "wall_seconds": 534.1593106569999,
+      "seed": 0,
+      "instruction": "Unload the spring fixture without allowing its platform to snap upward. Support the blue platform before withdrawing the orange retaining bar. Keep platform speed below 80 mm per second. Let it rise to its unloaded position under control. Put the bar on the white return pad. Finish with both grippers open. This is an unpowered test fixture.",
+      "environment_revision": "37e29a70ca6a",
+      "policy": "dream_current",
+      "checkpoint": "dreamlabs/dream-1-beta"
+    }
+  },
+  "runtime_sha256": {
+    "yam_articulated.py": "6abb972ac85e128c220ae86a0e17b6dba45fb5d52025feb9ec5a872af14518b7",
+    "yam_articulated_base.py": "094b6b3e4f734ade76355acc7224cc447b09e9382cbefee048c0e211de7738c0"
+  },
+  "api_adapter_sha256": {
+    "dream_current.py": "ecd2b7cf56817e29e96495299ad0849a8acbc2527240a19552266040acecedbd",
+    "current_api_bridge.py": "e9e21d597d4663dea03de8dd9c72a2d846a357eb702a41f66274a6dbf1c86590"
+  },
+  "dream_sdk": {
+    "dreamlabs": "1.0.23",
+    "dreamlabs-client": "1.0.14",
+    "checkpoint": "dreamlabs/dream-1-beta"
+  }
+}

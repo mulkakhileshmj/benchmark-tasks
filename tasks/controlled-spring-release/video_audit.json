@@ -1,0 +1,38 @@
+{
+  "demo.mp4": {
+    "codec_name": "h264",
+    "width": 1280,
+    "height": 720,
+    "duration": "16.900000",
+    "nb_read_frames": "338",
+    "bytes": 4219520,
+    "sha256": "dd4212d79982667a88ca6faa0378bcaf1956fd5fa1a6a6a933769c5f7e4eef36"
+  },
+  "dream.mp4": {
+    "codec_name": "h264",
+    "width": 1280,
+    "height": 720,
+    "duration": "60.050000",
+    "nb_read_frames": "1201",
+    "bytes": 11031217,
+    "sha256": "99044a498444b288f8a69152658db20f2728dad287cc5e0105f5bffafcb5d7bd"
+  },
+  "demo_left.mp4": {
+    "codec_name": "h264",
+    "width": 1280,
+    "height": 720,
+    "duration": "16.900000",
+    "nb_read_frames": "338",
+    "bytes": 4589224,
+    "sha256": "edeab0d5aba23b6c5d4a7a7064396fcd5d1e604b1871725e2bd367a957f15e52"
+  },
+  "demo_detail.mp4": {
+    "codec_name": "h264",
+    "width": 1280,
+    "height": 720,
+    "duration": "16.900000",
+    "nb_read_frames": "338",
+    "bytes": 4782162,
+    "sha256": "9c0693f2d82895eb47fb073339b0fa3f842bbea96f8b460eb2076a29ec9ecd88"
+  }
+}
