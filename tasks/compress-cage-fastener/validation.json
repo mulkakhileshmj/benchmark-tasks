@@ -4,7 +4,7 @@
     "demo": {
       "score": 1.0,
       "steps": 477,
-      "wall_seconds": 146.8675764589998,
+      "wall_seconds": 198.20810147600014,
       "seed": 0,
       "instruction": "Fit the blue spring cage fastener into the square opening in the rack coupon. Compress both spring legs before passing the hooks through the opening. Release the legs behind the coupon so both hooks retain it. Keep the coupon within 5 mm and 5 degrees of its starting pose. Release both grippers when the fastener is seated. All equipment is unpowered.",
       "environment_revision": "dfbb80d11402"
@@ -12,14 +12,14 @@
     "dream": {
       "score": 0.0,
       "steps": 1200,
-      "wall_seconds": 293.29659626500006,
+      "wall_seconds": 501.43843251399994,
       "seed": 0,
       "instruction": "Fit the blue spring cage fastener into the square opening in the rack coupon. Compress both spring legs before passing the hooks through the opening. Release the legs behind the coupon so both hooks retain it. Keep the coupon within 5 mm and 5 degrees of its starting pose. Release both grippers when the fastener is seated. All equipment is unpowered.",
       "environment_revision": "dfbb80d11402"
     }
   },
   "runtime_sha256": {
-    "yam_articulated.py": "73df422051d49d7e26a273684cd57fb603901c95a815224333508cbe6baaea2b",
+    "yam_articulated.py": "6abb972ac85e128c220ae86a0e17b6dba45fb5d52025feb9ec5a872af14518b7",
     "yam_articulated_base.py": "094b6b3e4f734ade76355acc7224cc447b09e9382cbefee048c0e211de7738c0"
   }
 }

@@ -137,6 +137,11 @@ def embodiment(**kwargs):
                 from isaaclab.app import AppLauncher
                 os.environ.setdefault('OMNI_KIT_ACCEPT_EULA','YES')
                 opts=dict(headless=self.headless,device=self.device,enable_cameras=True)
+                if os.environ.get('YAM_LIMIT_CPU_THREADS'):
+                    count=int(os.environ['YAM_LIMIT_CPU_THREADS'])
+                    if not 1<=count<=8:raise ValueError('Invalid CPU thread bound')
+                    opts['limit_cpu_threads']=count
+                    opts['kit_args']=f'--/plugins/carb.tasking.plugin/threadCount={count} --/plugins/omni.tbb.globalcontrol/maxThreadCount={count} --/persistent/physics/numThreads={count}'
                 if not self.headless:
                     opts['visualizer']=['kit'];os.environ['DISPLAY']=core.window_display(os.environ)
                 core._APP=AppLauncher(**opts).app

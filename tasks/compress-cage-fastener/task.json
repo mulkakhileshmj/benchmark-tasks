@@ -10,5 +10,5 @@
   "reset_notes": "Restore both root poses from scene_inventory.json. Place the fastener upright. Return both passive sliders to their outer stops. Restore the loose coupon without fastening it to the table. Nothing is consumed. Use seed 0 and object_jitter=0 for the recorded layout. Run one epoch per process.",
   "fidelity": "Rigid cuboid contact geometry on the official bimanual YAM rig. Two force limited prismatic spring joints represent guided retaining legs. Slider guides are ideal joints. The flange and hooks have physical collision geometry. Compound contact offsets are 1 mm. Contact materials use simulator defaults. Parts do not deform or fracture. Spring hysteresis and wear are omitted. History checks run at 20 Hz.",
   "scores": "Dream 1 run: 0.0. Scripted demo: 1.0.",
-  "media": "M-JAYRC4"
+  "media": "M-SGWDCF"
 }

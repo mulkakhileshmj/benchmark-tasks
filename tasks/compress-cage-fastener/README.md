@@ -18,14 +18,14 @@ The supplied runtime authors the geometry locally. It does not download asset me
 export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=2 MKL_NUM_THREADS=1
 inspect-robots run --embodiment yam_articulated --policy yam_scripted \
   -E task="$PWD/task.py" -E object_jitter=0 -E control_hz=20 \
-  -E cam_width=320 -E cam_height=176 --seed 0 --epochs 1 \
+  -E cam_width=1280 -E cam_height=720 --seed 0 --epochs 1 \
   --instruction "Fit the blue spring cage fastener into the square opening in the rack coupon. Compress both spring legs before passing the hooks through the opening. Release the legs behind the coupon so both hooks retain it. Keep the coupon within 5 mm and 5 degrees of its starting pose. Release both grippers when the fastener is seated. All equipment is unpowered." \
   --scorer task_score --max-steps 1200 --store-frames --log-dir runs/demo
 ```
 
 Use the same command with `--policy dream` and a different log directory for the Dream evaluation. Configure the official Dream plugin with a private credential before that run. Render the resulting log with `inspect-robots video LOG.json`.
 
-The full score demo uses seed 0 and 477 control steps. It took 146.87 seconds of wall time when run alongside a second task on one L40S. The control limit is 60 seconds at 20 Hz. Run one epoch per process. The scored task source SHA256 is `dfbb80d1140233b43264da0caa56fc97788d45004733ed0ebe03cd908db7cc57`.
+The full score demo uses seed 0 and 477 control steps. The native 720p trial took 198.21 seconds of wall time on one L40S while other work shared the instance. Its video contains all 478 recorded frames and lasts 23.9 seconds. The demo detail inset shows the synchronized right camera without changing the timeline. The matching 720p Dream run reached 0.0 in 1200 steps and took 501.44 seconds including a cold simulator startup. The control limit is 60 seconds at 20 Hz. Run one epoch per process. The scored task source SHA256 is `dfbb80d1140233b43264da0caa56fc97788d45004733ed0ebe03cd908db7cc57`.
 
 ## Fixture construction
 
