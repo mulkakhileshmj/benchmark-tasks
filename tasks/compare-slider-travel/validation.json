@@ -1,0 +1,38 @@
+{
+  "task_sha256": "1ee46d4f34e3869ffac9fafa87fe612fe4517369ce5413b15451e1aa5ac70d1f",
+  "trials": {
+    "demo": {
+      "score": 1.0,
+      "steps": 660,
+      "wall_seconds": 218.2729511590005,
+      "seed": 0,
+      "instruction": "Inspect the travel of all three loose sliders and mark the one with the most free play. Move each blue knob gently to both hard stops. Place the orange marker on the white pad beside the slider with the greatest total travel. Release every knob and the marker. The fixtures are unpowered. Do not dismantle them.",
+      "environment_revision": "1ee46d4f34e3",
+      "policy": "yam_scripted",
+      "checkpoint": null
+    },
+    "dream": {
+      "score": 0.0,
+      "steps": 1200,
+      "wall_seconds": 540.4843198939998,
+      "seed": 0,
+      "instruction": "Inspect the travel of all three loose sliders and mark the one with the most free play. Move each blue knob gently to both hard stops. Place the orange marker on the white pad beside the slider with the greatest total travel. Release every knob and the marker. The fixtures are unpowered. Do not dismantle them.",
+      "environment_revision": "1ee46d4f34e3",
+      "policy": "dream_current",
+      "checkpoint": "dreamlabs/dream-1-beta"
+    }
+  },
+  "runtime_sha256": {
+    "yam_articulated.py": "6abb972ac85e128c220ae86a0e17b6dba45fb5d52025feb9ec5a872af14518b7",
+    "yam_articulated_base.py": "094b6b3e4f734ade76355acc7224cc447b09e9382cbefee048c0e211de7738c0"
+  },
+  "api_adapter_sha256": {
+    "dream_current.py": "ecd2b7cf56817e29e96495299ad0849a8acbc2527240a19552266040acecedbd",
+    "current_api_bridge.py": "e9e21d597d4663dea03de8dd9c72a2d846a357eb702a41f66274a6dbf1c86590"
+  },
+  "dream_sdk": {
+    "dreamlabs": "1.0.23",
+    "dreamlabs-client": "1.0.14",
+    "checkpoint": "dreamlabs/dream-1-beta"
+  }
+}
