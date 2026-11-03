@@ -1,0 +1,43 @@
+{
+  "trials": {
+    "demo": {
+      "score": 1.0,
+      "steps": 650,
+      "wall_seconds": 105.575782334,
+      "seed": 0,
+      "instruction": "Remove both transport keys to their return trays before extracting the motion carrier. Pull the carrier through the front opening onto the white recovery pad. Do not move the carrier more than 5 mm while either key is engaged. Release all parts.",
+      "environment_revision": "dc32147fe67b"
+    },
+    "dream": {
+      "score": 0.0,
+      "steps": 1200,
+      "wall_seconds": 192.87544719600055,
+      "seed": 0,
+      "instruction": "Remove both transport keys to their return trays before extracting the motion carrier. Pull the carrier through the front opening onto the white recovery pad. Do not move the carrier more than 5 mm while either key is engaged. Release all parts.",
+      "environment_revision": "dc32147fe67b"
+    }
+  },
+  "task_sha256": "dc32147fe67b15f936857fc9d2adfc9d78f28112f0384362feb93cc815831ed7",
+  "runtime_sha256": "094b6b3e4f734ade76355acc7224cc447b09e9382cbefee048c0e211de7738c0",
+  "dependencies": {
+    "inspect-robots-dream": "0.1.0",
+    "isaaclab_arena": "0.3.0",
+    "torch": "2.11.0+cu128",
+    "yam-arena": "0.1.0",
+    "dreamlabs-client": "1.0.14",
+    "isaacsim": "6.1.0.0",
+    "numpy": "2.3.1",
+    "inspect-robots": "0.60.0"
+  },
+  "commits": {
+    "yam": "0059d02a1a91bc6834c1d0846022891df0c78730",
+    "arena": "c7edf3a9d5d8276565208f72422f8f8a0806d6cf",
+    "isaaclab": "91a0906f93802eb859192dcb0bca879f891e92d6"
+  },
+  "counterfactual": {
+    "score": 0.0,
+    "max_carrier_movement_mm": 4.709960911323618,
+    "source_revision": "e1d4140fe5ae",
+    "note": "Recorded before support and storage checks were tightened. Final scorer replay also returns zero."
+  }
+}
