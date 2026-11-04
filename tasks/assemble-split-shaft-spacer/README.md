@@ -1,6 +1,6 @@
 Assemble the two spacer halves around the captive shaft. The wide head blocks placing a complete ring from above. The full score demo uses the scripted policy. The model run is unscored.
 
-Use the official RoboCurve YAM launchable. The task uses Python 3.12 and Isaac Lab Arena 0.3.1. Runtime versions and the source hash are in validation.json. Every solid and starting pose is in scene_inventory.json. Dimensions are metres. Masses are kilograms. The scoring function in task.py implements the numeric conditions in task.json.
+Use the official RoboCurve YAM launchable. The task uses Python 3.12 and the Arena environment installed by the official launchable. Runtime versions and the source hash are in validation.json. Every solid and starting pose is in scene_inventory.json. Dimensions are metres. Masses are kilograms. The scoring function in task.py implements the numeric conditions in task.json.
 
 Install the local runtime in the launchable environment.
 

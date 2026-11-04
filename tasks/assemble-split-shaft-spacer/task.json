@@ -14,5 +14,6 @@
   "run_limit": "600 control steps at 20 Hz. This is 30 seconds of control time.",
   "reset_notes": "Restore both halves to their seam midpoint starting positions. Keep the shaft and guides fixed. Nothing is consumed. Run one epoch with seed 0 and object_jitter=0.",
   "fidelity": "Rigid compound boxes represent printed polymer parts. The shaft and guides are fixed. The halves are separate rigid bodies with no snap latch or elastic clamp. Contacts use PhysX defaults with 1 mm contact offsets. Bounds are computed from individual solids. No material damage or deformation is modelled.",
-  "scores": "Scripted demo score 1.0. Model run unscored."
+  "scores": "Scripted demo score 1.0. Model run unscored.",
+  "media": "M-FJQRL6"
 }
