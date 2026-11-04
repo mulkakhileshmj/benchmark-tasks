@@ -1,0 +1,13 @@
+{
+  "title": "Clamp a blank with an eccentric cam",
+  "category": "Impact on jobs",
+  "context": "Machine loading needs a blank to stay registered after the robot lets go. This task combines registration with a passive cam clamp rather than stopping at placement.",
+  "scoring": "Score zero if the blank ever goes more than 4 mm below the table. The blank centre must be within 3 mm on every axis of x 280 mm and y 77 mm and z 788 mm. Tilt and yaw must be below 5 degrees. This alignment earns 0.25. The blank must first be aligned while the cam is below 5 degrees. After that alignment a cam angle of at least 45 degrees earns 0.5. A cam angle of at least 92 degrees with the blank moving below 8 mm per second and 0.1 radians per second earns 0.75. Both measured grippers open beyond 35 mm raises this to 1.0. Full success must hold for 2 seconds. All other outcomes score zero.",
+  "fidelity": "Printed polymer solids use rigid contact. A passive revolute joint represents the eccentric cam. A backstop can travel 4 mm against a spring of 1500 newtons per metre with damping of 4 and maximum force of 15 newtons. This represents clamp compliance. No cutting process or deformation of the blank is simulated.",
+  "instruction": "Place the orange blank flat against both grey fixture stops. Hold it there while turning the blue cam lever to its closed stop past centre. Release both grippers. Leave the blank clamped after release. The fixture is bolted down and unpowered.",
+  "setup": "Use the bimanual YAM station with the tabletop at z 747.5 mm. x points forward. y points left. z points up. Every part is printed PA12 polymer. scene_inventory.json lists every object and every solid with exact dimensions and initial positions in metres and masses in kilograms. Object positions use the world frame. Solid positions use their body frame. Joint anchors and limits are listed with the articulated object. The setup image shows this fixed layout. All joint positions start at zero.",
+  "run_limit": "600 control steps at 20 Hz. This is 30 seconds of control time.",
+  "reset_notes": "Restore every object to the starting pose in scene_inventory.json and every joint to zero. Nothing is consumed. Use one epoch with seed 0 and object_jitter=0.",
+  "scores": "Both uploaded videos show the same scripted demo with score 1.0. No model score is claimed.",
+  "media": "M-PESLMV"
+}
