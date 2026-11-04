@@ -1,0 +1,20 @@
+{
+  "scripted_score": 1.0,
+  "model_score": null,
+  "task_sha256": "b08c488629b4231f7ab007e7fed128141502629206a7264ce0f15ca2f806c688",
+  "seed": 0,
+  "control_hz": 20,
+  "scripted_steps": 462,
+  "demo_run": "yam_scripted_20261104_112534",
+  "native_camera_dimensions": [
+    1280,
+    720
+  ],
+  "dependencies": {
+    "isaacsim": "6.1.0.0",
+    "isaaclab-arena": "0.3.0",
+    "inspect-robots": "0.60.0",
+    "numpy": "2.3.1",
+    "torch": "2.11.0+cu128"
+  }
+}
