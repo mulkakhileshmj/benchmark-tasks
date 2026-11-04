@@ -1,0 +1,23 @@
+{
+  "scripted_score": 1.0,
+  "model_score": null,
+  "model_checkpoint": "dreamlabs/dream-1-beta-flash",
+  "task_sha256": "0432e1da0f6e918b931e1271df320c0bce8e5d6993b9ba51e19121947f2d0a76",
+  "seed": 0,
+  "control_hz": 20,
+  "native_camera_dimensions": [
+    1280,
+    720
+  ],
+  "scripted_steps": 302,
+  "demo_run": "yam_scripted_20261104_092433",
+  "model_run": "dream_current_20261104_092821",
+  "models_share_task_source": true,
+  "dependencies": {
+    "isaacsim": "6.1.0.0",
+    "isaaclab-arena": "0.3.0",
+    "inspect-robots": "0.60.0",
+    "numpy": "2.3.1",
+    "torch": "2.11.0+cu128"
+  }
+}
