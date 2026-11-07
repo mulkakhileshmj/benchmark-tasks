@@ -1,0 +1,19 @@
+{
+  "title": "Set a sine bar angle using one gauge block",
+  "category": "Impact on jobs",
+  "keywords": [
+    "sine bar",
+    "gauge blocks",
+    "angle setting",
+    "load support"
+  ],
+  "instruction": "Set the sine bar to 30 degrees using one of the three gauge blocks. The roller centres are 130 mm apart. Support the bar while inserting the block below its far roller. Use one block only. Leave the block on the reference plate and release both hands. The fixture is unpowered.",
+  "context": "A sine bar sets a machining angle from a known roller spacing and a support height. This task requires selecting a suitable block and supporting the bar during insertion. A held near pose cannot replace a released load bearing setup.",
+  "setup": "Use the official bimanual YAM station. The tabletop is at z 747.5 mm. x points forward. y points left. z points up. Bolt the reference plate to the table. It is 230 mm by 140 mm by 8 mm with its centre at x 240 mm and y 0 mm. Its top is 8 mm above the table. The passive bar hinge is at x 160 mm and y 0 mm and 16 mm above the table. Its axis is y. The allowed lift is zero to 75 degrees. The bar assembly has mass 120 g. Its beam is 150 mm by 28 mm by 12 mm. Its local centre is 65 mm forward and 10 mm above the hinge. Two rounded roller feet have radius 8 mm and length 32 mm along y. Their centres lie on the bar axis at zero and 130 mm from the hinge. The side handle centre is 130 mm forward and 85 mm left and 28 mm above the hinge in bar coordinates. Its cap is 25 mm by 25 mm by 26 mm. Three loose blocks each have a 40 mm square footprint and mass 80 g. The orange block is 35 mm high at x 140 mm and y negative 160 mm. The yellow block is 50 mm high at x 260 mm and y negative 160 mm. The blue block is 65 mm high at x 200 mm and y negative 160 mm. Each starts upright on the tabletop. Every prop joint starts at zero. task.py supplies the exact solids and joint anchor.",
+  "scoring": "Any block falling more than 8 mm below the tabletop makes the whole episode score zero. Otherwise lifting the blue block bottom more than 15 mm above the table earns 0.25. Placing its bottom within 2 mm of the reference plate top earns 0.5 when its tilt is below 4 degrees and the horizontal offset from the nominal far roller centre to the block centre is less than 17 mm along each block axis. The nominal roller centre is at x 272.583 mm and y 0 mm. This leaves a 3 mm edge margin on the 40 mm block footprint. Score 0.75 when the bar angle is within 1.5 degrees of 30 degrees and its angular speed is below 0.04 radians per second and the block moves below 8 mm per second and 0.1 radians per second and its measured vertical support force against the bar exceeds 0.02 N. Score 1.0 when both measured grippers are also open beyond 35 mm and no robot body contacts the bar or the blue block. Contact separation of 1 mm or less counts as contact. Full success holds for one second. Pose checks run at 20 Hz. Contact and support force checks run each physics step. All other outcomes receive only the currently satisfied partial stage.",
+  "run_limit": "2400 control steps at 20 Hz. This is 120 seconds of control time.",
+  "reset_notes": "Return the bar to its zero angle. Put all three blocks upright at their source positions. Restore the fixed plate and clear scoring history. Nothing is consumed. Use seed 0 and object_jitter=0. Run one epoch per process.",
+  "fidelity": "Rigid printed training parts. A passive revolute joint fixes the near roller axis instead of modelling a freely rolling near support. The far rounded foot has native cylindrical contact. Native spring free gravity loading sets the final angle. A PhysX contact view measures support force and rejects robot contact after release. Contact offsets are 1 mm. Elastic bending and precision surface finish are omitted.",
+  "scores": "Dream 1 score 0.0. Scripted demo score 1.0.",
+  "media": "M-8RLW2E"
+}

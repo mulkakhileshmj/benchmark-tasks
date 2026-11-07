@@ -1,0 +1,116 @@
+{
+  "demo": {
+    "task": "set-sine-bar-with-gauge-block",
+    "policy": "yam_scripted",
+    "attempt": 3,
+    "max_steps": 650,
+    "source_sha256": "184bac2986179a64e9ff7ef35dd07456d74f524fe322d639e7cce99c42d51aef",
+    "returncode": 0,
+    "wall_seconds": 152.35836219787598,
+    "valid": true,
+    "log": "/data/fresh_batch_20261107/set-sine-bar-with-gauge-block/yam_scripted_3/adhoc_b23aec3c.json",
+    "results": {
+      "abstentions": {},
+      "errored_trials": 0,
+      "metrics": {
+        "task_score": 1.0
+      },
+      "total_scenes": 1,
+      "total_trials": 1
+    },
+    "stats": {
+      "completed_at": "2026-11-07T15:57:18.220221+00:00",
+      "duration_s": 150.92903575499804,
+      "frames_dir": "/data/fresh_batch_20261107/set-sine-bar-with-gauge-block/yam_scripted_3/frames/20261107_155447_5e126ebe",
+      "mean_inference_latency_s": null,
+      "records_dir": "/data/fresh_batch_20261107/set-sine-bar-with-gauge-block/yam_scripted_3/records/20261107_155447_5e126ebe",
+      "started_at": "2026-11-07T15:54:47.291195+00:00",
+      "total_steps": 436
+    },
+    "error": null
+  },
+  "dream": {
+    "task": "set-sine-bar-with-gauge-block",
+    "policy": "dream_current",
+    "attempt": 1,
+    "max_steps": 2400,
+    "source_sha256": "184bac2986179a64e9ff7ef35dd07456d74f524fe322d639e7cce99c42d51aef",
+    "returncode": 0,
+    "wall_seconds": 390.3885021209717,
+    "valid": true,
+    "physics_sources": {
+      "task.py": "184bac2986179a64e9ff7ef35dd07456d74f524fe322d639e7cce99c42d51aef",
+      "support_contact.py": "79427dd361e960d5b601687a9b772f4f6f71fdcfb33353c753d5fa63b0ecc2fd",
+      "validate.py": "940cabd87aad4fddcfdc609438b5a8b5ac195a77e2a9e022ae2477955955e16e",
+      "runtime/yam_articulated_base.py": "0cded39eb696696ceff368dd8d184139ef1c114760330e0c99a2a04653a6579f",
+      "runtime/yam_feedback.py": "c5cf5f2fa5f9fceeea82d8f545514b11d442d3d733c414d688c7e7a98b526dda",
+      "runtime/yam_articulated.py": "bfef52f6dd39d68145871fb3127511fb8f4c5837059f494ed8ba32e7ea26ba1c"
+    },
+    "source_files_unchanged": true,
+    "log": "/data/fresh_batch_20261107/set-sine-bar-with-gauge-block/dream_current_1/adhoc_a1009058.json",
+    "results": {
+      "abstentions": {},
+      "errored_trials": 0,
+      "metrics": {
+        "task_score": 0.0
+      },
+      "total_scenes": 1,
+      "total_trials": 1
+    },
+    "stats": {
+      "completed_at": "2026-11-07T16:26:56.146094+00:00",
+      "duration_s": 388.57574914900033,
+      "frames_dir": "/data/fresh_batch_20261107/set-sine-bar-with-gauge-block/dream_current_1/frames/20261107_162027_aaa8f1d7",
+      "mean_inference_latency_s": 0.6333858105797117,
+      "records_dir": "/data/fresh_batch_20261107/set-sine-bar-with-gauge-block/dream_current_1/records/20261107_162027_aaa8f1d7",
+      "started_at": "2026-11-07T16:20:27.570353+00:00",
+      "total_steps": 2400
+    },
+    "error": null
+  },
+  "checkpoint": "dreamlabs/dream-1-beta",
+  "seed": 0,
+  "object_jitter": 0,
+  "source_files": {
+    "task.py": "184bac2986179a64e9ff7ef35dd07456d74f524fe322d639e7cce99c42d51aef",
+    "support_contact.py": "79427dd361e960d5b601687a9b772f4f6f71fdcfb33353c753d5fa63b0ecc2fd",
+    "validate.py": "940cabd87aad4fddcfdc609438b5a8b5ac195a77e2a9e022ae2477955955e16e",
+    "policy/current_api_bridge.py": "86ce4c044aea7a10fc85be405535b20ba90bec26ecf3fe51bb28e4915e2adbf3",
+    "policy/dream_current.py": "bd9e9b318dcddca16e5285e0651c01be15af7ad7fd927d353b65e3eae358ddf7",
+    "policy/pyproject.toml": "d5714a78223b93d5f7f7cbd62d606654e82cd02378703e787487071350161288",
+    "runtime/yam_articulated_base.py": "0cded39eb696696ceff368dd8d184139ef1c114760330e0c99a2a04653a6579f",
+    "runtime/yam_feedback.py": "c5cf5f2fa5f9fceeea82d8f545514b11d442d3d733c414d688c7e7a98b526dda",
+    "runtime/yam_articulated.py": "bfef52f6dd39d68145871fb3127511fb8f4c5837059f494ed8ba32e7ea26ba1c",
+    "runtime/pyproject.toml": "0b5a6431aab8f962ced783dd26681f0aeffe08bdbde671befae98a79a20043f9"
+  },
+  "dream_session": {
+    "checkpoint": "dreamlabs/dream-1-beta",
+    "started_at": 1794068427.980372,
+    "action_requests": 50,
+    "session_ids": [
+      "188faf82-9f89-483a-b917-d07d40079aa6",
+      "b687fb4f-601f-4208-8333-c5eca4489a18",
+      "36669f22-e90c-4409-9efe-20b118063a32"
+    ],
+    "session_resets": [
+      {
+        "at": 1794068469.7584767,
+        "reason": "expired",
+        "new_session_id": "b687fb4f-601f-4208-8333-c5eca4489a18",
+        "action_request": 2
+      },
+      {
+        "at": 1794068484.3323767,
+        "reason": "expired",
+        "new_session_id": "36669f22-e90c-4409-9efe-20b118063a32",
+        "action_request": 3
+      }
+    ],
+    "protocol": "sdk_expiry_recovery_v1",
+    "finished_at": 1794070150.4119287,
+    "max_session_resets": 2,
+    "simulation_paused_during_recovery": true,
+    "bridge_episode": "622d5b5b773a4d03b829a32ef329caa7",
+    "collected_after_process_exit": true
+  }
+}

@@ -1,0 +1,86 @@
+[
+  {
+    "task": "set-sine-bar-with-gauge-block",
+    "policy": "yam_scripted",
+    "camera": "top_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "21.850000",
+      "nb_frames": "437"
+    },
+    "sha256": "35abc8f6065feb64a6625c420a4f22c6b46331f57a551688590d72b33c0e2916"
+  },
+  {
+    "task": "set-sine-bar-with-gauge-block",
+    "policy": "yam_scripted",
+    "camera": "left_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "21.850000",
+      "nb_frames": "437"
+    },
+    "sha256": "981b31ceb224c9dd2ca346043356a7f41accba772b0fb758cb0116f0b4c55a0c"
+  },
+  {
+    "task": "set-sine-bar-with-gauge-block",
+    "policy": "yam_scripted",
+    "camera": "right_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "21.850000",
+      "nb_frames": "437"
+    },
+    "sha256": "699ba2b6ab71679bb1a6133b2ad275f24e7334fa7cfbfa8a072429f2702feb45"
+  },
+  {
+    "task": "set-sine-bar-with-gauge-block",
+    "policy": "dream_current",
+    "camera": "top_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "120.050000",
+      "nb_frames": "2401"
+    },
+    "sha256": "0eb84d5d01bd894da8074485f0c160560a12a85a2aa133919ce72dc944224efc"
+  },
+  {
+    "task": "set-sine-bar-with-gauge-block",
+    "policy": "dream_current",
+    "camera": "left_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "120.050000",
+      "nb_frames": "2401"
+    },
+    "sha256": "a5aa03c5701709b2be2f745b5363ad172558e56611751ceb85581ce9b0570d7f"
+  },
+  {
+    "task": "set-sine-bar-with-gauge-block",
+    "policy": "dream_current",
+    "camera": "right_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "120.050000",
+      "nb_frames": "2401"
+    },
+    "sha256": "c9fff837da590216f6763ae0623ebf84bfe60b34fc287b052970b1f761866e08"
+  }
+]
