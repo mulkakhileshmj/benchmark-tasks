@@ -1,0 +1,37 @@
+{
+  "counterfactual": "one input moves while the other stays held",
+  "expected_score": 0.0,
+  "receipt": {
+    "task": "set-differential-angle-with-fixed-output",
+    "policy": "yam_scripted",
+    "attempt": 1,
+    "max_steps": 650,
+    "source_sha256": "99d33b8850a987ef439c3c65aaa89aaee8363415a64062024ecd7df48ed028cb",
+    "returncode": 0,
+    "wall_seconds": 155.66625332832336,
+    "valid": true,
+    "log": "/data/fresh_batch_20261107/counterfactual/set-differential-angle-with-fixed-output/yam_scripted_1/adhoc_f638e303.json",
+    "results": {
+      "abstentions": {},
+      "errored_trials": 0,
+      "metrics": {
+        "task_score": 0.0
+      },
+      "total_scenes": 1,
+      "total_trials": 1
+    },
+    "stats": {
+      "completed_at": "2026-11-07T15:33:44.259987+00:00",
+      "duration_s": 154.2061103119995,
+      "frames_dir": "/data/fresh_batch_20261107/counterfactual/set-differential-angle-with-fixed-output/yam_scripted_1/frames/20261107_153110_7cf83e34",
+      "mean_inference_latency_s": null,
+      "records_dir": "/data/fresh_batch_20261107/counterfactual/set-differential-angle-with-fixed-output/yam_scripted_1/records/20261107_153110_7cf83e34",
+      "started_at": "2026-11-07T15:31:10.053886+00:00",
+      "total_steps": 376
+    },
+    "error": null
+  },
+  "primary_task_sha256": "8c14400dc5b5a54f3846c97467277797485607df066d6f06d4d1ff700e87dab5",
+  "max_output_shift_m": 0.01932201348245144,
+  "limit_m": 0.004
+}

@@ -1,0 +1,93 @@
+{
+  "demo": {
+    "task": "set-differential-angle-with-fixed-output",
+    "policy": "yam_scripted",
+    "attempt": 2,
+    "max_steps": 650,
+    "source_sha256": "8c14400dc5b5a54f3846c97467277797485607df066d6f06d4d1ff700e87dab5",
+    "returncode": 0,
+    "wall_seconds": 114.1128671169281,
+    "valid": true,
+    "log": "/data/fresh_batch_20261107/set-differential-angle-with-fixed-output/yam_scripted_2/adhoc_e060858a.json",
+    "results": {
+      "abstentions": {},
+      "errored_trials": 0,
+      "metrics": {
+        "task_score": 1.0
+      },
+      "total_scenes": 1,
+      "total_trials": 1
+    },
+    "stats": {
+      "completed_at": "2026-11-07T15:33:02.664268+00:00",
+      "duration_s": 112.66069007600163,
+      "frames_dir": "/data/fresh_batch_20261107/set-differential-angle-with-fixed-output/yam_scripted_2/frames/20261107_153110_3710f1c0",
+      "mean_inference_latency_s": null,
+      "records_dir": "/data/fresh_batch_20261107/set-differential-angle-with-fixed-output/yam_scripted_2/records/20261107_153110_3710f1c0",
+      "started_at": "2026-11-07T15:31:10.003587+00:00",
+      "total_steps": 232
+    },
+    "error": null
+  },
+  "dream": {
+    "task": "set-differential-angle-with-fixed-output",
+    "policy": "dream_current",
+    "attempt": 3,
+    "max_steps": 2400,
+    "source_sha256": "8c14400dc5b5a54f3846c97467277797485607df066d6f06d4d1ff700e87dab5",
+    "returncode": 0,
+    "wall_seconds": 354.85295033454895,
+    "valid": true,
+    "log": "/data/fresh_batch_20261107/set-differential-angle-with-fixed-output/dream_current_3/adhoc_0a487803.json",
+    "results": {
+      "abstentions": {},
+      "errored_trials": 0,
+      "metrics": {
+        "task_score": 0.0
+      },
+      "total_scenes": 1,
+      "total_trials": 1
+    },
+    "stats": {
+      "completed_at": "2026-11-07T16:10:13.630068+00:00",
+      "duration_s": 353.08292910599994,
+      "frames_dir": "/data/fresh_batch_20261107/set-differential-angle-with-fixed-output/dream_current_3/frames/20261107_160420_eaf2bd08",
+      "mean_inference_latency_s": 0.5327551858797961,
+      "records_dir": "/data/fresh_batch_20261107/set-differential-angle-with-fixed-output/dream_current_3/records/20261107_160420_eaf2bd08",
+      "started_at": "2026-11-07T16:04:20.547147+00:00",
+      "total_steps": 2400
+    },
+    "error": null
+  },
+  "checkpoint": "dreamlabs/dream-1-beta",
+  "seed": 0,
+  "object_jitter": 0,
+  "source_files": {
+    "task.py": "8c14400dc5b5a54f3846c97467277797485607df066d6f06d4d1ff700e87dab5",
+    "one_input_only.py": "319d5d77e8a8eab66d6ee508016fe4a1923e9498022c391583e4f55ae29fc81d",
+    "output_contact.py": "0ee8cce1cfdd6f32dfcae7d94ead62f5e66a5fec323285dc163a7b25ccc70edf",
+    "validate.py": "36d74f54eecc9b7d42f275df19d749072145d9496f6916eec9e533be7a92eede",
+    "policy/current_api_bridge.py": "86ce4c044aea7a10fc85be405535b20ba90bec26ecf3fe51bb28e4915e2adbf3",
+    "policy/dream_current.py": "bd9e9b318dcddca16e5285e0651c01be15af7ad7fd927d353b65e3eae358ddf7",
+    "policy/pyproject.toml": "d5714a78223b93d5f7f7cbd62d606654e82cd02378703e787487071350161288",
+    "runtime/yam_articulated_base.py": "632fe3ccea383151e66112069e9105e69edab5c9c3ce71cd5c06f68c9ed7e4f2",
+    "runtime/yam_feedback.py": "c5cf5f2fa5f9fceeea82d8f545514b11d442d3d733c414d688c7e7a98b526dda",
+    "runtime/yam_articulated.py": "4e2e185638c99b393b0172d5a01203af482def38a9f1ded609380284d6895fd0",
+    "runtime/pyproject.toml": "0b5a6431aab8f962ced783dd26681f0aeffe08bdbde671befae98a79a20043f9"
+  },
+  "dream_session": {
+    "checkpoint": "dreamlabs/dream-1-beta",
+    "started_at": 1794067460.9763126,
+    "action_requests": 50,
+    "session_ids": [
+      "a0bc11de-6a7d-4ae3-aa3a-5052766ce101"
+    ],
+    "session_resets": [],
+    "protocol": "sdk_expiry_recovery_v1",
+    "finished_at": 1794068790.5661314,
+    "max_session_resets": 2,
+    "simulation_paused_during_recovery": true,
+    "bridge_episode": "5934415cbf114a9687f7cf880c4dacdb",
+    "collected_after_process_exit": true
+  }
+}

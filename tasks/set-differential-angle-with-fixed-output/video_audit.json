@@ -1,0 +1,86 @@
+[
+  {
+    "task": "set-differential-angle-with-fixed-output",
+    "policy": "yam_scripted",
+    "camera": "top_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "11.650000",
+      "nb_frames": "233"
+    },
+    "sha256": "5dffa1de83802f18402127b3889a9ffd291e7d64ce6171362f0c75be2596cdb8"
+  },
+  {
+    "task": "set-differential-angle-with-fixed-output",
+    "policy": "yam_scripted",
+    "camera": "left_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "11.650000",
+      "nb_frames": "233"
+    },
+    "sha256": "0e3251192725771225937d51f50922464abc10d0ed6fd1080649ac237cd850f6"
+  },
+  {
+    "task": "set-differential-angle-with-fixed-output",
+    "policy": "yam_scripted",
+    "camera": "right_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "11.650000",
+      "nb_frames": "233"
+    },
+    "sha256": "49bb998294960f21a8b1c1c7800fdce854c1b4243329202f0af622c5518af503"
+  },
+  {
+    "task": "set-differential-angle-with-fixed-output",
+    "policy": "dream_current",
+    "camera": "top_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "120.050000",
+      "nb_frames": "2401"
+    },
+    "sha256": "e61c545ecdaf4b7b94b4e24e473a7e1814584aed85f6fc438343fc66377640c8"
+  },
+  {
+    "task": "set-differential-angle-with-fixed-output",
+    "policy": "dream_current",
+    "camera": "left_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "120.050000",
+      "nb_frames": "2401"
+    },
+    "sha256": "626821dec9ccee079f013db91ecd43351ec7e64ff956f26722d8b95e41654fc0"
+  },
+  {
+    "task": "set-differential-angle-with-fixed-output",
+    "policy": "dream_current",
+    "camera": "right_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "120.050000",
+      "nb_frames": "2401"
+    },
+    "sha256": "14fa5183518997441e7cd4937853bdfb57dab8407d80d6c6a2c177e4739cd4cd"
+  }
+]
