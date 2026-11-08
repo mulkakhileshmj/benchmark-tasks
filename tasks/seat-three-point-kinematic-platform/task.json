@@ -1,0 +1,19 @@
+{
+  "title": "Seat a platform on three kinematic datums",
+  "category": "Impact on jobs",
+  "keywords": [
+    "bimanual",
+    "kinematic mount",
+    "seating",
+    "contact"
+  ],
+  "context": "Instrument carriers need repeatable support without rocking. The task seats three ball feet on a cup and a groove and a flat and verifies that every support carries load.",
+  "setup": "Use the official bimanual YAM station. Coordinates are metres in the station frame. The grey base is 180 by 180 by 8 mm centred at x 0.26 and y 0 on the table. Fixed datums sit on it. A 40 by 40 mm square cone cup is centred at x 0.21 and y 0.05. A 50 by 40 mm V groove is centred at x 0.31 and y 0.05. A 50 by 50 mm flat is centred at x 0.26 and y minus 0.05. The cup and groove have 45 degree rigid faces. The flat top is 14.142 mm above the table. The blue 200 g plate is 160 by 150 by 12 mm. It starts at x 0.10 and y 0 with its centre 28 mm above the table. Three 20 mm diameter ball feet sit 18 mm below the plate centre at offsets matching the datums. Two 14 by 14 by 64 mm handle stems carry 28 by 28 by 24 mm grips at y plus and minus 85 mm. The grip centres are 65 mm above the plate centre. The plate starts level with zero yaw. Use rigid metal datums and ball feet with a rigid plate and polymer grips for a physical trainer. Simulation uses rigid primitive contact geometry without material deformation.",
+  "scoring": "Score 0 if a datum moves more than 2 mm or the plate passes more than 8 mm below the table. Score 1 when plate x and y errors are each below 3 mm and height error below 3 mm and tilt and yaw below 3 degrees and all three vertical support forces exceed 0.02 N and plate speed is below 8 mm/s and angular speed below 0.1 rad/s and both grippers are open and clear. The target plate centre is x 0.26 and y 0 and 42.142 mm above the table. Score 0.75 for the same seated state before robot release. Score 0.5 when at least one support carries above 0.02 N and tilt is below 10 degrees. Score 0.25 when the lowest plate point is more than 15 mm above the table. Otherwise score 0. Full success must hold for one second.",
+  "reset_notes": "Nothing is consumed. Put the level plate back at x 0.10 and y 0 with centre 28 mm above the table. Leave the datums in their fixed positions. Recreate the scene and clear score history. Use the two handles for physical manipulation.",
+  "fidelity": "Native rigid body contact between sphere feet and convex cup and groove faces and a flat support. Contact force matrices supply each support force. Robot contacts must be clear at full score. The cup is a square cone approximation. Surface compliance and manufacturing tolerances are not simulated. Datums are fixed. The plate has no pose servo and is not teleported during a trial.",
+  "instruction": "Seat the blue platform on its three locating datums. Each ball foot must bear on its matching support. The rear left foot goes in the square cone cup. The rear right foot goes in the V groove. The front foot rests on the flat. Keep the platform level while lowering it. Release both handles. The fixture is unpowered.",
+  "run_limit": "2400 control steps at 20 Hz. This is 120 seconds of control time.",
+  "scores": "Dream 1 score 0.0. Scripted demo score 1.0.",
+  "media": "M-ZMKK37"
+}

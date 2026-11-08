@@ -1,0 +1,110 @@
+{
+  "demo": {
+    "task": "seat-three-point-kinematic-platform",
+    "policy": "yam_scripted",
+    "attempt": 2,
+    "max_steps": 650,
+    "source_sha256": "a89aaa63a77b17793d5999ed850b401eaa0e808a072a0c5f4f9f68da09b54e3c",
+    "returncode": 0,
+    "wall_seconds": 103.32279109954834,
+    "valid": true,
+    "physics_sources": {
+      "task.py": "a89aaa63a77b17793d5999ed850b401eaa0e808a072a0c5f4f9f68da09b54e3c",
+      "seating_contact.py": "0739a80a21f60ea776e4cbfc4760eac8f1443b2327b523b17eb84c8e9b43f681",
+      "validate.py": "ed525553f03680e89cfdf868b2cd2de04c6c872f8825f66c13b2ed65e24555a0",
+      "runtime/yam_articulated_base.py": "a9546c2347c05c63d000f460a67d95db902e8acac9a00f971e0e0b614cda21ef",
+      "runtime/yam_feedback.py": "12c5af6738e6e99900a849c89a1f11657be91521870aacd917c041dcd0812563",
+      "runtime/yam_articulated.py": "0fea52f4e1543e9b0d8e59537de39d5e08d4e7c3ee77d9966e661b10976c43f6"
+    },
+    "source_files_unchanged": true,
+    "log": "/data/fresh_batch_20261107/seat-three-point-kinematic-platform/yam_scripted_2/adhoc_c163be87.json",
+    "results": {
+      "abstentions": {},
+      "errored_trials": 0,
+      "metrics": {
+        "task_score": 1.0
+      },
+      "total_scenes": 1,
+      "total_trials": 1
+    },
+    "stats": {
+      "completed_at": "2026-11-07T17:31:53.920950+00:00",
+      "duration_s": 101.90258090499992,
+      "frames_dir": "/data/fresh_batch_20261107/seat-three-point-kinematic-platform/yam_scripted_2/frames/20261107_173012_e92bb070",
+      "mean_inference_latency_s": null,
+      "records_dir": "/data/fresh_batch_20261107/seat-three-point-kinematic-platform/yam_scripted_2/records/20261107_173012_e92bb070",
+      "started_at": "2026-11-07T17:30:12.018380+00:00",
+      "total_steps": 242
+    },
+    "error": null
+  },
+  "dream": {
+    "task": "seat-three-point-kinematic-platform",
+    "policy": "dream_current",
+    "attempt": 3,
+    "max_steps": 2400,
+    "source_sha256": "a89aaa63a77b17793d5999ed850b401eaa0e808a072a0c5f4f9f68da09b54e3c",
+    "returncode": 0,
+    "wall_seconds": 340.67447566986084,
+    "valid": true,
+    "physics_sources": {
+      "task.py": "a89aaa63a77b17793d5999ed850b401eaa0e808a072a0c5f4f9f68da09b54e3c",
+      "seating_contact.py": "0739a80a21f60ea776e4cbfc4760eac8f1443b2327b523b17eb84c8e9b43f681",
+      "validate.py": "ed525553f03680e89cfdf868b2cd2de04c6c872f8825f66c13b2ed65e24555a0",
+      "runtime/yam_articulated_base.py": "a9546c2347c05c63d000f460a67d95db902e8acac9a00f971e0e0b614cda21ef",
+      "runtime/yam_feedback.py": "12c5af6738e6e99900a849c89a1f11657be91521870aacd917c041dcd0812563",
+      "runtime/yam_articulated.py": "0fea52f4e1543e9b0d8e59537de39d5e08d4e7c3ee77d9966e661b10976c43f6"
+    },
+    "source_files_unchanged": true,
+    "log": "/data/fresh_batch_20261107/seat-three-point-kinematic-platform/dream_current_3/adhoc_13d2dc2d.json",
+    "results": {
+      "abstentions": {},
+      "errored_trials": 0,
+      "metrics": {
+        "task_score": 0.0
+      },
+      "total_scenes": 1,
+      "total_trials": 1
+    },
+    "stats": {
+      "completed_at": "2026-11-08T07:04:42.669496+00:00",
+      "duration_s": 338.951422308,
+      "frames_dir": "/data/fresh_batch_20261107/seat-three-point-kinematic-platform/dream_current_3/frames/20261108_065903_f157c9fe",
+      "mean_inference_latency_s": 0.49267161386002956,
+      "records_dir": "/data/fresh_batch_20261107/seat-three-point-kinematic-platform/dream_current_3/records/20261108_065903_f157c9fe",
+      "started_at": "2026-11-08T06:59:03.718082+00:00",
+      "total_steps": 2400
+    },
+    "error": null
+  },
+  "checkpoint": "dreamlabs/dream-1-beta",
+  "seed": 0,
+  "object_jitter": 0,
+  "source_files": {
+    "task.py": "a89aaa63a77b17793d5999ed850b401eaa0e808a072a0c5f4f9f68da09b54e3c",
+    "seating_contact.py": "0739a80a21f60ea776e4cbfc4760eac8f1443b2327b523b17eb84c8e9b43f681",
+    "validate.py": "ed525553f03680e89cfdf868b2cd2de04c6c872f8825f66c13b2ed65e24555a0",
+    "policy/current_api_bridge.py": "86ce4c044aea7a10fc85be405535b20ba90bec26ecf3fe51bb28e4915e2adbf3",
+    "policy/dream_current.py": "bd9e9b318dcddca16e5285e0651c01be15af7ad7fd927d353b65e3eae358ddf7",
+    "policy/pyproject.toml": "d5714a78223b93d5f7f7cbd62d606654e82cd02378703e787487071350161288",
+    "runtime/yam_articulated_base.py": "a9546c2347c05c63d000f460a67d95db902e8acac9a00f971e0e0b614cda21ef",
+    "runtime/yam_feedback.py": "12c5af6738e6e99900a849c89a1f11657be91521870aacd917c041dcd0812563",
+    "runtime/yam_articulated.py": "0fea52f4e1543e9b0d8e59537de39d5e08d4e7c3ee77d9966e661b10976c43f6",
+    "runtime/pyproject.toml": "0b5a6431aab8f962ced783dd26681f0aeffe08bdbde671befae98a79a20043f9"
+  },
+  "dream_session": {
+    "checkpoint": "dreamlabs/dream-1-beta",
+    "started_at": 1794121144.1576138,
+    "action_requests": 50,
+    "session_ids": [
+      "30e9b6ec-c822-44f9-8e11-3319bfd04fe4"
+    ],
+    "session_resets": [],
+    "protocol": "sdk_expiry_recovery_v1",
+    "finished_at": 1794121483.9090524,
+    "max_session_resets": 2,
+    "simulation_paused_during_recovery": true,
+    "bridge_episode": "ddda926893f141b28a8241fe0ba8add4",
+    "collected_after_process_exit": true
+  }
+}

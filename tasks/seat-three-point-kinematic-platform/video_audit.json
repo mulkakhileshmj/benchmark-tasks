@@ -1,0 +1,86 @@
+[
+  {
+    "task": "seat-three-point-kinematic-platform",
+    "policy": "yam_scripted",
+    "camera": "top_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "12.150000",
+      "nb_frames": "243"
+    },
+    "sha256": "398fac1fe52839906a3c12b6a6224c82a5460d905eadbe2ff36622722f0486f4"
+  },
+  {
+    "task": "seat-three-point-kinematic-platform",
+    "policy": "yam_scripted",
+    "camera": "left_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "12.150000",
+      "nb_frames": "243"
+    },
+    "sha256": "3b22dfd70c37d68bf6e50e19a49ef956671ef426e4c585cbcf63801517bfd124"
+  },
+  {
+    "task": "seat-three-point-kinematic-platform",
+    "policy": "yam_scripted",
+    "camera": "right_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "12.150000",
+      "nb_frames": "243"
+    },
+    "sha256": "d2f3fb63bc0a9d97f6d4fabb9c6bdf7d25258c48d03d5610f971d587caa37d24"
+  },
+  {
+    "task": "seat-three-point-kinematic-platform",
+    "policy": "dream_current",
+    "camera": "top_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "120.050000",
+      "nb_frames": "2401"
+    },
+    "sha256": "076803a2a19b6c969e9d97b986257d42489a7a51c369f5e1d92082cb813ec4fa"
+  },
+  {
+    "task": "seat-three-point-kinematic-platform",
+    "policy": "dream_current",
+    "camera": "left_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "120.050000",
+      "nb_frames": "2401"
+    },
+    "sha256": "9697b3d457983b07db9b7d5f5354c46c770214526d1a3d16be36eb92547e9b11"
+  },
+  {
+    "task": "seat-three-point-kinematic-platform",
+    "policy": "dream_current",
+    "camera": "right_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "120.050000",
+      "nb_frames": "2401"
+    },
+    "sha256": "ab490e9d70a211c66c571db920b2a327011f8b659ba59cb3be4615e75d2aefe2"
+  }
+]
