@@ -1,0 +1,86 @@
+[
+  {
+    "task": "calibrate-torque-limiting-clutch",
+    "policy": "yam_scripted",
+    "camera": "top_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "25.500000",
+      "nb_frames": "510"
+    },
+    "sha256": "557971aa87a5e17815dc6c3ff3c44336c0c4a5f9496049dc88f9c5a68e9f35c2"
+  },
+  {
+    "task": "calibrate-torque-limiting-clutch",
+    "policy": "yam_scripted",
+    "camera": "left_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "25.500000",
+      "nb_frames": "510"
+    },
+    "sha256": "e4a558108df317e90d9af29f3b8b6f50d3ebb80459af2e155a97da293795e0f8"
+  },
+  {
+    "task": "calibrate-torque-limiting-clutch",
+    "policy": "yam_scripted",
+    "camera": "right_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "25.500000",
+      "nb_frames": "510"
+    },
+    "sha256": "b39ef059e29ac9a79d3a3a6b853202ac8778a61efb8a90807b1dc7e848bdf905"
+  },
+  {
+    "task": "calibrate-torque-limiting-clutch",
+    "policy": "dream_current",
+    "camera": "top_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "120.050000",
+      "nb_frames": "2401"
+    },
+    "sha256": "c47c056a36897dbf160ba0306462a838cd4b181a01ef42db4386595d7b2e86f8"
+  },
+  {
+    "task": "calibrate-torque-limiting-clutch",
+    "policy": "dream_current",
+    "camera": "left_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "120.050000",
+      "nb_frames": "2401"
+    },
+    "sha256": "26cf63df8c169f034087dd836606ac08fc90412e3d5334b1f6632f3ea8b7e8e2"
+  },
+  {
+    "task": "calibrate-torque-limiting-clutch",
+    "policy": "dream_current",
+    "camera": "right_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "120.050000",
+      "nb_frames": "2401"
+    },
+    "sha256": "288d1b656d039c69742433510ee52dd0289880771f74f5ce0635387d19a9133d"
+  }
+]

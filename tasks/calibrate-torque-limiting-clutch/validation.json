@@ -1,0 +1,110 @@
+{
+  "demo": {
+    "task": "calibrate-torque-limiting-clutch",
+    "policy": "yam_scripted",
+    "attempt": 3,
+    "max_steps": 650,
+    "source_sha256": "ee67256eda65e746b14b35f56ed51157bea7fb32281429d221ddf0316de878e0",
+    "returncode": 0,
+    "wall_seconds": 147.6425232887268,
+    "valid": true,
+    "physics_sources": {
+      "task.py": "ee67256eda65e746b14b35f56ed51157bea7fb32281429d221ddf0316de878e0",
+      "output_contact.py": "233bb0ba6ed1ef8ef5a4b64366e35fae9edb7685bda3484ac5b4128864d6e614",
+      "validate.py": "49462b38b2ebba6c68e1f1691d71e8ff3e152b6177cd1a48c6f5f12965bcefb8",
+      "runtime/yam_articulated_base.py": "632fe3ccea383151e66112069e9105e69edab5c9c3ce71cd5c06f68c9ed7e4f2",
+      "runtime/yam_feedback.py": "c5cf5f2fa5f9fceeea82d8f545514b11d442d3d733c414d688c7e7a98b526dda",
+      "runtime/yam_articulated.py": "0fea52f4e1543e9b0d8e59537de39d5e08d4e7c3ee77d9966e661b10976c43f6"
+    },
+    "source_files_unchanged": true,
+    "log": "/data/fresh_batch_20261107/calibrate-torque-limiting-clutch/yam_scripted_3/adhoc_ad82e2d9.json",
+    "results": {
+      "abstentions": {},
+      "errored_trials": 0,
+      "metrics": {
+        "task_score": 1.0
+      },
+      "total_scenes": 1,
+      "total_trials": 1
+    },
+    "stats": {
+      "completed_at": "2026-11-07T17:32:38.236584+00:00",
+      "duration_s": 146.21574135699848,
+      "frames_dir": "/data/fresh_batch_20261107/calibrate-torque-limiting-clutch/yam_scripted_3/frames/20261107_173012_badb3b6b",
+      "mean_inference_latency_s": null,
+      "records_dir": "/data/fresh_batch_20261107/calibrate-torque-limiting-clutch/yam_scripted_3/records/20261107_173012_badb3b6b",
+      "started_at": "2026-11-07T17:30:12.020851+00:00",
+      "total_steps": 509
+    },
+    "error": null
+  },
+  "dream": {
+    "task": "calibrate-torque-limiting-clutch",
+    "policy": "dream_current",
+    "attempt": 4,
+    "max_steps": 2400,
+    "source_sha256": "ee67256eda65e746b14b35f56ed51157bea7fb32281429d221ddf0316de878e0",
+    "returncode": 0,
+    "wall_seconds": 356.9365029335022,
+    "valid": true,
+    "physics_sources": {
+      "task.py": "ee67256eda65e746b14b35f56ed51157bea7fb32281429d221ddf0316de878e0",
+      "output_contact.py": "233bb0ba6ed1ef8ef5a4b64366e35fae9edb7685bda3484ac5b4128864d6e614",
+      "validate.py": "49462b38b2ebba6c68e1f1691d71e8ff3e152b6177cd1a48c6f5f12965bcefb8",
+      "runtime/yam_articulated_base.py": "632fe3ccea383151e66112069e9105e69edab5c9c3ce71cd5c06f68c9ed7e4f2",
+      "runtime/yam_feedback.py": "c5cf5f2fa5f9fceeea82d8f545514b11d442d3d733c414d688c7e7a98b526dda",
+      "runtime/yam_articulated.py": "0fea52f4e1543e9b0d8e59537de39d5e08d4e7c3ee77d9966e661b10976c43f6"
+    },
+    "source_files_unchanged": true,
+    "log": "/data/fresh_batch_20261107/calibrate-torque-limiting-clutch/dream_current_4/adhoc_63995b40.json",
+    "results": {
+      "abstentions": {},
+      "errored_trials": 0,
+      "metrics": {
+        "task_score": 0.0
+      },
+      "total_scenes": 1,
+      "total_trials": 1
+    },
+    "stats": {
+      "completed_at": "2026-11-08T06:33:43.087848+00:00",
+      "duration_s": 354.90871127699995,
+      "frames_dir": "/data/fresh_batch_20261107/calibrate-torque-limiting-clutch/dream_current_4/frames/20261108_062748_f36bf931",
+      "mean_inference_latency_s": 0.47257275456000797,
+      "records_dir": "/data/fresh_batch_20261107/calibrate-torque-limiting-clutch/dream_current_4/records/20261108_062748_f36bf931",
+      "started_at": "2026-11-08T06:27:48.179144+00:00",
+      "total_steps": 2400
+    },
+    "error": null
+  },
+  "checkpoint": "dreamlabs/dream-1-beta",
+  "seed": 0,
+  "object_jitter": 0,
+  "source_files": {
+    "task.py": "ee67256eda65e746b14b35f56ed51157bea7fb32281429d221ddf0316de878e0",
+    "output_contact.py": "233bb0ba6ed1ef8ef5a4b64366e35fae9edb7685bda3484ac5b4128864d6e614",
+    "validate.py": "49462b38b2ebba6c68e1f1691d71e8ff3e152b6177cd1a48c6f5f12965bcefb8",
+    "policy/current_api_bridge.py": "86ce4c044aea7a10fc85be405535b20ba90bec26ecf3fe51bb28e4915e2adbf3",
+    "policy/dream_current.py": "bd9e9b318dcddca16e5285e0651c01be15af7ad7fd927d353b65e3eae358ddf7",
+    "policy/pyproject.toml": "d5714a78223b93d5f7f7cbd62d606654e82cd02378703e787487071350161288",
+    "runtime/yam_articulated_base.py": "632fe3ccea383151e66112069e9105e69edab5c9c3ce71cd5c06f68c9ed7e4f2",
+    "runtime/yam_feedback.py": "c5cf5f2fa5f9fceeea82d8f545514b11d442d3d733c414d688c7e7a98b526dda",
+    "runtime/yam_articulated.py": "0fea52f4e1543e9b0d8e59537de39d5e08d4e7c3ee77d9966e661b10976c43f6",
+    "runtime/pyproject.toml": "0b5a6431aab8f962ced783dd26681f0aeffe08bdbde671befae98a79a20043f9"
+  },
+  "dream_session": {
+    "checkpoint": "dreamlabs/dream-1-beta",
+    "started_at": 1794119268.618374,
+    "action_requests": 50,
+    "session_ids": [
+      "4e0ad2fc-6cc1-4546-842d-5ef123a23ab7"
+    ],
+    "session_resets": [],
+    "protocol": "sdk_expiry_recovery_v1",
+    "finished_at": 1794119705.8899474,
+    "max_session_resets": 2,
+    "simulation_paused_during_recovery": true,
+    "bridge_episode": "8afce074f98942d39966c6e9ad0a7d09",
+    "collected_after_process_exit": true
+  }
+}
