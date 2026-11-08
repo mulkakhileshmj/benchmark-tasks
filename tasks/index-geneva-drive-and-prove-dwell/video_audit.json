@@ -1,0 +1,86 @@
+[
+  {
+    "task": "index-geneva-drive-and-prove-dwell",
+    "policy": "yam_scripted",
+    "camera": "top_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "37.650000",
+      "nb_frames": "753"
+    },
+    "sha256": "9378f07c99c37f12916d25266529804732e03fcc6a8d6a778a3acfacf7e6b6ee"
+  },
+  {
+    "task": "index-geneva-drive-and-prove-dwell",
+    "policy": "yam_scripted",
+    "camera": "left_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "37.650000",
+      "nb_frames": "753"
+    },
+    "sha256": "73141c8e8d533eb411bf51ee599175158e78b875c9f10bfc3ebb0e808d5cb05a"
+  },
+  {
+    "task": "index-geneva-drive-and-prove-dwell",
+    "policy": "yam_scripted",
+    "camera": "right_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "37.650000",
+      "nb_frames": "753"
+    },
+    "sha256": "cf8bbae6edcdb6e170a2c6a42fa359ac0a75be9ea04ad9818913afdfa463591b"
+  },
+  {
+    "task": "index-geneva-drive-and-prove-dwell",
+    "policy": "dream_current",
+    "camera": "top_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "120.050000",
+      "nb_frames": "2401"
+    },
+    "sha256": "79e641f3a5f8b0d0363e6dc0ec78e1bfb5431b9a6815269d4039732dc8c1d1d5"
+  },
+  {
+    "task": "index-geneva-drive-and-prove-dwell",
+    "policy": "dream_current",
+    "camera": "left_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "120.050000",
+      "nb_frames": "2401"
+    },
+    "sha256": "3c3c359b01d9a5838da640474aae63531958bfc0dd77c3cccedd92c15d9b56e7"
+  },
+  {
+    "task": "index-geneva-drive-and-prove-dwell",
+    "policy": "dream_current",
+    "camera": "right_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "120.050000",
+      "nb_frames": "2401"
+    },
+    "sha256": "3752ed54240bc52cc4e0fa124f3c74b0f3a833aa82ae207a38dae7cd7c66df3f"
+  }
+]

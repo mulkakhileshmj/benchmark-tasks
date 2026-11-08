@@ -1,0 +1,120 @@
+{
+  "demo": {
+    "task": "index-geneva-drive-and-prove-dwell",
+    "policy": "yam_feedback",
+    "attempt": 9,
+    "max_steps": 900,
+    "source_sha256": "c542466397287ebf45b932d3e1387984d5ba28b434a49e5164e1ee7b755218cd",
+    "returncode": 0,
+    "wall_seconds": 304.15615224838257,
+    "valid": true,
+    "physics_sources": {
+      "task.py": "c542466397287ebf45b932d3e1387984d5ba28b434a49e5164e1ee7b755218cd",
+      "geometry.py": "25e4411a91e60867e0029ae27f891d4e7bfef08c24e34bfb71e9f0ba8b8b8449",
+      "output_contact.py": "1869af85eb89e88443c9eaa0563813ebc2d3bdf8f566c62c74b449552c69307b",
+      "validate.py": "f5bd9ca12d7a0d04d9eed9e0ca71df95d0c0c3ed83606d0beb3c0055ecbef97b",
+      "runtime/yam_articulated_base.py": "632fe3ccea383151e66112069e9105e69edab5c9c3ce71cd5c06f68c9ed7e4f2",
+      "runtime/yam_feedback.py": "dcb4f4f6b7bab81ea56532062de17bd1b45513caf14f92794237ae6fc28d8557",
+      "runtime/yam_articulated.py": "ad228f98cb6bfe3a575b7c98f6e23a348a3dd67a334d7345dcd89f876cc09ab7"
+    },
+    "source_files_unchanged": true,
+    "log": "/data/fresh_batch_20261107/index-geneva-drive-and-prove-dwell/yam_feedback_9/adhoc_37df773c.json",
+    "results": {
+      "abstentions": {},
+      "errored_trials": 0,
+      "metrics": {
+        "task_score": 1.0
+      },
+      "total_scenes": 1,
+      "total_trials": 1
+    },
+    "stats": {
+      "completed_at": "2026-11-08T07:09:48.091759+00:00",
+      "duration_s": 302.4949872320003,
+      "frames_dir": "/data/fresh_batch_20261107/index-geneva-drive-and-prove-dwell/yam_feedback_9/frames/20261108_070445_feec60d4",
+      "mean_inference_latency_s": null,
+      "records_dir": "/data/fresh_batch_20261107/index-geneva-drive-and-prove-dwell/yam_feedback_9/records/20261108_070445_feec60d4",
+      "started_at": "2026-11-08T07:04:45.596817+00:00",
+      "total_steps": 752
+    },
+    "error": null
+  },
+  "dream": {
+    "task": "index-geneva-drive-and-prove-dwell",
+    "policy": "dream_current",
+    "attempt": 1,
+    "max_steps": 2400,
+    "source_sha256": "c542466397287ebf45b932d3e1387984d5ba28b434a49e5164e1ee7b755218cd",
+    "returncode": 0,
+    "wall_seconds": 424.5475523471832,
+    "valid": true,
+    "physics_sources": {
+      "task.py": "c542466397287ebf45b932d3e1387984d5ba28b434a49e5164e1ee7b755218cd",
+      "geometry.py": "25e4411a91e60867e0029ae27f891d4e7bfef08c24e34bfb71e9f0ba8b8b8449",
+      "output_contact.py": "1869af85eb89e88443c9eaa0563813ebc2d3bdf8f566c62c74b449552c69307b",
+      "validate.py": "f5bd9ca12d7a0d04d9eed9e0ca71df95d0c0c3ed83606d0beb3c0055ecbef97b",
+      "runtime/yam_articulated_base.py": "632fe3ccea383151e66112069e9105e69edab5c9c3ce71cd5c06f68c9ed7e4f2",
+      "runtime/yam_feedback.py": "dcb4f4f6b7bab81ea56532062de17bd1b45513caf14f92794237ae6fc28d8557",
+      "runtime/yam_articulated.py": "ad228f98cb6bfe3a575b7c98f6e23a348a3dd67a334d7345dcd89f876cc09ab7"
+    },
+    "source_files_unchanged": true,
+    "log": "/data/fresh_batch_20261107/index-geneva-drive-and-prove-dwell/dream_current_1/adhoc_7171965b.json",
+    "results": {
+      "abstentions": {},
+      "errored_trials": 0,
+      "metrics": {
+        "task_score": 0.0
+      },
+      "total_scenes": 1,
+      "total_trials": 1
+    },
+    "stats": {
+      "completed_at": "2026-11-08T07:18:01.940255+00:00",
+      "duration_s": 422.80846987899986,
+      "frames_dir": "/data/fresh_batch_20261107/index-geneva-drive-and-prove-dwell/dream_current_1/frames/20261108_071059_95b3ce30",
+      "mean_inference_latency_s": 0.5063689001599869,
+      "records_dir": "/data/fresh_batch_20261107/index-geneva-drive-and-prove-dwell/dream_current_1/records/20261108_071059_95b3ce30",
+      "started_at": "2026-11-08T07:10:59.131794+00:00",
+      "total_steps": 2400
+    },
+    "error": null
+  },
+  "checkpoint": "dreamlabs/dream-1-beta",
+  "seed": 0,
+  "object_jitter": 0,
+  "source_files": {
+    "task.py": "c542466397287ebf45b932d3e1387984d5ba28b434a49e5164e1ee7b755218cd",
+    "geometry.py": "25e4411a91e60867e0029ae27f891d4e7bfef08c24e34bfb71e9f0ba8b8b8449",
+    "output_contact.py": "1869af85eb89e88443c9eaa0563813ebc2d3bdf8f566c62c74b449552c69307b",
+    "validate.py": "eace8679deefc0098d63c43a612ad6985e356b24c2d5d0e8f9399d46bd270c15",
+    "policy/current_api_bridge.py": "86ce4c044aea7a10fc85be405535b20ba90bec26ecf3fe51bb28e4915e2adbf3",
+    "policy/dream_current.py": "bd9e9b318dcddca16e5285e0651c01be15af7ad7fd927d353b65e3eae358ddf7",
+    "policy/pyproject.toml": "d5714a78223b93d5f7f7cbd62d606654e82cd02378703e787487071350161288",
+    "runtime/yam_articulated_base.py": "632fe3ccea383151e66112069e9105e69edab5c9c3ce71cd5c06f68c9ed7e4f2",
+    "runtime/yam_feedback.py": "dcb4f4f6b7bab81ea56532062de17bd1b45513caf14f92794237ae6fc28d8557",
+    "runtime/yam_articulated.py": "ad228f98cb6bfe3a575b7c98f6e23a348a3dd67a334d7345dcd89f876cc09ab7",
+    "runtime/pyproject.toml": "0b5a6431aab8f962ced783dd26681f0aeffe08bdbde671befae98a79a20043f9"
+  },
+  "dream_session": {
+    "checkpoint": "dreamlabs/dream-1-beta",
+    "started_at": 1794121859.5682127,
+    "action_requests": 50,
+    "session_ids": [
+      "69975201-6a48-4a4b-a87d-1423b81339db"
+    ],
+    "session_resets": [],
+    "protocol": "sdk_expiry_recovery_v1",
+    "finished_at": 1794122283.5925412,
+    "max_session_resets": 2,
+    "simulation_paused_during_recovery": true,
+    "bridge_episode": "cc483af6614049e6940afafd5e4a3322",
+    "collected_after_process_exit": true
+  },
+  "standalone_validation_tool_updates": {
+    "validate.py": {
+      "evaluated_sha256": "f5bd9ca12d7a0d04d9eed9e0ca71df95d0c0c3ed83606d0beb3c0055ecbef97b",
+      "current_sha256": "eace8679deefc0098d63c43a612ad6985e356b24c2d5d0e8f9399d46bd270c15",
+      "reason": "Standalone validator piece count bound updated for refined tessellation. This tool is not imported by the scene or policy. Runtime physics and scoring are unchanged."
+    }
+  }
+}

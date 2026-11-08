@@ -1,0 +1,5 @@
+[inspect_robots.embodiments]
+yam_articulated = yam_articulated:embodiment
+
+[inspect_robots.policies]
+yam_feedback = yam_feedback:policy

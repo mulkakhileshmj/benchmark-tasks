@@ -1,0 +1,21 @@
+{
+  "title": "Index a Geneva drive and prove its dwell",
+  "category": "Impact on jobs",
+  "keywords": [
+    "index",
+    "geneva",
+    "drive",
+    "and",
+    "prove",
+    "dwell"
+  ],
+  "instruction": "Hold the grey trainer still. Turn the blue crank through two complete forward turns. The orange slotted wheel must advance two quarter turns and stay still during each dwell. Finish with the blue handle at its starting mark and the orange pointer opposite its starting mark. Release both hands. Move only the blue handle and the grey support tab. The trainer is unpowered.",
+  "context": "An intermittent mechanism must advance only during engagement and remain still between engagements. This trainer checks two complete indexing cycles.",
+  "setup": "A free steel training fixture sits at x 0.23 and y 0 on the official YAM table. The base is 290 by 180 by 8 mm with a rear support tab. Its base mass is 3.2 kg. Two vertical shafts are 80 mm apart. The blue driver has a pin at radius 56.569 mm. The orange four slot star has 60 mm outer radius. Both wheel plates are 12 mm thick. The pin is 8 mm diameter. Radial slot half width is 5.5 mm. The lock radius is 43 mm with 44.5 mm cutouts. A freely swivelling blue grip sits above the pin. All shaft angles start at zero. Both arms begin in the official ready pose. Exact convex pieces and component offsets are in geometry.py and task.py.",
+  "scoring": "Zero after direct robot contact with the output or fixture translation above 5 mm or fixture rotation above 5 degrees or backward input motion below minus 5 degrees or output movement above 5 degrees during a dwell. Score 0.25 after one correct quarter turn with input beyond 300 degrees and output within 5 degrees of minus 90 degrees. Score 0.5 after the second quarter turn with input beyond 650 degrees and output within 5 degrees of minus 180 degrees. Score 0.75 when input is within 8 degrees of 720 degrees and output is within 5 degrees of minus 180 degrees and both angular speeds are below 0.05 rad/s. Score 1 when these final conditions also hold with both hands open and every robot contact clear. Full success must hold for one second.",
+  "run_limit": "2400 control steps at 20 Hz. This is 120 seconds of control time.",
+  "reset_notes": "Recreate the authored scene with all joint displacements at zero and clear the entire scoring history. No parts are consumed. Use the official ready pose and seed 0 with zero object jitter.",
+  "fidelity": "Native rigid contact between a roller pin and a convex approximation of a slotted star and locking profile. Neither shaft has a position drive. The base remains free. The steel base mass and small contact offsets stabilize the contact calculation. No object pose is set during the episode. The feasibility expert may read measured state. Dream receives only camera frames and robot state.",
+  "scores": "Dream 1 score 0.0. Scripted demo score 1.0.",
+  "media": "M-BXRHE5"
+}
