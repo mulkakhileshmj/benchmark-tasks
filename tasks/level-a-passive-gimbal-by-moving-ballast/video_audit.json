@@ -1,0 +1,86 @@
+[
+  {
+    "task": "level-a-passive-gimbal-by-moving-ballast",
+    "policy": "yam_scripted",
+    "camera": "top_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "51.200000",
+      "nb_frames": "1024"
+    },
+    "sha256": "94c2a582bd8d24a4a41d215deed7cbf8d93ac8a7888b80fc8ec5589978aace4a"
+  },
+  {
+    "task": "level-a-passive-gimbal-by-moving-ballast",
+    "policy": "yam_scripted",
+    "camera": "left_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "51.200000",
+      "nb_frames": "1024"
+    },
+    "sha256": "fe8362ce2d2b810a48eb6ecdb5dd935a8a5b3fe093f74e66efa66673ead64d8e"
+  },
+  {
+    "task": "level-a-passive-gimbal-by-moving-ballast",
+    "policy": "yam_scripted",
+    "camera": "right_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "51.200000",
+      "nb_frames": "1024"
+    },
+    "sha256": "aebf0d3e83a2cee896210afc8d68837bbd8f87745bd34b11b94a8c4121fdb265"
+  },
+  {
+    "task": "level-a-passive-gimbal-by-moving-ballast",
+    "policy": "dream_current",
+    "camera": "top_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "120.050000",
+      "nb_frames": "2401"
+    },
+    "sha256": "cbc9b86c5bb61fb6c28b278ea558661f6fba4481ec3e7db1db0afa464ddb2394"
+  },
+  {
+    "task": "level-a-passive-gimbal-by-moving-ballast",
+    "policy": "dream_current",
+    "camera": "left_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "120.050000",
+      "nb_frames": "2401"
+    },
+    "sha256": "974514f9394b0cc1a339925454215c03347d2df8e2a6e4b373a9882fb76844ed"
+  },
+  {
+    "task": "level-a-passive-gimbal-by-moving-ballast",
+    "policy": "dream_current",
+    "camera": "right_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "120.050000",
+      "nb_frames": "2401"
+    },
+    "sha256": "a9d9b7116681e5b4f1b90130d05d64a016f451076a0aa2553ce684aca430341a"
+  }
+]

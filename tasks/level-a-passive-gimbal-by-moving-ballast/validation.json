@@ -1,0 +1,107 @@
+{
+  "demo": {
+    "task": "level-a-passive-gimbal-by-moving-ballast",
+    "policy": "yam_feedback",
+    "attempt": 12,
+    "max_steps": 1600,
+    "source_sha256": "0ab95a558237a6a0ce02eea57fdade5be8061cfe3be356127acb2c8a9662facc",
+    "returncode": 0,
+    "wall_seconds": 305.8488495349884,
+    "valid": true,
+    "physics_sources": {
+      "task.py": "0ab95a558237a6a0ce02eea57fdade5be8061cfe3be356127acb2c8a9662facc",
+      "release_contact.py": "cf065f8e9a399f6c459cec4efe9530d8db7cfe889687270560a5c9bed01b46f6",
+      "runtime/yam_articulated_base.py": "632fe3ccea383151e66112069e9105e69edab5c9c3ce71cd5c06f68c9ed7e4f2",
+      "runtime/yam_feedback.py": "ff4516098008ff03cc0e838b9755e27b3f99e65be990bd1d1828179086b4eb19",
+      "runtime/yam_articulated.py": "5623cd9afba50aef1616ae07a05b634747361a159ae1ddb145469ddabf34c351"
+    },
+    "source_files_unchanged": true,
+    "log": "/data/fresh_batch_20261107/level-a-passive-gimbal-by-moving-ballast/yam_feedback_12/adhoc_1a9b77c6.json",
+    "results": {
+      "abstentions": {},
+      "errored_trials": 0,
+      "metrics": {
+        "task_score": 1.0
+      },
+      "total_scenes": 1,
+      "total_trials": 1
+    },
+    "stats": {
+      "completed_at": "2026-11-08T08:21:54.797043+00:00",
+      "duration_s": 304.1757201600003,
+      "frames_dir": "/data/fresh_batch_20261107/level-a-passive-gimbal-by-moving-ballast/yam_feedback_12/frames/20261108_081650_ccf5867d",
+      "mean_inference_latency_s": null,
+      "records_dir": "/data/fresh_batch_20261107/level-a-passive-gimbal-by-moving-ballast/yam_feedback_12/records/20261108_081650_ccf5867d",
+      "started_at": "2026-11-08T08:16:50.621332+00:00",
+      "total_steps": 1023
+    },
+    "error": null
+  },
+  "dream": {
+    "task": "level-a-passive-gimbal-by-moving-ballast",
+    "policy": "dream_current",
+    "attempt": 1,
+    "max_steps": 2400,
+    "source_sha256": "0ab95a558237a6a0ce02eea57fdade5be8061cfe3be356127acb2c8a9662facc",
+    "returncode": 0,
+    "wall_seconds": 332.12078881263733,
+    "valid": true,
+    "physics_sources": {
+      "task.py": "0ab95a558237a6a0ce02eea57fdade5be8061cfe3be356127acb2c8a9662facc",
+      "release_contact.py": "cf065f8e9a399f6c459cec4efe9530d8db7cfe889687270560a5c9bed01b46f6",
+      "runtime/yam_articulated_base.py": "632fe3ccea383151e66112069e9105e69edab5c9c3ce71cd5c06f68c9ed7e4f2",
+      "runtime/yam_feedback.py": "ff4516098008ff03cc0e838b9755e27b3f99e65be990bd1d1828179086b4eb19",
+      "runtime/yam_articulated.py": "5623cd9afba50aef1616ae07a05b634747361a159ae1ddb145469ddabf34c351"
+    },
+    "source_files_unchanged": true,
+    "log": "/data/fresh_batch_20261107/level-a-passive-gimbal-by-moving-ballast/dream_current_1/adhoc_956dc4e5.json",
+    "results": {
+      "abstentions": {},
+      "errored_trials": 0,
+      "metrics": {
+        "task_score": 0.0
+      },
+      "total_scenes": 1,
+      "total_trials": 1
+    },
+    "stats": {
+      "completed_at": "2026-11-08T08:28:08.059514+00:00",
+      "duration_s": 330.174238564,
+      "frames_dir": "/data/fresh_batch_20261107/level-a-passive-gimbal-by-moving-ballast/dream_current_1/frames/20261108_082237_a39c2cce",
+      "mean_inference_latency_s": 0.5137094648800303,
+      "records_dir": "/data/fresh_batch_20261107/level-a-passive-gimbal-by-moving-ballast/dream_current_1/records/20261108_082237_a39c2cce",
+      "started_at": "2026-11-08T08:22:37.885284+00:00",
+      "total_steps": 2400
+    },
+    "error": null
+  },
+  "checkpoint": "dreamlabs/dream-1-beta",
+  "seed": 0,
+  "object_jitter": 0,
+  "source_files": {
+    "task.py": "0ab95a558237a6a0ce02eea57fdade5be8061cfe3be356127acb2c8a9662facc",
+    "release_contact.py": "cf065f8e9a399f6c459cec4efe9530d8db7cfe889687270560a5c9bed01b46f6",
+    "policy/current_api_bridge.py": "86ce4c044aea7a10fc85be405535b20ba90bec26ecf3fe51bb28e4915e2adbf3",
+    "policy/dream_current.py": "bd9e9b318dcddca16e5285e0651c01be15af7ad7fd927d353b65e3eae358ddf7",
+    "policy/pyproject.toml": "d5714a78223b93d5f7f7cbd62d606654e82cd02378703e787487071350161288",
+    "runtime/yam_articulated_base.py": "632fe3ccea383151e66112069e9105e69edab5c9c3ce71cd5c06f68c9ed7e4f2",
+    "runtime/yam_feedback.py": "ff4516098008ff03cc0e838b9755e27b3f99e65be990bd1d1828179086b4eb19",
+    "runtime/yam_articulated.py": "5623cd9afba50aef1616ae07a05b634747361a159ae1ddb145469ddabf34c351",
+    "runtime/pyproject.toml": "0b5a6431aab8f962ced783dd26681f0aeffe08bdbde671befae98a79a20043f9"
+  },
+  "dream_session": {
+    "checkpoint": "dreamlabs/dream-1-beta",
+    "started_at": 1794126158.3157804,
+    "action_requests": 50,
+    "session_ids": [
+      "38b9786a-3bd4-45d4-90eb-12730a1c9dbb"
+    ],
+    "session_resets": [],
+    "protocol": "sdk_expiry_recovery_v1",
+    "finished_at": 1794126489.530432,
+    "max_session_resets": 2,
+    "simulation_paused_during_recovery": true,
+    "bridge_episode": "3bc5f94681d94ea0981efa816d1ddfeb",
+    "collected_after_process_exit": true
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "brakes_closed": {
+    "change": "Only expert actions changed. Scene and scoring source before demo() are identical.",
+    "receipt": {
+      "task": "level-a-passive-gimbal-by-moving-ballast",
+      "policy": "yam_feedback",
+      "attempt": 1,
+      "max_steps": 1600,
+      "source_sha256": "35a91fc46f201cb381c6e917b87c78d667ae1b7754bba1b42be45ef0a4dda1d0",
+      "returncode": 0,
+      "wall_seconds": 342.3803355693817,
+      "valid": true,
+      "physics_sources": {
+        "task.py": "35a91fc46f201cb381c6e917b87c78d667ae1b7754bba1b42be45ef0a4dda1d0",
+        "release_contact.py": "cf065f8e9a399f6c459cec4efe9530d8db7cfe889687270560a5c9bed01b46f6",
+        "runtime/yam_articulated_base.py": "632fe3ccea383151e66112069e9105e69edab5c9c3ce71cd5c06f68c9ed7e4f2",
+        "runtime/yam_feedback.py": "ff4516098008ff03cc0e838b9755e27b3f99e65be990bd1d1828179086b4eb19",
+        "runtime/yam_articulated.py": "5623cd9afba50aef1616ae07a05b634747361a159ae1ddb145469ddabf34c351"
+      },
+      "source_files_unchanged": true,
+      "log": "/data/fresh_batch_20261107/gimbal_control_brakes_closed/level-a-passive-gimbal-by-moving-ballast/yam_feedback_1/adhoc_1b30a9eb.json",
+      "results": {
+        "abstentions": {},
+        "errored_trials": 0,
+        "metrics": {
+          "task_score": 0.0
+        },
+        "total_scenes": 1,
+        "total_trials": 1
+      },
+      "stats": {
+        "completed_at": "2026-11-08T08:22:31.554262+00:00",
+        "duration_s": 340.928924631,
+        "frames_dir": "/data/fresh_batch_20261107/gimbal_control_brakes_closed/level-a-passive-gimbal-by-moving-ballast/yam_feedback_1/frames/20261108_081650_17e990e9",
+        "mean_inference_latency_s": null,
+        "records_dir": "/data/fresh_batch_20261107/gimbal_control_brakes_closed/level-a-passive-gimbal-by-moving-ballast/yam_feedback_1/records/20261108_081650_17e990e9",
+        "started_at": "2026-11-08T08:16:50.625346+00:00",
+        "total_steps": 1227
+      },
+      "error": null
+    }
+  },
+  "no_adjustment": {
+    "change": "Only expert actions changed. Scene and scoring source before demo() are identical.",
+    "receipt": {
+      "task": "level-a-passive-gimbal-by-moving-ballast",
+      "policy": "yam_feedback",
+      "attempt": 1,
+      "max_steps": 1600,
+      "source_sha256": "f882139e8ac882edd07ea4e82ecf49ba7934ec60b127fd37247ccede0dcde737",
+      "returncode": 0,
+      "wall_seconds": 344.68137788772583,
+      "valid": true,
+      "physics_sources": {
+        "task.py": "f882139e8ac882edd07ea4e82ecf49ba7934ec60b127fd37247ccede0dcde737",
+        "release_contact.py": "cf065f8e9a399f6c459cec4efe9530d8db7cfe889687270560a5c9bed01b46f6",
+        "runtime/yam_articulated_base.py": "632fe3ccea383151e66112069e9105e69edab5c9c3ce71cd5c06f68c9ed7e4f2",
+        "runtime/yam_feedback.py": "d355866a99321a0f42ca9b77a7f80babf439c20bfa46fd0465182fdf40273df7",
+        "runtime/yam_articulated.py": "5623cd9afba50aef1616ae07a05b634747361a159ae1ddb145469ddabf34c351"
+      },
+      "source_files_unchanged": true,
+      "log": "/data/fresh_batch_20261107/gimbal_control_no_adjustment/level-a-passive-gimbal-by-moving-ballast/yam_feedback_1/adhoc_3ef20862.json",
+      "results": {
+        "abstentions": {},
+        "errored_trials": 0,
+        "metrics": {
+          "task_score": 0.0
+        },
+        "total_scenes": 1,
+        "total_trials": 1
+      },
+      "stats": {
+        "completed_at": "2026-11-08T08:22:33.902244+00:00",
+        "duration_s": 343.2775181979996,
+        "frames_dir": "/data/fresh_batch_20261107/gimbal_control_no_adjustment/level-a-passive-gimbal-by-moving-ballast/yam_feedback_1/frames/20261108_081650_e3523f05",
+        "mean_inference_latency_s": null,
+        "records_dir": "/data/fresh_batch_20261107/gimbal_control_no_adjustment/level-a-passive-gimbal-by-moving-ballast/yam_feedback_1/records/20261108_081650_e3523f05",
+        "started_at": "2026-11-08T08:16:50.624734+00:00",
+        "total_steps": 1227
+      },
+      "error": null
+    }
+  }
+}
