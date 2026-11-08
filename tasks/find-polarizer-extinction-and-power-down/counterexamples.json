@@ -1,0 +1,84 @@
+{
+  "no_source": {
+    "change": "Only the feasibility demo function differs. Physics and scoring source before demo() are identical.",
+    "receipt": {
+      "task": "optical_control_no_source",
+      "policy": "yam_scripted",
+      "attempt": 1,
+      "max_steps": 650,
+      "source_sha256": "9df1db6ebda827169fb462b2c613414fa37db6127526dd10e9b83b51af9f2a09",
+      "returncode": 0,
+      "wall_seconds": 185.83082723617554,
+      "valid": true,
+      "physics_sources": {
+        "task.py": "9df1db6ebda827169fb462b2c613414fa37db6127526dd10e9b83b51af9f2a09",
+        "release_contact.py": "e1d5ad7fa225cc74de451e96a163463c43b686bd897917d71d4d006ef347f449",
+        "runtime/yam_articulated_base.py": "632fe3ccea383151e66112069e9105e69edab5c9c3ce71cd5c06f68c9ed7e4f2",
+        "runtime/yam_feedback.py": "a953bd4a02c7f185ce36a99707ec3a3025d227f86d42b9fb2f53793ec3ce0d41",
+        "runtime/yam_articulated.py": "0fea52f4e1543e9b0d8e59537de39d5e08d4e7c3ee77d9966e661b10976c43f6"
+      },
+      "source_files_unchanged": true,
+      "log": "/data/fresh_batch_20261107/optical_control_no_source/yam_scripted_1/adhoc_86ae8785.json",
+      "results": {
+        "abstentions": {},
+        "errored_trials": 0,
+        "metrics": {
+          "task_score": 0.0
+        },
+        "total_scenes": 1,
+        "total_trials": 1
+      },
+      "stats": {
+        "completed_at": "2026-11-08T08:13:53.591035+00:00",
+        "duration_s": 184.39798322000024,
+        "frames_dir": "/data/fresh_batch_20261107/optical_control_no_source/yam_scripted_1/frames/20261108_081049_82049713",
+        "mean_inference_latency_s": null,
+        "records_dir": "/data/fresh_batch_20261107/optical_control_no_source/yam_scripted_1/records/20261108_081049_82049713",
+        "started_at": "2026-11-08T08:10:49.193063+00:00",
+        "total_steps": 500
+      },
+      "error": null
+    }
+  },
+  "bright_only": {
+    "change": "Only the feasibility demo function differs. Physics and scoring source before demo() are identical.",
+    "receipt": {
+      "task": "optical_control_bright_only",
+      "policy": "yam_scripted",
+      "attempt": 1,
+      "max_steps": 650,
+      "source_sha256": "ebfda264e337ca1e69236d49fa8e8716b58dfee2ff3a0f1fe8058c454f8c62ff",
+      "returncode": 0,
+      "wall_seconds": 234.35464143753052,
+      "valid": true,
+      "physics_sources": {
+        "task.py": "ebfda264e337ca1e69236d49fa8e8716b58dfee2ff3a0f1fe8058c454f8c62ff",
+        "release_contact.py": "e1d5ad7fa225cc74de451e96a163463c43b686bd897917d71d4d006ef347f449",
+        "runtime/yam_articulated_base.py": "632fe3ccea383151e66112069e9105e69edab5c9c3ce71cd5c06f68c9ed7e4f2",
+        "runtime/yam_feedback.py": "a953bd4a02c7f185ce36a99707ec3a3025d227f86d42b9fb2f53793ec3ce0d41",
+        "runtime/yam_articulated.py": "0fea52f4e1543e9b0d8e59537de39d5e08d4e7c3ee77d9966e661b10976c43f6"
+      },
+      "source_files_unchanged": true,
+      "log": "/data/fresh_batch_20261107/optical_control_bright_only/yam_scripted_1/adhoc_190b66df.json",
+      "results": {
+        "abstentions": {},
+        "errored_trials": 0,
+        "metrics": {
+          "task_score": 0.25
+        },
+        "total_scenes": 1,
+        "total_trials": 1
+      },
+      "stats": {
+        "completed_at": "2026-11-08T08:14:42.162237+00:00",
+        "duration_s": 232.97193285399953,
+        "frames_dir": "/data/fresh_batch_20261107/optical_control_bright_only/yam_scripted_1/frames/20261108_081049_670a8d82",
+        "mean_inference_latency_s": null,
+        "records_dir": "/data/fresh_batch_20261107/optical_control_bright_only/yam_scripted_1/records/20261108_081049_670a8d82",
+        "started_at": "2026-11-08T08:10:49.190312+00:00",
+        "total_steps": 650
+      },
+      "error": null
+    }
+  }
+}

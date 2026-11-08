@@ -1,0 +1,86 @@
+[
+  {
+    "task": "find-polarizer-extinction-and-power-down",
+    "policy": "yam_scripted",
+    "camera": "top_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "28.850000",
+      "nb_frames": "577"
+    },
+    "sha256": "c23bec5763ecd5ce65d3453fe7a3bc793df2ed6d51e99581eb96a12f554c5257"
+  },
+  {
+    "task": "find-polarizer-extinction-and-power-down",
+    "policy": "yam_scripted",
+    "camera": "left_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "28.850000",
+      "nb_frames": "577"
+    },
+    "sha256": "e025d2c798abd48386cffbf70716b9c13a6b7cfbf4fc9365f5a35eb29b1c954c"
+  },
+  {
+    "task": "find-polarizer-extinction-and-power-down",
+    "policy": "yam_scripted",
+    "camera": "right_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "28.850000",
+      "nb_frames": "577"
+    },
+    "sha256": "25605a2fec346c8dc96fef3af5e6218f1c5db9f5b4336b939004450d056d764c"
+  },
+  {
+    "task": "find-polarizer-extinction-and-power-down",
+    "policy": "dream_current",
+    "camera": "top_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "120.050000",
+      "nb_frames": "2401"
+    },
+    "sha256": "6cb2df0090d5fb33705518b71d32f1cb3d8d6b7bc1044be4b57fc8f0c5fae919"
+  },
+  {
+    "task": "find-polarizer-extinction-and-power-down",
+    "policy": "dream_current",
+    "camera": "left_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "120.050000",
+      "nb_frames": "2401"
+    },
+    "sha256": "8b4d25c9031b4f96d594b7139292ed26062e84df5e25470eb3691733c5063df4"
+  },
+  {
+    "task": "find-polarizer-extinction-and-power-down",
+    "policy": "dream_current",
+    "camera": "right_cam",
+    "video": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "120.050000",
+      "nb_frames": "2401"
+    },
+    "sha256": "6052a7c331a9ca84a8a551afdb132701ae8889fb841cfcaafa942da1b1f1f13f"
+  }
+]

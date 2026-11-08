@@ -1,0 +1,110 @@
+{
+  "demo": {
+    "task": "find-polarizer-extinction-and-power-down",
+    "policy": "yam_scripted",
+    "attempt": 16,
+    "max_steps": 650,
+    "source_sha256": "90bf69ecda1cd9878c6ba26e9595a2971087eb1b68ded754de33bba965cc4eb6",
+    "returncode": 0,
+    "wall_seconds": 224.67776823043823,
+    "valid": true,
+    "physics_sources": {
+      "task.py": "90bf69ecda1cd9878c6ba26e9595a2971087eb1b68ded754de33bba965cc4eb6",
+      "release_contact.py": "e1d5ad7fa225cc74de451e96a163463c43b686bd897917d71d4d006ef347f449",
+      "runtime/yam_articulated_base.py": "632fe3ccea383151e66112069e9105e69edab5c9c3ce71cd5c06f68c9ed7e4f2",
+      "runtime/yam_feedback.py": "a953bd4a02c7f185ce36a99707ec3a3025d227f86d42b9fb2f53793ec3ce0d41",
+      "runtime/yam_articulated.py": "0fea52f4e1543e9b0d8e59537de39d5e08d4e7c3ee77d9966e661b10976c43f6"
+    },
+    "source_files_unchanged": true,
+    "log": "/data/fresh_batch_20261107/find-polarizer-extinction-and-power-down/yam_scripted_16/adhoc_18272f66.json",
+    "results": {
+      "abstentions": {},
+      "errored_trials": 0,
+      "metrics": {
+        "task_score": 1.0
+      },
+      "total_scenes": 1,
+      "total_trials": 1
+    },
+    "stats": {
+      "completed_at": "2026-11-08T07:57:33.562311+00:00",
+      "duration_s": 222.99773430199912,
+      "frames_dir": "/data/fresh_batch_20261107/find-polarizer-extinction-and-power-down/yam_scripted_16/frames/20261108_075350_e36d830f",
+      "mean_inference_latency_s": null,
+      "records_dir": "/data/fresh_batch_20261107/find-polarizer-extinction-and-power-down/yam_scripted_16/records/20261108_075350_e36d830f",
+      "started_at": "2026-11-08T07:53:50.564585+00:00",
+      "total_steps": 576
+    },
+    "error": null,
+    "demo_parameters": {
+      "dark_degrees": 110.0
+    }
+  },
+  "dream": {
+    "task": "find-polarizer-extinction-and-power-down",
+    "policy": "dream_current",
+    "attempt": 1,
+    "max_steps": 2400,
+    "source_sha256": "90bf69ecda1cd9878c6ba26e9595a2971087eb1b68ded754de33bba965cc4eb6",
+    "returncode": 0,
+    "wall_seconds": 333.3207817077637,
+    "valid": true,
+    "physics_sources": {
+      "task.py": "90bf69ecda1cd9878c6ba26e9595a2971087eb1b68ded754de33bba965cc4eb6",
+      "release_contact.py": "e1d5ad7fa225cc74de451e96a163463c43b686bd897917d71d4d006ef347f449",
+      "runtime/yam_articulated_base.py": "632fe3ccea383151e66112069e9105e69edab5c9c3ce71cd5c06f68c9ed7e4f2",
+      "runtime/yam_feedback.py": "a953bd4a02c7f185ce36a99707ec3a3025d227f86d42b9fb2f53793ec3ce0d41",
+      "runtime/yam_articulated.py": "0fea52f4e1543e9b0d8e59537de39d5e08d4e7c3ee77d9966e661b10976c43f6"
+    },
+    "source_files_unchanged": true,
+    "log": "/data/fresh_batch_20261107/find-polarizer-extinction-and-power-down/dream_current_1/adhoc_a002bb69.json",
+    "results": {
+      "abstentions": {},
+      "errored_trials": 0,
+      "metrics": {
+        "task_score": 0.0
+      },
+      "total_scenes": 1,
+      "total_trials": 1
+    },
+    "stats": {
+      "completed_at": "2026-11-08T08:05:24.130665+00:00",
+      "duration_s": 331.2101605580001,
+      "frames_dir": "/data/fresh_batch_20261107/find-polarizer-extinction-and-power-down/dream_current_1/frames/20261108_075952_b28a45b0",
+      "mean_inference_latency_s": 0.5836828555000647,
+      "records_dir": "/data/fresh_batch_20261107/find-polarizer-extinction-and-power-down/dream_current_1/records/20261108_075952_b28a45b0",
+      "started_at": "2026-11-08T07:59:52.920512+00:00",
+      "total_steps": 2400
+    },
+    "error": null
+  },
+  "checkpoint": "dreamlabs/dream-1-beta",
+  "seed": 0,
+  "object_jitter": 0,
+  "source_files": {
+    "task.py": "90bf69ecda1cd9878c6ba26e9595a2971087eb1b68ded754de33bba965cc4eb6",
+    "release_contact.py": "e1d5ad7fa225cc74de451e96a163463c43b686bd897917d71d4d006ef347f449",
+    "policy/current_api_bridge.py": "86ce4c044aea7a10fc85be405535b20ba90bec26ecf3fe51bb28e4915e2adbf3",
+    "policy/dream_current.py": "bd9e9b318dcddca16e5285e0651c01be15af7ad7fd927d353b65e3eae358ddf7",
+    "policy/pyproject.toml": "d5714a78223b93d5f7f7cbd62d606654e82cd02378703e787487071350161288",
+    "runtime/yam_articulated_base.py": "632fe3ccea383151e66112069e9105e69edab5c9c3ce71cd5c06f68c9ed7e4f2",
+    "runtime/yam_feedback.py": "a953bd4a02c7f185ce36a99707ec3a3025d227f86d42b9fb2f53793ec3ce0d41",
+    "runtime/yam_articulated.py": "0fea52f4e1543e9b0d8e59537de39d5e08d4e7c3ee77d9966e661b10976c43f6",
+    "runtime/pyproject.toml": "0b5a6431aab8f962ced783dd26681f0aeffe08bdbde671befae98a79a20043f9"
+  },
+  "dream_session": {
+    "checkpoint": "dreamlabs/dream-1-beta",
+    "started_at": 1794124793.5446424,
+    "action_requests": 50,
+    "session_ids": [
+      "27f8caba-0bf7-4d82-9bef-c17887f697f2"
+    ],
+    "session_resets": [],
+    "protocol": "sdk_expiry_recovery_v1",
+    "finished_at": 1794125388.7914057,
+    "max_session_resets": 2,
+    "simulation_paused_during_recovery": true,
+    "bridge_episode": "04dbaea9915844729412442d8bd8bf76",
+    "collected_after_process_exit": true
+  }
+}

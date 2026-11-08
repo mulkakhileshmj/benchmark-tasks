@@ -1,0 +1,21 @@
+{
+  "title": "Find polarizer extinction and power down",
+  "category": "Impact on jobs",
+  "keywords": [
+    "find",
+    "polarizer",
+    "extinction",
+    "and",
+    "power",
+    "down"
+  ],
+  "instruction": "Find bright transmission then extinction using the blue analyzer. Hold the source button while testing. Show a stable bright reading followed by a stable dark reading. Release the source button without changing the dark setting. Release both hands. Do not use a powered off source as proof of extinction.",
+  "context": "Optical bench setup requires distinguishing a real dark orientation from a source that is simply switched off.",
+  "setup": "Use the official bimanual YAM table. Coordinates are metres in the station frame. A fixed grey aluminium training base is centred at x 0.19 and y 0. Its main plate is 250 by 280 by 8 mm. A blue 80 g analyzer disc is 90 mm diameter and 8 mm thick on a passive vertical axis 50 mm above the table. A thin 8 mm diameter post carries a freely swivelling blue metal grip at radius 60 mm. The grip is 22 mm diameter and 20 mm high with mass 25 g and centre 110 mm above the table. The green polymer source cap is 26 by 26 by 20 mm with mass 20 g at x 0.16 and y 0.20 and centre 30 mm above the table. It moves down 12 mm against a 200 N/m spring. Its support pad is 40 by 40 by 10 mm. A 60 by 30 by 25 mm detector patch shows normalized transmission through green brightness. The analyzer starts at zero degrees with the source off. Its allowed travel is zero to 180 degrees. The fixed filter axis is 35 degrees. Exact post and patch offsets are in task.py. All colliders use the official simulator contact material rather than calibrated optical hardware materials.",
+  "scoring": "Score 0.25 after powered normalized intensity exceeds 0.90 for 0.5 seconds with stable angle. After that bright proof score 0.75 after powered intensity stays below 0.01 for 0.5 seconds with stable angle. Stable means the measured angle spans less than 0.5 degrees over the preceding full 0.5 seconds. Thus a momentary bright or dark crossing never establishes a proof. Moving more than 2 degrees from the last qualified dark setting clears that proof. Score 1 when both proofs hold and the source is off and the button returns above minus 3 mm and the angle spans less than 0.25 degrees over the preceding full 0.5 seconds and both grippers are open and every robot contact is clear. Otherwise score 0. A powered off source never establishes extinction. Full success must hold for one second.",
+  "run_limit": "2400 control steps at 20 Hz. This is 120 seconds of control time.",
+  "reset_notes": "Recreate the authored scene with all joint displacements at zero and clear the entire scoring history. No parts are consumed. Use the official ready pose and seed 0 with zero object jitter.",
+  "fidelity": "Native rigid contact and passive analyzer and source button joints. An ideal Malus law signal equals cosine squared of analyzer angle minus 35 degrees while powered. It does not simulate optical waves or detector noise. The detector color is a visual readout and never changes a physical pose. There is no analyzer angle servo. Stillness uses measured pose history rather than backend instantaneous velocity because contact can produce high frequency solver velocity noise. Optical intensity and power sequence gates are unchanged.",
+  "scores": "Dream 1 score 0.0. Scripted demo score 1.0.",
+  "media": "M-2GNWQ3"
+}
