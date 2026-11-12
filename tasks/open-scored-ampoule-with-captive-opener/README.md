@@ -4,7 +4,9 @@ The scripted demo scored 1.0 in 502 control steps at 20 Hz. The neck broke in na
 
 The goal is to open an inert scored ampoule while its separated cap stays inside a protective tool. One arm steadies the body. The other covers the cap with the tool and levers the tool through a bounded arc. The open body returns to its holder. The tool returns to its rack with its mouth facing down and the cap still retained after both arms release.
 
-This is a preparation task performed in laboratories and clinical settings. A captive opener provides both leverage and separation from the detached glass cap. The task concerns handling a hazardous remnant rather than clinical care or medication selection.
+## Impact on jobs
+
+Nurses preparing an injectable medicine supplied in a scored glass ampoule must open the container before they can draw up the prescribed dose. This benchmark isolates that manual step. One hand steadies the narrow body while the other uses the opener as a lever. The sleeve captures the detached tip so the operator can set the tool down without grasping the broken end. The score measures whether the robot can leave the body upright and the tip contained after releasing both hands. The inert replica models the handling step only. [Nursing study of ampoule opening movements](https://www.jstage.jst.go.jp/article/jbse/advpub/0/advpub_19-00037/_article/-char/en) · [Nursing study of protective opener design](https://ijosi.org/journal/IJOSI/5/2/10.6977/IJoSI.201809_5%282%29.0006)
 
 ## Source and scope
 
