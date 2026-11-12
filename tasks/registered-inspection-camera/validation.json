@@ -1,0 +1,88 @@
+{
+  "receipts": {
+    "demo": {
+      "source_sha256": "a88bbb6d58ef161d2ab6e92a87a64b66a553b6badaf537639b1f437fbc70a5f2",
+      "results": {
+        "abstentions": {},
+        "errored_trials": 0,
+        "metrics": {
+          "task_score": 1.0
+        },
+        "total_scenes": 1,
+        "total_trials": 1
+      },
+      "stats": {
+        "completed_at": "2026-11-12T07:43:21.555076+00:00",
+        "duration_s": 56.11807782200003,
+        "frames_dir": "/data/recovery_20261112/diagnostics/set-differential-angle-with-fixed-output/1794469345147585334/frames/20261112_074225_b9ab6718",
+        "mean_inference_latency_s": null,
+        "records_dir": "/data/recovery_20261112/diagnostics/set-differential-angle-with-fixed-output/1794469345147585334/records/20261112_074225_b9ab6718",
+        "started_at": "2026-11-12T07:42:25.437005+00:00",
+        "total_steps": 252
+      },
+      "diagnostic_receipt": {
+        "slug": "set-differential-angle-with-fixed-output",
+        "returncode": 0,
+        "wall_seconds": 57.577330112457275,
+        "purpose": "Diagnostic only. Practical redesign not complete.",
+        "task_sha256": "a88bbb6d58ef161d2ab6e92a87a64b66a553b6badaf537639b1f437fbc70a5f2"
+      }
+    },
+    "model": {
+      "source_sha256": "a88bbb6d58ef161d2ab6e92a87a64b66a553b6badaf537639b1f437fbc70a5f2",
+      "results": {
+        "abstentions": {},
+        "errored_trials": 0,
+        "metrics": {
+          "task_score": 0.0
+        },
+        "total_scenes": 1,
+        "total_trials": 1
+      },
+      "stats": {
+        "completed_at": "2026-11-12T08:04:48.020271+00:00",
+        "duration_s": 374.97693874200013,
+        "frames_dir": "/data/recovery_20261112/diagnostics/set-differential-angle-with-fixed-output/1794470312513794047/frames/20261112_075833_8ab1676d",
+        "mean_inference_latency_s": 0.5290060576400083,
+        "records_dir": "/data/recovery_20261112/diagnostics/set-differential-angle-with-fixed-output/1794470312513794047/records/20261112_075833_8ab1676d",
+        "started_at": "2026-11-12T07:58:33.043342+00:00",
+        "total_steps": 2400
+      },
+      "diagnostic_receipt": {
+        "slug": "set-differential-angle-with-fixed-output",
+        "policy": "dream_current",
+        "returncode": 0,
+        "wall_seconds": 376.8355619907379,
+        "purpose": "Diagnostic only. Practical redesign not complete.",
+        "task_file": "/home/ubuntu/recovery_20261112/tasks/set-differential-angle-with-fixed-output/task.py",
+        "task_sha256": "a88bbb6d58ef161d2ab6e92a87a64b66a553b6badaf537639b1f437fbc70a5f2"
+      },
+      "session_summary": {
+        "checkpoint": "dreamlabs/dream-1-beta",
+        "started_at": 1794470313.5130842,
+        "action_requests": 50,
+        "session_ids": [
+          "3374d28c-0c23-4a50-b50a-4a52219e7336"
+        ],
+        "session_resets": [],
+        "protocol": "sdk_expiry_recovery_v1",
+        "finished_at": 1794471451.6336994,
+        "max_session_resets": 2,
+        "simulation_paused_during_recovery": true
+      }
+    }
+  },
+  "source_files": {
+    "output_contact.py": "0ee8cce1cfdd6f32dfcae7d94ead62f5e66a5fec323285dc163a7b25ccc70edf",
+    "task.py": "a88bbb6d58ef161d2ab6e92a87a64b66a553b6badaf537639b1f437fbc70a5f2",
+    "policy/pyproject.toml": "d5714a78223b93d5f7f7cbd62d606654e82cd02378703e787487071350161288",
+    "policy/dream_current.py": "bd9e9b318dcddca16e5285e0651c01be15af7ad7fd927d353b65e3eae358ddf7",
+    "policy/current_api_bridge.py": "86ce4c044aea7a10fc85be405535b20ba90bec26ecf3fe51bb28e4915e2adbf3",
+    "runtime/pyproject.toml": "0b5a6431aab8f962ced783dd26681f0aeffe08bdbde671befae98a79a20043f9",
+    "runtime/yam_articulated.py": "4e2e185638c99b393b0172d5a01203af482def38a9f1ded609380284d6895fd0",
+    "runtime/yam_feedback.py": "c5cf5f2fa5f9fceeea82d8f545514b11d442d3d733c414d688c7e7a98b526dda",
+    "runtime/yam_articulated_base.py": "632fe3ccea383151e66112069e9105e69edab5c9c3ce71cd5c06f68c9ed7e4f2"
+  },
+  "seed": 0,
+  "object_jitter": 0
+}

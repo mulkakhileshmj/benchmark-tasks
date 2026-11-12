@@ -1,0 +1,19 @@
+{
+  "title": "Aim a registered inspection camera without shifting its mount datum",
+  "category": "Impact on jobs",
+  "keywords": [
+    "coupled controls",
+    "continuous constraint",
+    "bimanual coordination",
+    "mechanical differential"
+  ],
+  "instruction": "Aim the inspection camera at the green target. Keep its registered centre within the white datum band throughout the adjustment. Leave both hands clear. Do not touch the camera or its central carriage.",
+  "context": "An inspection camera mount is aimed at a second work target while its calibrated pivot remains on the registered datum. Moving that datum changes the registered coordinate transform. Two independent passive controls change yaw and translation together. The camera axis must intersect the target after both hands withdraw.",
+  "setup": "Use the standard bimanual YAM station with the table at z 747.5 mm. x points forward and y points left from the midpoint of the arm bases. The unpowered camera mount is fixed at x 240 mm and y 0. A passive central carriage travels along y and carries a 160 by 10 by 10 mm bar on a yaw pivot. A rigid black camera body 46 by 32 by 32 mm is attached to that bar with its centre 8 mm behind the pivot and 26 mm above it. A blue lens housing 12 by 22 by 22 mm faces along the bar toward positive x. Two blue input forks run along y on fixed supports at x 305 mm and x 175 mm. Their raised grips extend outward by 28 mm. Both input travels start at zero. The camera yaw and central carriage displacement start at zero. A white datum strip 40 by 8 by 1 mm lies at x 240 mm and y 0. A green reference bar 140 by 8 by 2 mm lies at x 240 mm and y 105 mm with yaw 25 degrees. A green target 3 by 24 by 40 mm stands at x 390 mm and y 70 mm with its centre 71 mm above the table. The mount and bars are rigid aluminium proxies. Grips are polymer. The camera is a rigid polymer housing. All primitive sizes and masses are in scene_inventory.json. Nothing is powered and no camera image formation is simulated.",
+  "scoring": "At 20 Hz score zero permanently if the carriage leaves its reset centre by more than 4 mm or forbidden robot contact with the output is detected. Nonfinite joint states score zero. The left input must finish above 10 mm and the right below minus 10 mm or the score is zero. Otherwise score 0.25. Camera yaw above 15 degrees gives 0.5. Yaw strictly between 21 and 29 degrees with carriage and input speeds below 4 mm per second and angular speed below 0.04 radians per second gives 0.75. Full conditions also require both grippers open beyond 35 mm and no robot contact within 1 mm of the output or input forks. The geometric optical axis must intersect the target plane at x 390 mm within 12 mm of y 70 mm. Those conditions score 0.9 until they hold continuously for one second and then score 1.0. Any interruption restarts that hold. All other outcomes retain the applicable lower level. The final score is used.",
+  "run_limit": "2400 control steps at 20 Hz. This is 120 seconds.",
+  "reset_notes": "Restore the fixed roots from task.py and set all four prop joints to zero. Restore the reference bars. Clear the scorer history. Nothing is consumed. Use seed 0 and object_jitter=0. Run one epoch per process.",
+  "fidelity": "Rigid camera and differential mount proxies use native contacts. The optical axis is a geometric ray rather than a rendered camera image. No lens distortion or calibration error is simulated. The camera is mounted to the floating output bar. The guide and fork contacts remain passive.",
+  "scores": "Dream-1 run: 0.0 in 2400 steps. Scripted demo: 1.0 in 252 steps.",
+  "media": "M-FE5B2Y"
+}
