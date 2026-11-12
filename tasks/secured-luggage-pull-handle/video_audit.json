@@ -1,0 +1,78 @@
+{
+  "demo": [
+    {
+      "camera": "top_cam",
+      "video": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "20/1",
+        "duration": "17.650000",
+        "nb_frames": "353"
+      },
+      "sha256": "194ef66ba89144ce98d9a7068acb839086cbf0d5eab7aa130edbed528fc69113"
+    },
+    {
+      "camera": "left_cam",
+      "video": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "20/1",
+        "duration": "17.650000",
+        "nb_frames": "353"
+      },
+      "sha256": "ade18abb9233a2436fec5da265c4454027ceeb69f56ccdc52983aa34872ec357"
+    },
+    {
+      "camera": "right_cam",
+      "video": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "20/1",
+        "duration": "17.650000",
+        "nb_frames": "353"
+      },
+      "sha256": "5a0aa0e53f8e13904be836e76f7809731dd6f93101962b058814bc2392f67295"
+    }
+  ],
+  "model": [
+    {
+      "camera": "top_cam",
+      "video": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "20/1",
+        "duration": "120.050000",
+        "nb_frames": "2401"
+      },
+      "sha256": "1e9671c4c8eb3144ecd7bf8e6d6bedcf316443bec8e2e0d4abfcb46f3e09b538"
+    },
+    {
+      "camera": "left_cam",
+      "video": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "20/1",
+        "duration": "120.050000",
+        "nb_frames": "2401"
+      },
+      "sha256": "f9b269bd4230f075b5cbef1e69c68befb69854a5510cf49b87261bba00f4f056"
+    },
+    {
+      "camera": "right_cam",
+      "video": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "20/1",
+        "duration": "120.050000",
+        "nb_frames": "2401"
+      },
+      "sha256": "17adbce78a7ff07f0a27cb7b21fa9300879f822a38b674fbdb971499cf1cd040"
+    }
+  ]
+}
