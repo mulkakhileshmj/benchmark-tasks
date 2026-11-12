@@ -1,0 +1,72 @@
+{
+  "trials": {
+    "demo": {
+      "steps": 396,
+      "score": 1.0,
+      "wall_seconds": 164.2
+    },
+    "model": {
+      "steps": 2400,
+      "score": 0.0,
+      "wall_seconds": 640.2
+    }
+  },
+  "controls": {
+    "hover": 0.5,
+    "overopen": 0.0
+  },
+  "control_states": {
+    "hover": {
+      "peak_opening_deg": 109.6349431468128,
+      "final_spine_target_error_mm": 3.1617390511529413,
+      "final_spine_clear": true,
+      "final_contact_count": 2,
+      "final_fingers_open": [
+        false,
+        false
+      ],
+      "latched_violation": null
+    },
+    "overopen": {
+      "peak_opening_deg": 110.11712951227247,
+      "final_spine_target_error_mm": 13.275545760859364,
+      "final_spine_clear": false,
+      "final_contact_count": 4,
+      "final_fingers_open": [
+        true,
+        true
+      ],
+      "latched_violation": null
+    }
+  },
+  "in_air_opening_control": {
+    "steps": 390,
+    "peak_opening_deg": 115.10514086806936,
+    "first_limit_crossing_s": 15.000000000000078,
+    "samples_above_115": 91,
+    "all_subsequent_scores_zero": true,
+    "final_score": 0.0,
+    "trajectory_sha256": "491ea3f3fc9e8bf394ea6d246d9f657d81f18e534ba88c3eb3eb565ab024234a",
+    "policy_sha256": "9575ce43efcffac64f36b8c54dd292f73bddaa25147f3c31c27ed635d972aef0"
+  },
+  "dream_session_resets": 0,
+  "rows_per_request": 8,
+  "evaluated_source_sha256": {
+    "overopen_attempt.py": "beef37ab9d5da76e1ea777d3ab24d88adf9bf78004a1f09c55ccfefec456bb48",
+    "task.py": "d65da75759ab6ad3cf56b1ee52de0ff3648bc0c4b61446f55d479cd7b46a89fd",
+    "geometry.py": "8fdb9ab0e2355be53422d33421be5435b9d2e186e5d5ee4e183a06d26b50209c",
+    "scoring.py": "4691cfdfaf0892f8d64d0fc977b09da2e978dab89f8ec3916a0037ed2eca68e4",
+    "oriented_waypoints.py": "d3a3401a11955f9457b99ebce52cd168f5baaf855410d88a31e0c6c532a84c83",
+    "hover_attempt.py": "05bebeb662049c0749d10d4faac16150ac26d3020eeaee8865586fde18d94d35",
+    "prepare_draft.py": "e8d03922711d96eb92e1827907afba9e82239d7d911cf75ceebab391c0819f1d",
+    "validate.py": "cb47526d125d65fb0a81063b82591cdf549fb5bf62b05de2870ac82c4a58e3b1",
+    "support_contacts.py": "2c91e7f29e74a7d1fe1ccfa1c8dd12b350d294ffe6d0c432d0fdfa7755d971a6",
+    "policy/current_api_bridge.py": "86ce4c044aea7a10fc85be405535b20ba90bec26ecf3fe51bb28e4915e2adbf3",
+    "policy/dream_current.py": "bd9e9b318dcddca16e5285e0651c01be15af7ad7fd927d353b65e3eae358ddf7",
+    "policy/pyproject.toml": "d5714a78223b93d5f7f7cbd62d606654e82cd02378703e787487071350161288",
+    "runtime/yam_articulated_base.py": "619cb7614917731efca17bbc3f25cf2bfb32da419b13a6b5fa729c8a5be98809",
+    "runtime/yam_articulated.py": "7156ce44cee59a932b079d9c559412aeefd05a62d64f79b4f9ff1dd7e7cf2048",
+    "runtime/pyproject.toml": "ebb88d03e2cb9342bf8b2cb037e504731613640984e356c35d99a6b55010aa0a"
+  },
+  "packaging_note": "Optional author metadata is removed from public pyproject files for blind review."
+}
