@@ -100,3 +100,5 @@ A measured neck gap alone can earn at most 0.25 while the cap remains covered. E
 Dream 1 scored 0.0 in 2400 steps. The scripted demonstration scored 1.0 in 502 steps. The demo took 341.8 seconds of wall time and the model took 881.1 seconds. Both trials ran at 20 Hz. The model had 0 session recoveries.
 
 ![Task score over simulated time](scores.svg)
+
+In a separate 400 step control the robot covered the cap and held the opener without commanding a levering or extraction motion. The native neck joint broke at 15.65 seconds. The maximum measured separation was 2.05 mm. The cap stayed covered and the control scored 0.25. Opening credit requires at least 12 mm of separation after a confirmed break. A break event alone does not establish extraction or successful tool use.
