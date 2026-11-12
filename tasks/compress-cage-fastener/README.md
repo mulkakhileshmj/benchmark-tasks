@@ -2,6 +2,18 @@
 
 This task tests active compression of two retaining legs while the other arm steadies a loose rack coupon. The legs must pass through a square opening and expand below it. The upper flange supports the fastener after release. This differs from seating a keyed plug in a socket because the robot must hold two spring loaded legs inward during insertion.
 
+## Relevance to AI infrastructure
+
+Category: Impact on AI timelines.
+
+Square hole server racks use cage nuts to provide mounting threads for equipment. Preparing those attachment points is one of the physical steps required to install and service data center hardware. A robot doing this work must keep the retaining legs compressed as they pass through the opening and then release them to retain the fastener. Placement at the hole alone does not complete the installation.
+
+This task isolates that contact transition in a scaled plastic prototype with guided spring legs and a loose rack coupon. It does not claim to reproduce a commercial steel cage nut at full scale. It does not test threaded fastening or complete rack installation or equipment load capacity. Its relevance is to the manipulation needed during rack preparation rather than the size of a general occupation.
+
+The [Dell PowerEdge rack installation guide](https://dl.dell.com/manuals/all-products/esuprt_ser_stor_net/esuprt_poweredge/poweredge-6300_setup%20guide_en-us.pdf) describes engaging cage nuts in square rack openings. The [StarTech cage nut guide](https://www.startech.com/en-us/faq/server-racks-cage-nuts) explains how their retained wings provide a mounting point for the equipment screw. These sources establish the real application. The task geometry and simplifications remain those listed below.
+
+This revision changes the category and relevance explanation only. The evaluated scene and scorer and scripted controller and uploaded videos are unchanged. The existing matching source trials remain the evidence for the reported scores.
+
 ## Runtime
 
 Use the official YAM Isaac Lab Arena environment. Install the local embodiment extension in that environment.
@@ -55,4 +67,5 @@ Dream 1 scored 0.0 in 2400 control steps. The separate scripted demo scored 1.0 
 
 The task source SHA256 is `9398a3efc8f82ad89b9ea7248faf81f9c8d988247cb27bb9eac39f6e4250cc49`. validation.json identifies the selected receipts. video_audit.json records the checksums and native camera frame counts. The score plot shows measured scores through the recorded trajectories.
 
-This submission replaces PR 112. It preserves our original task idea and is not an additional new idea.
+
+
