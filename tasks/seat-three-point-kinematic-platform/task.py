@@ -1,4 +1,4 @@
-"""Seat the blue platform on its three locating datums. Each ball foot must bear on its matching support. The rear left foot goes in the square cone cup. The rear right foot goes in the V groove. The front foot rests on the flat. Keep the platform level while lowering it. Release both handles. The fixture is unpowered."""
+"""Seat the blue platform on its matching cup and groove and flat datums. Leave all three ball feet seated and both hands clear. The fixture is unpowered."""
 import math
 import numpy as np
 import seating_contact
@@ -35,29 +35,46 @@ for sign in (-1,1):
 PLATE=Compound('mount_plate',pos=(.10,0,TOP+.028),size=(.160,.198,.055),mass=.200,color=(.12,.35,.85),parts=tuple(parts))
 BASE=Box('mount_base',pos=(.26,0,TOP+.004),size=(.18,.18,.008),color=(.45,.45,.45))
 OBJECTS=[BASE,*DATUMS,PLATE]
-_bad=False;_pose=None;_open=False;_clear=False;_forces=np.zeros(3);_references=None
+_bad=False;_pose=None;_open=False;_clear=False;_contacts=np.zeros(3,dtype=bool);_references=None
+_qualified_since=None;_observation_time=None
 def reset_history():
- global _bad,_pose,_open,_clear,_forces,_references
- _bad=False;_pose=None;_open=False;_clear=False;_forces=np.zeros(3);_references=None;seating_contact.reset()
+ global _bad,_pose,_open,_clear,_contacts,_references,_qualified_since,_observation_time
+ _bad=False;_pose=None;_open=False;_clear=False;_contacts=np.zeros(3,dtype=bool);_references=None
+ _qualified_since=None;_observation_time=None;seating_contact.reset()
 def observe(states,t,base):
- global _bad,_pose,_open,_clear,_forces,_references
+ global _bad,_pose,_open,_clear,_contacts,_references,_qualified_since,_observation_time
  seating_contact.bind(base)
  origin=base.scene.env_origins[0].detach().cpu().numpy()
  _pose=base.arena_world.get_pose_w('mount_plate')[0].detach().cpu().numpy().copy();_pose[:3]-=origin
  references=np.array([base.arena_world.get_pose_w(name)[0,:3].detach().cpu().numpy() for name in ('mount_cone','mount_groove','mount_flat')])
  if _references is None:_references=references.copy()
- if np.max(np.linalg.norm(references-_references,axis=1))>.002 or states['mount_plate'].low[2]<TOP-.008:_bad=True
- _open=all(float(np.max(np.abs(base.scene[name].data.joint_pos.torch[0,base.scene[name].find_joints(FINGER_JOINTS,preserve_order=True)[0]].detach().cpu().numpy())))>.035 for name in ['left_robot','right_robot'])
- _clear=seating_contact.clear();_forces=seating_contact.forces()
-def score(states):
+ finite=all(np.isfinite(np.asarray(getattr(states['mount_plate'],field))).all() for field in ('pos','quat_xyzw','lin_vel','ang_vel','low','high'))
+ if not finite or not np.isfinite(_pose).all() or not np.isfinite(references).all() or np.max(np.linalg.norm(references-_references,axis=1))>.002 or states['mount_plate'].low[2]<TOP-.008:_bad=True
+ _open=all(float(np.min(np.abs(base.scene[name].data.joint_pos.torch[0,base.scene[name].find_joints(FINGER_JOINTS,preserve_order=True)[0]].detach().cpu().numpy())))>.035 for name in ['left_robot','right_robot'])
+ _clear=seating_contact.clear();_contacts=seating_contact.contacts()
+ now=float(t)
+ if not math.isfinite(now):
+  _bad=True;_qualified_since=None;_observation_time=None;return
+ if _observation_time is not None and (now<_observation_time or now-_observation_time>.100001):_qualified_since=None
+ _observation_time=now
+ if instantaneous_score(states)==1.:
+  if _qualified_since is None:_qualified_since=now
+ else:_qualified_since=None
+def instantaneous_score(states):
  if _bad or _pose is None:return 0.
  rotation=quat_xyzw_to_matrix(_pose[3:]);yaw=abs(math.atan2(rotation[1,0],rotation[0,0]))
  aligned=np.max(np.abs(_pose[:2]-np.array([.26,0.])))<.003 and abs(_pose[2]-SEAT_Z)<.003 and rotation[2,2]>math.cos(math.radians(3)) and yaw<math.radians(3)
- supported=_forces>.02
+ supported=_contacts
  if aligned and supported.all() and states['mount_plate'].resting(.008,.1):return 1. if _open and _clear else .75
  if supported.any() and rotation[2,2]>math.cos(math.radians(10)):return .5
  if states['mount_plate'].low[2]>TOP+.015:return .25
  return 0.
+
+def score(states):
+ value=instantaneous_score(states)
+ if value!=1.:return value
+ if _qualified_since is not None and _observation_time is not None and _observation_time-_qualified_since>=1.-1e-9:return 1.
+ return .9
 def success(states):return score(states)==1.
 def distance(states):return 1. if _pose is None else float(np.linalg.norm(_pose[:3]-np.array([.26,0,SEAT_Z])))
 def demo():
@@ -66,4 +83,5 @@ def demo():
   pick=(.10,sign*.085,TOP+.093+D);carry=(.26,sign*.085,TOP+.155+D);seat=(.26,sign*.085,SEAT_Z+.065+D-.0005)
   paths[arm]=[Waypoint(1.5,(pick[0],pick[1],TOP+.14),O),Waypoint(1.5,pick,O),Waypoint(.8,pick,C),Waypoint(1.5,(pick[0],pick[1],carry[2]),C),Waypoint(2.,carry,C),Waypoint(2.,seat,C),Waypoint(1.,seat,C),Waypoint(.8,seat,O),Waypoint(1.5,(seat[0],seat[1],TOP+.14),O)]
  return paths
-def diagnostics():return dict(bad=_bad,root_pose=None if _pose is None else _pose.tolist(),support_forces_n=_forces.tolist(),robot_clear=_clear,fingers_open=_open)
+def diagnostics():
+ return dict(bad=_bad,root_pose=None if _pose is None else _pose.tolist(),datum_contacts=_contacts.tolist(),contact_gaps_m=[float(v) if math.isfinite(v) else None for v in seating_contact.gaps()],robot_clear=_clear,fingers_open=_open)

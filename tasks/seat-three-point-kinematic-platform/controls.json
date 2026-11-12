@@ -1,0 +1,80 @@
+{
+  "held": {
+    "kind": "held",
+    "returncode": 0,
+    "log": "/data/revision1112/held/1794478689521213732/adhoc_61032ee7.json",
+    "source_sha256": "45ad5f9645ac76c006eb9894c6f4bbef9ac049c542ab2cd18aed5f375e7e771d",
+    "status": "success",
+    "results": {
+      "abstentions": {},
+      "errored_trials": 0,
+      "metrics": {
+        "task_score": 0.5
+      },
+      "total_scenes": 1,
+      "total_trials": 1
+    },
+    "stats": {
+      "completed_at": "2026-11-12T10:20:13.365682+00:00",
+      "duration_s": 123.51735057999997,
+      "frames_dir": "/data/revision1112/held/1794478689521213732/frames/20261112_101809_8562993a",
+      "mean_inference_latency_s": null,
+      "records_dir": "/data/revision1112/held/1794478689521213732/records/20261112_101809_8562993a",
+      "started_at": "2026-11-12T10:18:09.848339+00:00",
+      "total_steps": 366
+    },
+    "error": null,
+    "source_files": {
+      "task.py": "03f8bb80d406c5aac6465256e2cfb26e02f6b0f06f013fd5befe576710bc277d",
+      "seating_contact.py": "910f1c3ad4bef03c935e671ef667e61ce966a1ca9e74a161d2d1b12b3ff64250",
+      "validate.py": "0d763d94654be32de84e782b40d01d6461e36e08e06eb919686ebe7b053cc1da",
+      "policy/current_api_bridge.py": "86ce4c044aea7a10fc85be405535b20ba90bec26ecf3fe51bb28e4915e2adbf3",
+      "policy/dream_current.py": "bd9e9b318dcddca16e5285e0651c01be15af7ad7fd927d353b65e3eae358ddf7",
+      "policy/pyproject.toml": "d5714a78223b93d5f7f7cbd62d606654e82cd02378703e787487071350161288",
+      "runtime/yam_articulated_base.py": "a9546c2347c05c63d000f460a67d95db902e8acac9a00f971e0e0b614cda21ef",
+      "runtime/yam_feedback.py": "12c5af6738e6e99900a849c89a1f11657be91521870aacd917c041dcd0812563",
+      "runtime/yam_articulated.py": "0fea52f4e1543e9b0d8e59537de39d5e08d4e7c3ee77d9966e661b10976c43f6",
+      "runtime/pyproject.toml": "0b5a6431aab8f962ced783dd26681f0aeffe08bdbde671befae98a79a20043f9"
+    },
+    "source_unchanged": true
+  },
+  "hover": {
+    "kind": "hover",
+    "returncode": 0,
+    "log": "/data/revision1112/hover/1794478689520882827/adhoc_ca5d8914.json",
+    "source_sha256": "2b1034778303b14af8b4397d3e9dd90f57973a49f1b15a7741fed1f3850577cd",
+    "status": "success",
+    "results": {
+      "abstentions": {},
+      "errored_trials": 0,
+      "metrics": {
+        "task_score": 0.25
+      },
+      "total_scenes": 1,
+      "total_trials": 1
+    },
+    "stats": {
+      "completed_at": "2026-11-12T10:20:10.435531+00:00",
+      "duration_s": 120.59092885099994,
+      "frames_dir": "/data/revision1112/hover/1794478689520882827/frames/20261112_101809_a7152eba",
+      "mean_inference_latency_s": null,
+      "records_dir": "/data/revision1112/hover/1794478689520882827/records/20261112_101809_a7152eba",
+      "started_at": "2026-11-12T10:18:09.844625+00:00",
+      "total_steps": 346
+    },
+    "error": null,
+    "source_files": {
+      "task.py": "03f8bb80d406c5aac6465256e2cfb26e02f6b0f06f013fd5befe576710bc277d",
+      "seating_contact.py": "910f1c3ad4bef03c935e671ef667e61ce966a1ca9e74a161d2d1b12b3ff64250",
+      "validate.py": "0d763d94654be32de84e782b40d01d6461e36e08e06eb919686ebe7b053cc1da",
+      "policy/current_api_bridge.py": "86ce4c044aea7a10fc85be405535b20ba90bec26ecf3fe51bb28e4915e2adbf3",
+      "policy/dream_current.py": "bd9e9b318dcddca16e5285e0651c01be15af7ad7fd927d353b65e3eae358ddf7",
+      "policy/pyproject.toml": "d5714a78223b93d5f7f7cbd62d606654e82cd02378703e787487071350161288",
+      "runtime/yam_articulated_base.py": "a9546c2347c05c63d000f460a67d95db902e8acac9a00f971e0e0b614cda21ef",
+      "runtime/yam_feedback.py": "12c5af6738e6e99900a849c89a1f11657be91521870aacd917c041dcd0812563",
+      "runtime/yam_articulated.py": "0fea52f4e1543e9b0d8e59537de39d5e08d4e7c3ee77d9966e661b10976c43f6",
+      "runtime/pyproject.toml": "0b5a6431aab8f962ced783dd26681f0aeffe08bdbde671befae98a79a20043f9"
+    },
+    "source_unchanged": true
+  }
+}
