@@ -1,0 +1,33 @@
+{
+  "trials": {
+    "demo": {
+      "steps": 502,
+      "score": 1.0,
+      "wall_seconds": 341.78325033187866
+    },
+    "model": {
+      "steps": 2400,
+      "score": 0.0,
+      "wall_seconds": 881.0638086795807
+    }
+  },
+  "evaluated_source_sha256": {
+    "contact_monitor.py": "342c48988d6068f45a23dee90b312abee91ed519087a03b89987430fe8bbda77",
+    "counterexample_no_break.py": "73dc49e8dd1eb96cfbd92725a3c9de27ff5ba89da4bd64b2449fdd624d7adbdc",
+    "observed_rest.py": "29e6cd6b573473893b0d741473888281d64518dd0e557efeef5f60a89561c652",
+    "oriented_waypoints.py": "0e70e366305fbfd71b85602cbc4b34db93d62cb6272183cb95586a61cfd980df",
+    "policy/current_api_bridge.py": "86ce4c044aea7a10fc85be405535b20ba90bec26ecf3fe51bb28e4915e2adbf3",
+    "policy/dream_current.py": "bd9e9b318dcddca16e5285e0651c01be15af7ad7fd927d353b65e3eae358ddf7",
+    "policy/pyproject.toml": "d5714a78223b93d5f7f7cbd62d606654e82cd02378703e787487071350161288",
+    "runtime/ampoule_native.py": "1c97722865d1fcbd35df79def497214d28399c75a67d7e70723333f4e86a6ae3",
+    "runtime/pyproject.toml": "08f35e1b15023cbb7bf14731a9d450a6faf61a0d2e14bd662451618a8b49111e",
+    "runtime/yam_articulated.py": "9ecc743ca4dea90a74142052129b16e182b5ad41ef959916030acd11b099f6c4",
+    "runtime/yam_articulated_base.py": "943b2ad20e42d39b2bbd6caa478813e169893910e1e593e54ffd5b150de66990",
+    "scoring.py": "4da03ccea43bda004aa4dd3f84baa6ec1b2010abcc6bc25bd95b6345b68d255d",
+    "task.py": "9bda08f49d38e02a395f0e40be7999eb2760800efe202ae41097d9222313d972",
+    "validate.py": "e3786d7a22dc8345386a61ab94a74ec383cbce9276da3dd384a4ccc694cd65e2",
+    "validate_observed_rest.py": "41609eb0b1d16b99c1db679dd8623850273fe1fbeefaa48bfabf555e73ec6ce8"
+  },
+  "model_recoveries": 0,
+  "rows_per_request": 8
+}

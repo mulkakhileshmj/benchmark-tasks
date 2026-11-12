@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "yam-captive-ampoule-prototype"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = ["numpy"]
+
+[project.entry-points."inspect_robots.embodiments"]
+ampoule_yam = "ampoule_native:embodiment"
+
+[tool.setuptools]
+py-modules = ["yam_articulated", "yam_articulated_base", "ampoule_native"]
