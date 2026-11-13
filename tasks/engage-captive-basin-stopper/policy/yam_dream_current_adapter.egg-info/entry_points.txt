@@ -1,2 +1,0 @@
-[inspect_robots.policies]
-dream_current = dream_current:dream_current

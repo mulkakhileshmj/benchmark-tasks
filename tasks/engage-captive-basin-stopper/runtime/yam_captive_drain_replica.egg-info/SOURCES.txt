@@ -1,9 +1,0 @@
-drain_base.py
-drain_runtime.py
-pyproject.toml
-yam_captive_drain_replica.egg-info/PKG-INFO
-yam_captive_drain_replica.egg-info/SOURCES.txt
-yam_captive_drain_replica.egg-info/dependency_links.txt
-yam_captive_drain_replica.egg-info/entry_points.txt
-yam_captive_drain_replica.egg-info/requires.txt
-yam_captive_drain_replica.egg-info/top_level.txt
