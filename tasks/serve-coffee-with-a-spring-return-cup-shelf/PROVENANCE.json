@@ -1,0 +1,23 @@
+{
+  "source_pr": "https://github.com/robocurve/benchmark-tasks/pull/1878",
+  "source_author": "Bhuvan-rayani",
+  "source_commit": "a883557efde01e8a14e0b8d6994ea95181012a72",
+  "upstream_sha256": {
+    "demo_plan.py": "76882c9972fab9c3fe3d1908c9df55861de1d4a88bbf4350e27f3d0a5f73bfe6",
+    "display.py": "02caa33cc97b6f81add34d80a3fa890e7efb39d7228349b4cdc14a8b46d08006",
+    "geometry.py": "c689e470677c15382ca985a4920af512f42db885defe7fa8453f13e0e66a57d4",
+    "logic.py": "b28009c43c41c3af279f2b05d62f94dee115f9a859cddf0aec00edba7081e984",
+    "parts.py": "11ebe4461f127dd791adad84900873d4066e079be1467dc4ca9013fee070bf0e",
+    "README.md": "eede3c3f50c47fa9c54176f07b4b5d415b1c05adfb79a484ba5d6d66f592eb83",
+    "run.sh": "fb961180caed537eb97c20be34bf0e48a93952ae5449339f38d2b0b19d1ec55f",
+    "scoring.py": "59eef4a69d3f4c1510f9df3eddfc73041074d01e79d9f1d415c83451299287cc",
+    "task.json": "f33e4a3fcbf05d3e3225911103f875e3f90f65b811925498d0ced49c2e1d291a",
+    "task.py": "0bfc21a8cf7618556278a448ab39099ee1716e2ea601c68715eea9339979b80c",
+    "tracekit.py": "8f94702150b2c44147d669991e1acc4b5befcd12de692bb50eb94b966a125bd2",
+    "tests/test_coffee_machine_cup_shelf.py": "056d78876d927bec23112e0ae3324a58c2b96d40a4094b9e25e8470016634ddb"
+  },
+  "private_local_revision": true,
+  "redistribution_license_verified": false,
+  "novelty_or_hold_clearance": false,
+  "note": "Original fixture, display and demo code is attributed, not relabeled as our original work."
+}

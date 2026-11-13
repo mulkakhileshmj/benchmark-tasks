@@ -1,0 +1,6 @@
+__pycache__/
+*.egg-info/
+dist/
+local_validation.json
+runs/
+generated_geometry/

@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "coffee-native-servo"
+version = "0.1.0"
+[project.entry-points."inspect_robots.policies"]
+coffee_servo = "coffee_servo:policy"
+[project.entry-points."inspect_robots.embodiments"]
+coffee_yam = "coffee_runtime:embodiment"
+[tool.setuptools]
+py-modules = ["coffee_servo", "coffee_runtime"]

@@ -1,0 +1,72 @@
+{
+  "control_hz": 20,
+  "run_limit_steps": 2400,
+  "native_camera_resolution": [
+    1280,
+    720
+  ],
+  "codec": "h264",
+  "fps": 20,
+  "source_sha256": {
+    "coffee_runtime.py": "1922d5784850f602143f7ddcef746d14aecb3bc833f347e621c66211e789658b",
+    "coffee_servo.py": "dd26e8205c24eab953a40747c375f5e5e38e6c279605226b8430ddfc8aec7be2",
+    "demo_plan.py": "a2a62f95b564aa9a9153469e68c80c14ce17bca81a9b568d9b3c41375ae62de6",
+    "display.py": "fc6e29ea5f26f06968e842cbb0bef97800a0866caf8ada5f3c327ba02d8815ec",
+    "display_state.py": "d92c6987ab43eabd4c4267b48414b50e4f7be41212aac71f44ea7ac48f26da55",
+    "engine.py": "66c2f3947b7086f43b99f84cc946d449086a81155e9f1845105d9897dbc90c9a",
+    "evidence.py": "1af4b6deb22a37eb74457d3ea6f4613f23abe97466c3d1fc105b6a1dcc4d41ca",
+    "geometry.py": "2274aed8b2b862bb3bc1a4a44519f1b7f691355f034c34b34d90c6de1720cc65",
+    "hand_envelopes.py": "5e1ee4a49f7f12f45f3f344fccd7e0c24a1e8d801bfd293c1b08d63176657995",
+    "native_contacts.py": "c6c30ad5cb63595c520b16d705a10a77a652373965c7493a3ec3a9690b135e05",
+    "parts.py": "52a66913d8b0abb596b7e4885b1b8833d95302e94bfa46789a73c478d9510969",
+    "pyproject.toml": "a9ad2e0e1be3c5ffd944fba5ac43b16711653a152c3170e1d0527481c9a46b07",
+    "run.sh": "4628e00074b343f59a916f57579293e37e6fa607d9ebdb91e3b0ac825d446d6d",
+    "strong_runtime.py": "f3d2d9ef07528fd64139fa74812fd43cfeab02c86bd309bfdf49db1ed4f01a48",
+    "task.py": "70a33c3dc1e824e2c739bacc05e8ab34a08fb4c61d7ecd8b3c897d9bcea32db9",
+    "validate_local.py": "c5c2cbde526b8156b6cb36dd183787c117ef448a36764902b88dc4e5ecfe6fc1"
+  },
+  "runs": {
+    "demo": {
+      "score": 1.0,
+      "steps": 1989,
+      "control_hz": 20,
+      "source_verified": true,
+      "run_status": "success",
+      "execution_error": null,
+      "trial_file": "adhoc_c419e4d9.json",
+      "wall_duration_s": 735.2566182330011,
+      "media_sha256": {
+        "top_cam.mp4": "0c6769dabd7e1b10c054eb348870c080cea56e121cc2ee44ab84ff3b3878e506",
+        "left_cam.mp4": "06de30f3f5258bd7364dda61a60be78ade3f3da921b199b1aaae9cf0a3db8670",
+        "right_cam.mp4": "1a865ef741a31b69ad6adc26d530a4d474eab902e63b3a7795fba4f778df30e3"
+      }
+    },
+    "dream": {
+      "score": 0.0,
+      "steps": 2400,
+      "control_hz": 20,
+      "source_verified": true,
+      "run_status": "success",
+      "execution_error": null,
+      "trial_file": "adhoc_c990ec26.json",
+      "wall_duration_s": 450.25783860900265,
+      "media_sha256": {
+        "top_cam.mp4": "134d0384272fdce24d1aa0064ece960ed96a9e2ec7c03af14a4a668c9f389b71",
+        "left_cam.mp4": "ccba0c50d558560336b1ac3336b56ebea55333eeb32f12f42f16825aa18ae156",
+        "right_cam.mp4": "46875e920b2fc2941ed6929aa5a04efed6fa413f7ad7d52d8f928911966d398e"
+      }
+    }
+  },
+  "dream_policy": {
+    "checkpoint": "dreamlabs/dream-1-beta",
+    "dry_run": false,
+    "preroll_steps": 32,
+    "rows_per_request": 48,
+    "successful_requests": 50,
+    "inference_attempts": 53,
+    "provider_sessions": 4,
+    "provider_session_replacements": 3,
+    "memory_reset_disclosed": true,
+    "scripted_fallback": false
+  }
+}
