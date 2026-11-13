@@ -1,5 +1,4 @@
 {
-  "source_pr": "https://github.com/robocurve/benchmark-tasks/pull/1878",
   "source_author": "Bhuvan-rayani",
   "source_commit": "a883557efde01e8a14e0b8d6994ea95181012a72",
   "upstream_sha256": {
@@ -16,8 +15,8 @@
     "tracekit.py": "8f94702150b2c44147d669991e1acc4b5befcd12de692bb50eb94b966a125bd2",
     "tests/test_coffee_machine_cup_shelf.py": "056d78876d927bec23112e0ae3324a58c2b96d40a4094b9e25e8470016634ddb"
   },
-  "private_local_revision": true,
   "redistribution_license_verified": false,
   "novelty_or_hold_clearance": false,
-  "note": "Original fixture, display and demo code is attributed, not relabeled as our original work."
+  "note": "Original fixture, display and demo code is attributed, not relabeled as our original work.",
+  "source_repository": "https://github.com/Bhuvan-rayani/robocurve-manas-benchmark-tasks"
 }
