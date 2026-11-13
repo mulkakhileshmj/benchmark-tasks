@@ -1,0 +1,12 @@
+{
+  "title": "Reconnect a basin stopper in its captive configuration",
+  "category": "Societal relatability",
+  "instruction": "Reconnect the basin stopper in its captive configuration. Open it with the external pivot lever, close it again, and leave both hands clear.",
+  "context": "When servicing a pop-up sink drain, fitting the rod underneath the stopper can still produce visible movement. Threading the rod through the eye retains the stopper and permits the full opening and closing stroke.",
+  "setup": "Place the dry metal drain stand on the standard dual YAM table with its stopper eye at (295, 15, 842.5) mm. Seat the 35 mm metal cap on its 26 mm bore. The stem eye measures 5 by 8 by 2.5 mm. Start the horizontal 4 mm steel rod 16 mm short of the seated bearing position. The attached polymer grip is 65 mm from the bearing. The documented sectioned stand gives a clear side view of the engagement.",
+  "scoring": "Score 0.25 for a seated bearing and a rod passing through both sides of the eye. Score 0.65 after the retained cap lifts 8 mm or more at 20 degrees or greater without hand support. Score 1 after reseating and release for one second. The cap gap must be at most 0.6 mm and the lever within 4 degrees of level. Complete distances, clearances and speed bounds are in the README and scoring code.",
+  "fidelity": "Full size exposed dry service fixture with a passive pivot, hollow stopper eye, contact-driven cap and return spring. A bench guide constrains insertion of the ball along the side port. The task omits retainer tightening, water sealing and the faucet lift linkage.",
+  "run_limit": "2400 control steps at 20 Hz",
+  "scores": "Dream 1 scored 0.0 in 2400 steps. Scripted demo scored 1.0 in 351 steps. Both at 20 Hz.",
+  "media": "M-4NMVZ9"
+}

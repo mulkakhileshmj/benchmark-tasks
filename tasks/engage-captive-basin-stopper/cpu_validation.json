@@ -1,0 +1,32 @@
+{
+  "captured": {
+    "peak_stroke_mm": 11.92603321612187,
+    "closed_gap_mm": 0.019999453659846025,
+    "proof_lift_mm": 2.2353971643577344,
+    "rod_stopper_contacts": 2796,
+    "captured_at_seat": true,
+    "stroke_score": 1.0
+  },
+  "underneath": {
+    "peak_stroke_mm": 21.926555741203803,
+    "closed_gap_mm": 8.01547442322429,
+    "proof_lift_mm": 41.22683268023811,
+    "rod_stopper_contacts": 3159,
+    "captured_at_seat": false,
+    "stroke_score": 0.0
+  },
+  "withdrawn": {
+    "peak_stroke_mm": 0.019999454759510295,
+    "closed_gap_mm": 0.019999453292291604,
+    "proof_lift_mm": 42.296044256917696,
+    "rod_stopper_contacts": 0,
+    "captured_at_seat": false,
+    "stroke_score": 0.0
+  },
+  "right_ik": {
+    "worst_mm": 0.07442420438991747,
+    "worst_deg": 0.01334621648147827,
+    "steps": 340,
+    "seconds": 17.0
+  }
+}

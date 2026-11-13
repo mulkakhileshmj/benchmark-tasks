@@ -1,0 +1,2 @@
+[inspect_robots.embodiments]
+drain_yam = drain_runtime:embodiment
