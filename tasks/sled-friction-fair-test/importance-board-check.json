@@ -1,0 +1,147 @@
+{
+  "checked_at_utc": "2026-11-14T06:55:49.723103+00:00",
+  "source": "https://tasks.robocurve.org/board",
+  "method": "Title-keyword screening; not an exhaustive semantic or historical novelty clearance",
+  "matches": [
+    {
+      "id": "TK-SHQ94B",
+      "title": "Calibrate a tool tip by touching one point from four angles",
+      "category": "Impact on AI timelines",
+      "status": "pending",
+      "reviewed_at": null
+    },
+    {
+      "id": "TK-TJQJEQ",
+      "title": "Lower a loaded steel hotel pan level into a steam-table well and let go",
+      "category": "Impact on jobs",
+      "status": "pending",
+      "reviewed_at": null
+    },
+    {
+      "id": "TK-EL5LF7",
+      "title": "Sort machined blocks with a go/no-go gap gauge",
+      "category": "Impact on jobs",
+      "status": "rejected",
+      "reviewed_at": "2026-11-14T06:16:25.349Z"
+    },
+    {
+      "id": "TK-USB3W6",
+      "title": "Fit a spring tension rod between two cupboard walls so it holds itself up, level and at a marked height",
+      "category": "Impact on jobs",
+      "status": "rejected",
+      "reviewed_at": "2026-11-14T06:14:22.196Z"
+    },
+    {
+      "id": "TK-WGM2ZQ",
+      "title": "Close a deli slicer's gauge plate over the knife, then take its carriage off for cleaning",
+      "category": "Impact on jobs",
+      "status": "rejected",
+      "reviewed_at": "2026-11-14T06:14:22.196Z"
+    },
+    {
+      "id": "TK-UJZYER",
+      "title": "Zero an unpowered robot arm joint: hold the link on its zero mark and insert the calibration pin",
+      "category": "Impact on AI timelines",
+      "status": "rejected",
+      "reviewed_at": "2026-11-14T06:16:25.349Z"
+    },
+    {
+      "id": "TK-UC4CMD",
+      "title": "Roll a cabinet shelf wider than its face-frame opening through it, level it inside, and lower it onto its four pins",
+      "category": "Societal relatability",
+      "status": "pending",
+      "reviewed_at": null
+    },
+    {
+      "id": "TK-KUQS9V",
+      "title": "Read a wheel's tyre pressure with a pencil gauge, then put the gauge back in its holder",
+      "category": "Societal relatability",
+      "status": "rejected",
+      "reviewed_at": "2026-11-13T23:40:24.360Z"
+    },
+    {
+      "id": "TK-22MV92",
+      "title": "Check a bent tube on its fixture: lower it level in both hands so all four legs drop into their slots at once",
+      "category": "Impact on jobs",
+      "status": "pending",
+      "reviewed_at": null
+    },
+    {
+      "id": "TK-84X8VV",
+      "title": "Set a telescoping gauge to a bearing housing's bore diameter and leave it on its stand",
+      "category": "Impact on jobs",
+      "status": "pending",
+      "reviewed_at": null
+    },
+    {
+      "id": "TK-TLLPCQ",
+      "title": "Tamp the coffee in a portafilter level with a tamper, then lock the portafilter into an espresso machine's group head",
+      "category": "Societal relatability",
+      "status": "pending",
+      "reviewed_at": null
+    },
+    {
+      "id": "TK-JGJZS9",
+      "title": "Measure powdered formula into a 4-ounce bottle: two unpacked scoops, each leveled against the tin's leveling bar",
+      "category": "Impact on jobs",
+      "status": "pending",
+      "reviewed_at": null
+    },
+    {
+      "id": "TK-LAJNZX",
+      "title": "Roll puff pastry into an even 3 mm sheet, both hands keeping the spacer-ring pin level",
+      "category": "Societal relatability",
+      "status": "rejected",
+      "reviewed_at": "2026-11-14T06:11:22.273Z"
+    },
+    {
+      "id": "TK-QYVGLD",
+      "title": "Check a small engine's oil with the dipstick: pull, wipe, reseat, read the level, mark it on the check card, and reseat",
+      "category": "Impact on jobs",
+      "status": "pending",
+      "reviewed_at": null
+    },
+    {
+      "id": "TK-7Z8SYG",
+      "title": "Weigh an infant manikin on a beam scale: set the kilogram notch, then slide the gram weight until the pointer is level",
+      "category": "Impact on jobs",
+      "status": "pending",
+      "reviewed_at": null
+    },
+    {
+      "id": "TK-X2M6L6",
+      "title": "Transfer a datum height to a far post with a water level, holding the jar's water at the line while marking",
+      "category": "Impact on jobs",
+      "status": "pending",
+      "reviewed_at": null
+    },
+    {
+      "id": "TK-DWLJQ6",
+      "title": "Transfer a reference angle with a bevel gauge",
+      "category": "Impact on jobs",
+      "status": "rejected",
+      "reviewed_at": "2026-11-14T05:31:24.135Z"
+    },
+    {
+      "id": "TK-2WVMKA",
+      "title": "Calibrate a colorimeter on the blank and measure a sealed sample",
+      "category": "Impact on jobs",
+      "status": "rejected",
+      "reviewed_at": "2026-11-14T05:31:24.135Z"
+    },
+    {
+      "id": "TK-QJ8724",
+      "title": "Fit a U-joint cross longer than its yoke's ear gap: push one journal through, swing it level, slide it back to centre",
+      "category": "Impact on jobs",
+      "status": "accepted",
+      "reviewed_at": "2026-11-12T10:31:21.000Z"
+    },
+    {
+      "id": "TK-CTCQVY",
+      "title": "Carry an open tray level",
+      "category": "Impact on jobs",
+      "status": "pilot",
+      "reviewed_at": null
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Compare sled base friction using a gravity ramp",
+  "category": "Other",
+  "keywords": [
+    "controlled experiment",
+    "gravity ramp",
+    "relative sliding friction",
+    "material handling"
+  ],
+  "instruction": "Use the two-lane track to determine which sled base has higher friction. Put that sled alone on the red mat. The red button toggles the shared start gate.",
+  "context": "Gravity-driven sliding comparisons inform material-handling and chute design. This task tests a robot arranging a controlled comparison, observing stopping outcomes and selecting a specimen. It is an isolated physical-experiment benchmark in Other, with no claim of broad occupational coverage or standard-compliant friction measurement. See IMPORTANCE.md.",
+  "setup": "Bimanual YAM station with 0.7475 m worktop. Two 50 x 50 x 40 mm rigid sleds of 150 g and 250 g start at x=0.10 m, y=0.14/0.05 m. A 180 x 220 mm, 30-degree two-lane ramp spans x=0.17 to 0.35 m with lane centres y=0.165/0.055 m. A flat 180 x 230 x 8 mm runout and fixed end stop follow it. A shared rigid gate retracts sideways by 240 mm when the physical spring button at (0.14,-0.12) m is pressed. The 110 x 100 x 4 mm red mat is centred at (0.23,-0.01) m. Full compound geometry, estimated friction and motor parameters are in task.py and review_native_common.py.",
+  "scoring": "0 without valid measurements. 0.25 for one released sled stopping without robot interference or end-stop contact. 0.5 after both stopping distances establish a difference greater than 30 mm. Full score requires that comparison and only the higher-friction sled stationary on the red mat, with hands clear. Mat centre tolerance is 40 mm in x/y and speed below 10 mm/s. Scoring uses the final state with a 1-second success hold. See task.py for all measurement predicates.",
+  "run_limit": "2,400 control steps at 20 Hz (120 seconds).",
+  "reset_notes": "Fresh process per trial, seed 0 and object_jitter=0. Restore the exact fixed development layout and native joint coordinates specified in task.py. The initial layout and parameter assignments are fixed; per-trial randomisation is not implemented.",
+  "fidelity": "PhysX rigid bodies with estimated Coulomb contact friction, a fixed 30-degree ramp and a physical sliding start gate. Fixed masses and base-friction assignments are disclosed. No prop pose or launch velocity is imposed after reset. The scripted expert reads simulator poses and measured stopping events, and uses contact pushing to recover failed placement. It never reads the hidden friction assignment. No deformation or validated tribology model.",
+  "scores": "Dream-1: 0.0 in 2,400 steps. Scripted pose-feedback demo: 1.0 in 1,263 steps.",
+  "media": "M-5H6QDF"
+}

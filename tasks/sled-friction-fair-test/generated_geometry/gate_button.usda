@@ -1,0 +1,124 @@
+#usda 1.0
+(
+    defaultPrim = "prop"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "prop" (
+    prepend apiSchemas = ["PhysicsArticulationRootAPI", "PhysxArticulationAPI"]
+)
+{
+    bool physxArticulation:enabledSelfCollisions = 0
+    int physxArticulation:solverPositionIterationCount = 64
+    int physxArticulation:solverVelocityIterationCount = 8
+
+    def Xform "root" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "PhysxContactReportAPI", "PhysxRigidBodyAPI"]
+    )
+    {
+        float physics:mass = 0.1
+        bool physics:rigidBodyEnabled = 1
+        float physxContactReport:threshold = 0
+        bool physxRigidBody:enableCCD = 1
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+        def Cube "p0" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </prop/Materials/root_0> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            bool physics:collisionEnabled = 1
+            float physxCollision:contactOffset = 0.00005
+            float physxCollision:restOffset = 0
+            color3f[] primvars:displayColor = [(0.12, 0.12, 0.12)]
+            double size = 1
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (0.035, 0.035, 0.008)
+            double3 xformOp:translate = (0, 0, 0.004)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+    }
+
+    def "Materials"
+    {
+        def Material "root_0" (
+            prepend apiSchemas = ["PhysicsMaterialAPI"]
+        )
+        {
+            float physics:dynamicFriction = 0.4
+            float physics:restitution = 0
+            float physics:staticFriction = 0.5
+        }
+
+        def Material "cap_0" (
+            prepend apiSchemas = ["PhysicsMaterialAPI"]
+        )
+        {
+            float physics:dynamicFriction = 0.4
+            float physics:restitution = 0
+            float physics:staticFriction = 0.5
+        }
+    }
+
+    def Xform "cap" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "PhysxContactReportAPI", "PhysxRigidBodyAPI"]
+    )
+    {
+        float physics:mass = 0.015
+        bool physics:rigidBodyEnabled = 1
+        float physxContactReport:threshold = 0
+        bool physxRigidBody:enableCCD = 1
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0.022)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+        def Cube "p0" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </prop/Materials/cap_0> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            bool physics:collisionEnabled = 1
+            float physxCollision:contactOffset = 0.00005
+            float physxCollision:restOffset = 0
+            color3f[] primvars:displayColor = [(0.9, 0.4, 0.05)]
+            double size = 1
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (0.028, 0.028, 0.012)
+            double3 xformOp:translate = (0, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+    }
+
+    def PhysicsFixedJoint "world_fix"
+    {
+        rel physics:body1 = </prop/root>
+        point3f physics:localPos0 = (0.14, -0.12, 0.7475)
+        quatf physics:localRot0 = (1, 0, 0, 0)
+    }
+
+    def PhysicsPrismaticJoint "press" (
+        prepend apiSchemas = ["PhysicsDriveAPI:linear"]
+    )
+    {
+        float drive:linear:physics:damping = 3
+        float drive:linear:physics:maxForce = 10
+        float drive:linear:physics:stiffness = 350
+        float drive:linear:physics:targetPosition = 0
+        uniform token drive:linear:physics:type = "force"
+        uniform token physics:axis = "Z"
+        rel physics:body0 = </prop/root>
+        rel physics:body1 = </prop/cap>
+        point3f physics:localPos0 = (0, 0, 0.022)
+        point3f physics:localPos1 = (0, 0, 0)
+        float physics:lowerLimit = -0.008
+        float physics:upperLimit = 0
+    }
+}
+

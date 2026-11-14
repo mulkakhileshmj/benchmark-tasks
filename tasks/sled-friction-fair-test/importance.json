@@ -1,0 +1,17 @@
+{
+  "category": "Other",
+  "claim": "Robot-executed physical comparison of material sliding behaviour under controlled release conditions.",
+  "sources": [
+    {
+      "url": "https://store.astm.org/g0219-23.html",
+      "supports": "The public significance summary describes inclined-plane comparisons and chute-design relevance. G219 concerns static breakaway friction; this fixed-angle stopping-distance task is a different procedure."
+    },
+    {
+      "url": "https://tasks.robocurve.org/#rubric",
+      "supports": "Other permits additional domains informative about real-world impact, subject to the same importance criteria."
+    }
+  ],
+  "limit": "No evidence establishes frequent performance of this exact test by occupations exceeding the jobs-impact threshold. This is not ASTM G219, a calibrated coefficient measurement, or a slip-safety certification. Importance under Other remains a reviewer judgment.",
+  "checked_date": "2026-11-14",
+  "acceptance": "Unreviewed local package; acceptance is not established"
+}
