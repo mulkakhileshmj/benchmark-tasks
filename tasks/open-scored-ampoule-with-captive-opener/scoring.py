@@ -21,6 +21,7 @@ class Sample:
     neck_broken: bool=False
     cap_escape: bool=False
     monitor_valid: bool=True
+    neck_scored: bool=False
 
 class Scorer:
     def __init__(self):
@@ -38,6 +39,8 @@ class Scorer:
         if (s.rim_contact or s.cap_contact or s.cap_escape or s.dropped or s.opener_outside_table
                 or not s.monitor_valid or s.body_upright_deg>15.):
             self.failed=True;self.reason='handling constraint violated'
+        if s.neck_broken and not s.neck_scored:
+            self.failed=True;self.reason='fracture before scoring the neck'
         if self.failed:self.hold_start=None;return 0.
         # Capture is required from the first detected break. Twelve millimetres
         # is only the progress clearance, never the start of the safety rule.
@@ -52,7 +55,7 @@ class Scorer:
             self.failed=True;self.reason='cap escaped';return 0.
         if not self.opened:
             self.reason='cap covered' if s.cap_in_opener and s.cap_covered else 'not opened'
-            return .25 if s.cap_in_opener and s.cap_covered else 0.
+            return (.25 if s.neck_scored else .15) if s.cap_in_opener and s.cap_covered else 0.
         if not (s.body_in_holder and s.opener_in_rack):
             self.hold_start=None;self.reason='opened and retained';return .5
         if not (s.bodies_slow and s.hands_open_clear):

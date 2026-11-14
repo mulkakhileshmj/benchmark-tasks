@@ -1,0 +1,37 @@
+{
+  "role": "dream",
+  "score": 0.0,
+  "steps": 2400,
+  "videos": {
+    "top_cam": {
+      "bytes": 6053816,
+      "sha256": "21f06be44f6b6cf4a2fedecab271efb4be1ab628ae5931607b1e2a850ddcd510",
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "pix_fmt": "yuv420p",
+      "avg_frame_rate": "20/1",
+      "nb_read_frames": "2401"
+    },
+    "left_cam": {
+      "bytes": 7522970,
+      "sha256": "a1ec1dd4193f98c72a2351f6f5a1b9ed9f91cdd8ff56372830e71def4dbbde69",
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "pix_fmt": "yuv420p",
+      "avg_frame_rate": "20/1",
+      "nb_read_frames": "2401"
+    },
+    "right_cam": {
+      "bytes": 10905521,
+      "sha256": "b67d3ce0b6737edb57123310604c67fff1c7269bcc3a6712824fc3c6095def1b",
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "pix_fmt": "yuv420p",
+      "avg_frame_rate": "20/1",
+      "nb_read_frames": "2401"
+    }
+  }
+}

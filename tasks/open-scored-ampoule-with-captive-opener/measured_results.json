@@ -1,33 +1,688 @@
 {
-  "trials": {
+  "native_trials": {
     "demo": {
-      "steps": 502,
       "score": 1.0,
-      "wall_seconds": 341.78325033187866
+      "steps": 782,
+      "wall_time_s": 746.393452105,
+      "camera_native_resolution": [
+        1280,
+        720
+      ],
+      "control_hz": 20,
+      "qualified_at_s": 19.30000000000014,
+      "native_break_at_s": 19.35000000000014,
+      "max_qualified_sectors": 36,
+      "max_neck_gap_m": 0.16785208058585604,
+      "telemetry_sha256": "c68677ec0971dbc043ba1c14ff39d180832398ef47c8cd1eb2ad63423e3d374e",
+      "video_verification": {
+        "role": "demo",
+        "score": 1.0,
+        "steps": 782,
+        "videos": {
+          "top_cam": {
+            "bytes": 2253896,
+            "sha256": "9944024d2ebd8e9d3897ad56b61e6b5980a31fef6936ae67b92de249a2b222ad",
+            "codec_name": "h264",
+            "width": 1280,
+            "height": 720,
+            "pix_fmt": "yuv420p",
+            "avg_frame_rate": "20/1",
+            "nb_read_frames": "783"
+          },
+          "left_cam": {
+            "bytes": 3363434,
+            "sha256": "da1bedd46ee478a03680bd313ed0c7ddc9983eb6b8d364940abc1005f37b9146",
+            "codec_name": "h264",
+            "width": 1280,
+            "height": 720,
+            "pix_fmt": "yuv420p",
+            "avg_frame_rate": "20/1",
+            "nb_read_frames": "783"
+          },
+          "right_cam": {
+            "bytes": 4272008,
+            "sha256": "4a585c32d17c9deca22b6f2e6358ed08ce12075ebe4d2c4526f53136a4286b1e",
+            "codec_name": "h264",
+            "width": 1280,
+            "height": 720,
+            "pix_fmt": "yuv420p",
+            "avg_frame_rate": "20/1",
+            "nb_read_frames": "783"
+          }
+        }
+      },
+      "uploaded_overview_verification": {
+        "layout": "Unscaled native top camera with synchronized left/right wrist insets, each 384x216; no time cuts or synthesized frames",
+        "bytes": 3033547,
+        "sha256": "1cca8810534ff9fc7df971644f0c532a4a9efa795a289a42bfd114c6175f7d2d",
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "pix_fmt": "yuv420p",
+        "avg_frame_rate": "20/1",
+        "nb_read_frames": "783"
+      }
     },
-    "model": {
-      "steps": 2400,
+    "dream": {
       "score": 0.0,
-      "wall_seconds": 881.0638086795807
+      "steps": 2400,
+      "wall_time_s": 1024.5055196900003,
+      "camera_native_resolution": [
+        1280,
+        720
+      ],
+      "control_hz": 20,
+      "qualified_at_s": null,
+      "native_break_at_s": null,
+      "max_qualified_sectors": 0,
+      "max_neck_gap_m": 1.385028752525507e-07,
+      "telemetry_sha256": "53e950a30eefaf7b064a3387432d2653c703a41d3af90c4a83933ec942eac782",
+      "video_verification": {
+        "role": "dream",
+        "score": 0.0,
+        "steps": 2400,
+        "videos": {
+          "top_cam": {
+            "bytes": 6053816,
+            "sha256": "21f06be44f6b6cf4a2fedecab271efb4be1ab628ae5931607b1e2a850ddcd510",
+            "codec_name": "h264",
+            "width": 1280,
+            "height": 720,
+            "pix_fmt": "yuv420p",
+            "avg_frame_rate": "20/1",
+            "nb_read_frames": "2401"
+          },
+          "left_cam": {
+            "bytes": 7522970,
+            "sha256": "a1ec1dd4193f98c72a2351f6f5a1b9ed9f91cdd8ff56372830e71def4dbbde69",
+            "codec_name": "h264",
+            "width": 1280,
+            "height": 720,
+            "pix_fmt": "yuv420p",
+            "avg_frame_rate": "20/1",
+            "nb_read_frames": "2401"
+          },
+          "right_cam": {
+            "bytes": 10905521,
+            "sha256": "b67d3ce0b6737edb57123310604c67fff1c7269bcc3a6712824fc3c6095def1b",
+            "codec_name": "h264",
+            "width": 1280,
+            "height": 720,
+            "pix_fmt": "yuv420p",
+            "avg_frame_rate": "20/1",
+            "nb_read_frames": "2401"
+          }
+        }
+      },
+      "policy_transcripts": [
+        {
+          "control_hz": 20.0,
+          "dry_run": false,
+          "model": "dreamlabs/dream-1-beta",
+          "preroll_steps": 32,
+          "requests": [
+            {
+              "attempts": 1,
+              "infer_ms": 300,
+              "rows": 48,
+              "rows_beyond_limits": 0,
+              "rtt_s": 3.0006459709998126,
+              "session_id": "07d25d5f-4e0b-4499-a12b-6bf98ac01e07",
+              "step": 32
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 266,
+              "rows": 48,
+              "rows_beyond_limits": 0,
+              "rtt_s": 0.395714592999866,
+              "session_id": "ed7925fe-15bf-48a6-a258-479758170591",
+              "step": 80
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 267,
+              "rows": 48,
+              "rows_beyond_limits": 0,
+              "rtt_s": 0.7188316789997771,
+              "session_id": "81158543-94b2-4261-a423-1b3601ba5470",
+              "step": 128
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 264,
+              "rows": 48,
+              "rows_beyond_limits": 0,
+              "rtt_s": 0.36830947599992214,
+              "session_id": "1201fd2f-c673-4b0d-8b98-cf20418d068d",
+              "step": 176
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 264,
+              "rows": 48,
+              "rows_beyond_limits": 0,
+              "rtt_s": 0.38169014300001436,
+              "session_id": "f0e24e10-1d04-41c6-93f1-d788a175cc69",
+              "step": 224
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 265,
+              "rows": 48,
+              "rows_beyond_limits": 0,
+              "rtt_s": 0.38553326600003857,
+              "session_id": "f951710c-fd92-4ad9-9a06-365caa06d2ed",
+              "step": 272
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 262,
+              "rows": 48,
+              "rows_beyond_limits": 47,
+              "rtt_s": 0.3933980469996641,
+              "session_id": "5e7a7a0f-63b4-42f3-9ac0-fd000c51e1ee",
+              "step": 320
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 264,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.3691733129999193,
+              "session_id": "866bfaf0-b334-4104-a573-77d959c7785f",
+              "step": 368
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 265,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.5395780710000508,
+              "session_id": "a94ddde9-fab4-40a1-a1ac-efc04e8e9ebb",
+              "step": 416
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 261,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.36396724699989136,
+              "session_id": "a42abafb-9b3d-45d1-97b7-f2dc9fac246c",
+              "step": 464
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 260,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.3625289370002065,
+              "session_id": "09f6f59f-e068-4375-9e01-a41e129e025d",
+              "step": 512
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 260,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.369426957000087,
+              "session_id": "cd4603b2-9f02-4425-94ef-d2a3db045f93",
+              "step": 560
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 262,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.42413662399985697,
+              "session_id": "954bfcc4-c91d-4c25-9b58-c569f28b09d9",
+              "step": 608
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 263,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.44796198299991374,
+              "session_id": "021c7c0c-3d76-4315-8a04-692211443f4f",
+              "step": 656
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 265,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.36831136799992237,
+              "session_id": "fdbbed91-74a7-42cc-b948-640c57f25a09",
+              "step": 704
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 259,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.35929178699961994,
+              "session_id": "a4c8ee4d-d38c-4d50-97e2-24185182617a",
+              "step": 752
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 264,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.39476689399998577,
+              "session_id": "1242b9ad-8ad9-4a98-8395-2d7715306c8e",
+              "step": 800
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 257,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.33487089900017963,
+              "session_id": "ff7346a6-7c85-4d35-802c-51eee2914715",
+              "step": 848
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 264,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.3450566380001874,
+              "session_id": "9b73ee5c-3eef-4a12-9d4e-3826a2fd9beb",
+              "step": 896
+            },
+            {
+              "attempts": 3,
+              "infer_ms": 261,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.35512212399999044,
+              "session_id": "cde14e78-248c-48b3-9014-64976f63d6d4",
+              "step": 944
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 262,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.36394450399984635,
+              "session_id": "733fe93a-84c3-4795-aca6-8159614b9a9a",
+              "step": 992
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 265,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.363978115000009,
+              "session_id": "5a5ccaa7-403c-4a98-acc1-0e7c1cead730",
+              "step": 1040
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 261,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.3592895970000427,
+              "session_id": "6d0d4cbe-8f3b-4f1c-a556-03d69afff940",
+              "step": 1088
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 262,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.3622772620001342,
+              "session_id": "36865158-8c5e-47f1-9699-967ea5adace1",
+              "step": 1136
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 271,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.5619762960000116,
+              "session_id": "09c32d45-4c49-4e3c-9e5f-e92a1cd1327c",
+              "step": 1184
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 266,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.3494016590002502,
+              "session_id": "1d61aeb7-2ad6-47b4-936e-ec3eb5c919b8",
+              "step": 1232
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 264,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.539182012999845,
+              "session_id": "eebd27aa-0791-41ec-96bc-48e322975858",
+              "step": 1280
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 268,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.5398927379997076,
+              "session_id": "f2d288f8-307b-4fe3-ac84-73e629a89125",
+              "step": 1328
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 259,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.33918331399991075,
+              "session_id": "f62f3171-bbba-4257-ab5f-57c7d73a95e1",
+              "step": 1376
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 263,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.36352859399994486,
+              "session_id": "938a752c-a495-48fa-bd75-9b4b48139516",
+              "step": 1424
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 263,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.3673654270000952,
+              "session_id": "66ffb39d-3d26-40bf-81f7-ab328bb8adad",
+              "step": 1472
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 260,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.34489910799993595,
+              "session_id": "9c587c9b-7988-4bd4-8dec-e3c95e35fe46",
+              "step": 1520
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 262,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.3461098650000167,
+              "session_id": "fdaa3a9f-3007-40f0-b028-6f3e75658b53",
+              "step": 1568
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 263,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.44820757700017566,
+              "session_id": "80da0cef-be8a-4916-b3a8-db84eb74f744",
+              "step": 1616
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 265,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.403589613999884,
+              "session_id": "701a00fb-dbd6-4f19-8138-81c7e966ef84",
+              "step": 1664
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 259,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.3942948459998661,
+              "session_id": "05e2b4f5-7d9b-4aa7-9094-766438e433e7",
+              "step": 1712
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 262,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.3621110890003365,
+              "session_id": "bd7037bb-1409-4979-8aee-25f15daacd3c",
+              "step": 1760
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 264,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.769776573999934,
+              "session_id": "0c5d4a60-c60d-4028-ad5b-70259e0df688",
+              "step": 1808
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 263,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.658367243000157,
+              "session_id": "97dffe3d-0561-4a32-b39a-39d19e4c2da0",
+              "step": 1856
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 264,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.5191198679999616,
+              "session_id": "f2976ddc-74ee-4523-bd83-880880a42d86",
+              "step": 1904
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 269,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.6733474460002071,
+              "session_id": "f8488181-6b8d-4252-ad80-a325e833c972",
+              "step": 1952
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 262,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.6414464650001719,
+              "session_id": "8debcf3b-b34a-427a-ade3-4cbe68427718",
+              "step": 2000
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 264,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.5739636129997052,
+              "session_id": "137bfc22-3dc7-4a99-837e-919df4fe8f49",
+              "step": 2048
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 269,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.6743088490002265,
+              "session_id": "04d7cd12-d6c8-49b1-b091-e4e3d5109ff4",
+              "step": 2096
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 265,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.4158783739999308,
+              "session_id": "524e69d2-e716-4ceb-97a3-ca3e8c241311",
+              "step": 2144
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 265,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.3640653170000405,
+              "session_id": "81d8feeb-890a-499b-af33-ad3d120a7fa8",
+              "step": 2192
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 284,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.7310659159998067,
+              "session_id": "e7f96895-074f-4382-9b99-73b7833e8ed7",
+              "step": 2240
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 283,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.7489374390002013,
+              "session_id": "a9ef26c5-e97a-4744-b4f2-8f6a888b92d8",
+              "step": 2288
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 268,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.3668803969999317,
+              "session_id": "e5e5e38b-5eb6-4298-be9c-914eef378be1",
+              "step": 2336
+            },
+            {
+              "attempts": 2,
+              "infer_ms": 262,
+              "rows": 48,
+              "rows_beyond_limits": 48,
+              "rtt_s": 0.3465023020003173,
+              "session_id": "57784a4d-7a07-4119-8174-799c98d6a487",
+              "step": 2384
+            }
+          ],
+          "rows_per_request": 48,
+          "server_url": null,
+          "tracking_error_rad": {
+            "max": 0.1886368751170934,
+            "mean": 0.03773590968417091
+          }
+        }
+      ],
+      "inference_chunks": 50,
+      "retry_attempts": 50,
+      "session_ids": [
+        "021c7c0c-3d76-4315-8a04-692211443f4f",
+        "04d7cd12-d6c8-49b1-b091-e4e3d5109ff4",
+        "05e2b4f5-7d9b-4aa7-9094-766438e433e7",
+        "07d25d5f-4e0b-4499-a12b-6bf98ac01e07",
+        "09c32d45-4c49-4e3c-9e5f-e92a1cd1327c",
+        "09f6f59f-e068-4375-9e01-a41e129e025d",
+        "0c5d4a60-c60d-4028-ad5b-70259e0df688",
+        "1201fd2f-c673-4b0d-8b98-cf20418d068d",
+        "1242b9ad-8ad9-4a98-8395-2d7715306c8e",
+        "137bfc22-3dc7-4a99-837e-919df4fe8f49",
+        "1d61aeb7-2ad6-47b4-936e-ec3eb5c919b8",
+        "36865158-8c5e-47f1-9699-967ea5adace1",
+        "524e69d2-e716-4ceb-97a3-ca3e8c241311",
+        "57784a4d-7a07-4119-8174-799c98d6a487",
+        "5a5ccaa7-403c-4a98-acc1-0e7c1cead730",
+        "5e7a7a0f-63b4-42f3-9ac0-fd000c51e1ee",
+        "66ffb39d-3d26-40bf-81f7-ab328bb8adad",
+        "6d0d4cbe-8f3b-4f1c-a556-03d69afff940",
+        "701a00fb-dbd6-4f19-8138-81c7e966ef84",
+        "733fe93a-84c3-4795-aca6-8159614b9a9a",
+        "80da0cef-be8a-4916-b3a8-db84eb74f744",
+        "81158543-94b2-4261-a423-1b3601ba5470",
+        "81d8feeb-890a-499b-af33-ad3d120a7fa8",
+        "866bfaf0-b334-4104-a573-77d959c7785f",
+        "8debcf3b-b34a-427a-ade3-4cbe68427718",
+        "938a752c-a495-48fa-bd75-9b4b48139516",
+        "954bfcc4-c91d-4c25-9b58-c569f28b09d9",
+        "97dffe3d-0561-4a32-b39a-39d19e4c2da0",
+        "9b73ee5c-3eef-4a12-9d4e-3826a2fd9beb",
+        "9c587c9b-7988-4bd4-8dec-e3c95e35fe46",
+        "a42abafb-9b3d-45d1-97b7-f2dc9fac246c",
+        "a4c8ee4d-d38c-4d50-97e2-24185182617a",
+        "a94ddde9-fab4-40a1-a1ac-efc04e8e9ebb",
+        "a9ef26c5-e97a-4744-b4f2-8f6a888b92d8",
+        "bd7037bb-1409-4979-8aee-25f15daacd3c",
+        "cd4603b2-9f02-4425-94ef-d2a3db045f93",
+        "cde14e78-248c-48b3-9014-64976f63d6d4",
+        "e5e5e38b-5eb6-4298-be9c-914eef378be1",
+        "e7f96895-074f-4382-9b99-73b7833e8ed7",
+        "ed7925fe-15bf-48a6-a258-479758170591",
+        "eebd27aa-0791-41ec-96bc-48e322975858",
+        "f0e24e10-1d04-41c6-93f1-d788a175cc69",
+        "f2976ddc-74ee-4523-bd83-880880a42d86",
+        "f2d288f8-307b-4fe3-ac84-73e629a89125",
+        "f62f3171-bbba-4257-ab5f-57c7d73a95e1",
+        "f8488181-6b8d-4252-ad80-a325e833c972",
+        "f951710c-fd92-4ad9-9a06-365caa06d2ed",
+        "fdaa3a9f-3007-40f0-b028-6f3e75658b53",
+        "fdbbed91-74a7-42cc-b948-640c57f25a09",
+        "ff7346a6-7c85-4d35-802c-51eee2914715"
+      ],
+      "uploaded_overview_verification": {
+        "layout": "Unscaled native top camera with synchronized left/right wrist insets, each 384x216; no time cuts or synthesized frames",
+        "bytes": 7193461,
+        "sha256": "0f93114ee6505849f55c67f56db0954fa13849cd9cb701777d7ee6f8c097f12e",
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "pix_fmt": "yuv420p",
+        "avg_frame_rate": "20/1",
+        "nb_read_frames": "2401"
+      }
     }
   },
-  "evaluated_source_sha256": {
-    "contact_monitor.py": "342c48988d6068f45a23dee90b312abee91ed519087a03b89987430fe8bbda77",
+  "source_sha256": {
+    "task.py": "9ab2540d10bc0e6cb22d7efcf2e71d6758b007bd2e2c70fc20c45b72375901aa",
     "counterexample_no_break.py": "73dc49e8dd1eb96cfbd92725a3c9de27ff5ba89da4bd64b2449fdd624d7adbdc",
-    "observed_rest.py": "29e6cd6b573473893b0d741473888281d64518dd0e557efeef5f60a89561c652",
+    "scoring_collar.py": "a523c2814321c561218fdb3ada7dfc625dfca93f6472118030e88fe4386a30c2",
+    "contact_monitor.py": "342c48988d6068f45a23dee90b312abee91ed519087a03b89987430fe8bbda77",
+    "scoring.py": "d657736c52c6cd1e01bc13a7b397550586ef3d17636800933abd09ed0c3d6a1c",
     "oriented_waypoints.py": "0e70e366305fbfd71b85602cbc4b34db93d62cb6272183cb95586a61cfd980df",
+    "observed_rest.py": "29e6cd6b573473893b0d741473888281d64518dd0e557efeef5f60a89561c652",
+    "make_overview.py": "85a6cb79957e104d9d0de67a647452529a3a36fd1f04981d16835b40dc740f7e",
+    "validate_observed_rest.py": "41609eb0b1d16b99c1db679dd8623850273fe1fbeefaa48bfabf555e73ec6ce8",
+    "render_evidence.py": "f513f88eb58037bc2240d490cb96857cfb4cab625d834eca750e4e719109365a",
+    "inspect_lossless_frames.py": "0a8eca20c2c13abaa4b6385f269bb4b77fa277569627c7688360e74cb3bbc3df",
+    "validate.py": "d9525bc0586b2013058f133587c6346844b96d503379bcc48ad339ee6dee80a7",
+    "validate_abrasion.py": "f1c00038e80bb80aa6362fc3557135612b23bb6e381a7d2f11d0cbea4b7f71fd",
     "policy/current_api_bridge.py": "86ce4c044aea7a10fc85be405535b20ba90bec26ecf3fe51bb28e4915e2adbf3",
     "policy/dream_current.py": "bd9e9b318dcddca16e5285e0651c01be15af7ad7fd927d353b65e3eae358ddf7",
-    "policy/pyproject.toml": "d5714a78223b93d5f7f7cbd62d606654e82cd02378703e787487071350161288",
-    "runtime/ampoule_native.py": "1c97722865d1fcbd35df79def497214d28399c75a67d7e70723333f4e86a6ae3",
-    "runtime/pyproject.toml": "08f35e1b15023cbb7bf14731a9d450a6faf61a0d2e14bd662451618a8b49111e",
-    "runtime/yam_articulated.py": "9ecc743ca4dea90a74142052129b16e182b5ad41ef959916030acd11b099f6c4",
-    "runtime/yam_articulated_base.py": "943b2ad20e42d39b2bbd6caa478813e169893910e1e593e54ffd5b150de66990",
-    "scoring.py": "4da03ccea43bda004aa4dd3f84baa6ec1b2010abcc6bc25bd95b6345b68d255d",
-    "task.py": "9bda08f49d38e02a395f0e40be7999eb2760800efe202ae41097d9222313d972",
-    "validate.py": "e3786d7a22dc8345386a61ab94a74ec383cbce9276da3dd384a4ccc694cd65e2",
-    "validate_observed_rest.py": "41609eb0b1d16b99c1db679dd8623850273fe1fbeefaa48bfabf555e73ec6ce8"
+    "runtime/ampoule_native.py": "6bf7249e780cc995e2447c37860bade97356427880cbdc1a5109f0ba2f154587",
+    "runtime/yam_articulated_base.py": "210a520ac427afc8f8202cd4578571bbcd23e765f715eebc2697dd7ec2e4d3ca",
+    "runtime/yam_articulated.py": "f482abefe48e19b32ec5208f2f8f960c693b512995c3e520b1ef3052c09087f4"
   },
-  "model_recoveries": 0,
-  "rows_per_request": 8
+  "stationary_control": {
+    "control": "Seat opener and hold without filing or levering",
+    "camera_resolution": [
+      320,
+      180
+    ],
+    "native_trial_completed": true,
+    "steps": 400,
+    "score": 0.15,
+    "max_qualified_sectors": 1,
+    "max_tangential_travel_m": 0.0011209952769818034,
+    "neck_broke": false,
+    "max_neck_gap_m": 0.00010166632135427996,
+    "telemetry_sha256": "74c5d3ffdeb09db9cd60a1b7ce7dec4b09c20ab90131812e2fffc660cc3a29ab"
+  },
+  "glass_fracture_calibrated": false,
+  "abrasion_model_calibrated": false,
+  "media": "M-CRXM3X"
 }

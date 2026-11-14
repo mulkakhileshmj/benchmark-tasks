@@ -1,0 +1,11 @@
+{
+  "layout": "Unscaled native top camera with synchronized left/right wrist insets, each 384x216; no time cuts or synthesized frames",
+  "bytes": 7193461,
+  "sha256": "0f93114ee6505849f55c67f56db0954fa13849cd9cb701777d7ee6f8c097f12e",
+  "codec_name": "h264",
+  "width": 1280,
+  "height": 720,
+  "pix_fmt": "yuv420p",
+  "avg_frame_rate": "20/1",
+  "nb_read_frames": "2401"
+}

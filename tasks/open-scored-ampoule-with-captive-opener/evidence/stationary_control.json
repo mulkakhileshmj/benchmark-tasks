@@ -1,0 +1,15 @@
+{
+  "control": "Seat opener and hold without filing or levering",
+  "camera_resolution": [
+    320,
+    180
+  ],
+  "native_trial_completed": true,
+  "steps": 400,
+  "score": 0.15,
+  "max_qualified_sectors": 1,
+  "max_tangential_travel_m": 0.0011209952769818034,
+  "neck_broke": false,
+  "max_neck_gap_m": 0.00010166632135427996,
+  "telemetry_sha256": "74c5d3ffdeb09db9cd60a1b7ce7dec4b09c20ab90131812e2fffc660cc3a29ab"
+}

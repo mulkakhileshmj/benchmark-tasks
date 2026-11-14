@@ -41,6 +41,8 @@ def _write_usd(spec,directory):
         prim.AddTranslateOp().Set(Gf.Vec3d(*pos))
         UsdPhysics.RigidBodyAPI.Apply(prim.GetPrim()).CreateRigidBodyEnabledAttr(True)
         UsdPhysics.MassAPI.Apply(prim.GetPrim()).CreateMassAttr(float(mass))
+        if name.startswith('file_'):
+            PhysxSchema.PhysxContactReportAPI.Apply(prim.GetPrim()).CreateThresholdAttr(0.)
         for i,p in enumerate(parts):
             if p.get('shape')=='mesh':
                 cube=UsdGeom.Mesh.Define(stage,f'/prop/{name}/p{i}')
@@ -166,6 +168,26 @@ def embodiment(**kwargs):
                     opts['visualizer']=['kit'];os.environ['DISPLAY']=core.window_display(os.environ)
                 core._APP=AppLauncher(**opts).app
                 atexit.register(core._close_app_at_exit)
+            from yam_arena import embodiment as rig
+            if not getattr(rig.BimanualYamEmbodiment,'_native_hd',False):
+                original=rig.BimanualYamEmbodiment
+                width,height=self.cam_width,self.cam_height
+                class NativeHD(original):
+                    _native_hd=True
+                    def __init__(self,*args,**kwargs):
+                        kwargs.update(cam_width=width,cam_height=height)
+                        super().__init__(*args,**kwargs)
+                rig.BimanualYamEmbodiment=NativeHD
+            from yam_arena import scene
+            previous_cfg=scene.env_cfg_callback
+            def configure(hz=None):
+                parent=previous_cfg(hz)
+                def apply(cfg):
+                    cfg=parent(cfg)
+                    cfg.sim.use_fabric=False
+                    return cfg
+                return apply
+            scene.env_cfg_callback=configure
             _install()
             result=super()._ensure_sim(goal)
             return result

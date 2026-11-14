@@ -1,0 +1,89 @@
+{
+  "description": "Summary of the full Inspect Robots trial; full trial.json is preserved in the GPU/local evidence package.",
+  "full_trial_sha256": "9dbf1b19de40aa7308730bbb055ab7ecee38c5f122e603c3f4316e1f4d1f746a",
+  "version": 3,
+  "eval": {
+    "benchmark": null,
+    "created": "2026-11-14T09:01:30.547095+00:00",
+    "embodiment": "yam_arena",
+    "embodiment_info": {
+      "capabilities": [
+        "privileged_success",
+        "resettable",
+        "seedable"
+      ],
+      "control_hz": 20.0,
+      "evaluation_interface": [],
+      "is_simulated": true,
+      "morphology": null
+    },
+    "environment_id": "isaaclab-arena-0.3.1-yam-bimanual-station-calibrated-task-counterexample_no_break",
+    "environment_revision": "73dc49e8dd1e",
+    "git_commit": "c6392babe322fe2ab299470cf0af691cef80f9b7-dirty",
+    "grader": null,
+    "grader_config": {},
+    "inspect_robots_version": "1.0.0",
+    "max_seconds": null,
+    "max_steps": 400,
+    "policy": "yam_scripted",
+    "policy_checkpoint": null,
+    "policy_config": {
+      "action_horizon": 1,
+      "replan_interval": null,
+      "temperature": null
+    },
+    "reducer": "mean",
+    "rubrics": [
+      {
+        "kind": "capability",
+        "metadata": {},
+        "name": "task_score",
+        "scorer": "task_score",
+        "text": ""
+      }
+    ],
+    "seed": 0,
+    "task": "adhoc"
+  },
+  "results": {
+    "abstentions": {},
+    "errored_trials": 0,
+    "metrics": {
+      "task_score": 0.15
+    },
+    "total_scenes": 1,
+    "total_trials": 1
+  },
+  "stats": {
+    "completed_at": "2026-11-14T09:09:43.051349+00:00",
+    "duration_s": 492.4968898869997,
+    "frames_dir": null,
+    "mean_inference_latency_s": null,
+    "records_dir": "/data/pr1795-controls/20261114T090130/records/20261114_090130_41ef5178",
+    "started_at": "2026-11-14T09:01:30.554469+00:00",
+    "total_steps": 400
+  },
+  "status": "success",
+  "error": null,
+  "samples": [
+    {
+      "instruction": "Score the neck of the inert ampoule using the abrasive collar, then open it with the captive opener. Keep the body upright and both grippers off the cap and neck. Leave the body in its holder and the cap captured inside the opener on its rack. Release both hands.",
+      "epochs": [
+        {
+          "task_score": 0.15
+        }
+      ],
+      "termination_reasons": [
+        "max_steps"
+      ],
+      "termination_details": [
+        null
+      ],
+      "status": "success",
+      "error": null,
+      "policy_transcripts": [
+        null
+      ]
+    }
+  ]
+}

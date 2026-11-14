@@ -51,8 +51,10 @@ def _usd(spec,directory):
         else:
             g=UsdGeom.Cube.Define(stage,f'/part/p{i}');g.CreateSizeAttr(1.)
         g.AddTranslateOp().Set(Gf.Vec3d(*item['pos']))
+        if item.get('rot_z'):g.AddRotateZOp().Set(float(item['rot_z'])*180/np.pi)
         if item.get('shape') not in ('sphere','mesh'):g.AddScaleOp().Set(Gf.Vec3f(*item['size']))
         g.CreateDisplayColorAttr([Gf.Vec3f(*item.get('color',spec.color))])
+        if item.get('visual_only'):continue
         UsdPhysics.CollisionAPI.Apply(g.GetPrim()).CreateCollisionEnabledAttr(True)
         c=PhysxSchema.PhysxCollisionAPI.Apply(g.GetPrim())
         c.CreateContactOffsetAttr(float(item.get('contact_offset',.0001)))

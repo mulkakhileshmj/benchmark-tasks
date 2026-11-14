@@ -1,0 +1,37 @@
+{
+  "role": "demo",
+  "score": 1.0,
+  "steps": 782,
+  "videos": {
+    "top_cam": {
+      "bytes": 2253896,
+      "sha256": "9944024d2ebd8e9d3897ad56b61e6b5980a31fef6936ae67b92de249a2b222ad",
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "pix_fmt": "yuv420p",
+      "avg_frame_rate": "20/1",
+      "nb_read_frames": "783"
+    },
+    "left_cam": {
+      "bytes": 3363434,
+      "sha256": "da1bedd46ee478a03680bd313ed0c7ddc9983eb6b8d364940abc1005f37b9146",
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "pix_fmt": "yuv420p",
+      "avg_frame_rate": "20/1",
+      "nb_read_frames": "783"
+    },
+    "right_cam": {
+      "bytes": 4272008,
+      "sha256": "4a585c32d17c9deca22b6f2e6358ed08ce12075ebe4d2c4526f53136a4286b1e",
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "pix_fmt": "yuv420p",
+      "avg_frame_rate": "20/1",
+      "nb_read_frames": "783"
+    }
+  }
+}

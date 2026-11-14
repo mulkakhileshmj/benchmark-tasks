@@ -15,7 +15,7 @@ sys.path.insert(0,str(ROOT/'runtime'))
 from scoring import Scorer,Sample
 
 def sample(t=0.,**kw):
-    s=Sample(t,0.,False,False,0.,True,True,True,True)
+    s=Sample(t,0.,False,False,0.,True,True,True,True,neck_scored=True)
     return replace(s,**kw)
 
 def check_scoring():
@@ -23,6 +23,8 @@ def check_scoring():
     def check(name,condition):
         assert condition,name
         names.append(name)
+    m=Scorer();check('unscored fracture fails',m.update(sample(neck_broken=True,neck_scored=False))==0 and m.failed)
+    m=Scorer();check('stationary unscored coverage only partial',m.update(sample(cap_in_opener=True,cap_covered=True,neck_scored=False))==.15)
     m=Scorer();check('untouched start zero',m.update(sample())==0)
     check('covering without break only partial',m.update(sample(.05,cap_in_opener=True,cap_covered=True))==.25)
     check('unsafe open fails',Scorer().update(sample(neck_gap_m=.02))==0)
@@ -61,14 +63,15 @@ def check_geometry_and_ik():
     assert abs(m.BODY_ROOT[2]-.020-m.TOP-.004)<1e-9
     for item in m.OBJECTS:
         item._check()
-        for p in item.parts:assert p['contact_offset']<=.0001
+        for p in item.parts:
+            if not p.get('visual_only'):assert p['contact_offset']<=.0001
     assert m.OBJECTS.index(m.BODY)<m.OBJECTS.index(m.CAP)
     assert m.CAP.parts[0]['size'][0] <= .00901
     assert m.OPENER.parts[0]['size'][2] <= .08001
     # Blade-like tiny scales are not enlarged for robot convenience.
-    assert abs(sum(l['mass'] for l in m.OPENER.links)+m.OPENER.mass-.020)<1e-9
+    assert abs(sum(l['mass'] for l in m.OPENER.links)+m.OPENER.mass-.022)<1e-9
     from ampoule_native import BREAK_TORQUE_NM,BREAK_FORCE_N
-    assert BREAK_TORQUE_NM==.020 and BREAK_FORCE_N==20.
+    assert BREAK_TORQUE_NM==.20 and BREAK_FORCE_N==20.
     # The controller function must not read task state or write simulator state.
     node=next(x for x in ast.parse((ROOT/'task.py').read_text()).body if isinstance(x,ast.FunctionDef) and x.name=='demo')
     forbidden={'_expert_states','_expert_joints','set_pose','write_root_pose_to_sim','write_root_state_to_sim'}

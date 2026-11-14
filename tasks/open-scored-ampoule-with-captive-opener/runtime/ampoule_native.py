@@ -12,7 +12,7 @@ from yam_articulated_base import Compound
 import yam_articulated as articulated
 import yam_articulated_base as common
 
-BREAK_TORQUE_NM = .020
+BREAK_TORQUE_NM = .20
 BREAK_FORCE_N = 20.
 
 @dataclass(frozen=True)

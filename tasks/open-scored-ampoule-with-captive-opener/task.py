@@ -1,8 +1,9 @@
-"""Open the inert scored ampoule using the captive opener. Keep its body upright.
+"""Score the inert ampoule neck using the abrasive collar, then open it. Keep its body upright.
 
 Keep both grippers off the ampoule cap and neck. Leave the open body in its
 holder and the cap retained inside the opener on its rack. Release both hands.
 """
+from dataclasses import replace
 import math
 import numpy as np
 from yam_arena.task_file import TABLE_TOP
@@ -14,6 +15,7 @@ from yam_articulated import Articulated,Compound
 from ampoule_native import BreakawayCap
 from scoring import Scorer,Sample
 import contact_monitor
+import scoring_collar
 
 SCENE='station';TOP=TABLE_TOP[SCENE];SCORE_OVER='end';SUCCESS_HOLD_S=1.
 AXY=np.array([.26,.020]);RXY=np.array([.28,-.14])
@@ -38,6 +40,12 @@ def radial_mesh(sections,n=16):
 
 BODY=Compound('ampoule_body',pos=tuple(BODY_ROOT),size=(.012,.012,.040),mass=.008,
               color=(.72,.83,.89),parts=(radial_mesh([(-.020,.006),(.014,.006),(.0198,.003)]),))
+witness=[]
+for index in range(36):
+    angle=2*math.pi*(index+.5)/36
+    witness.append(dict(pos=(.00308*math.cos(angle),.00308*math.sin(angle),.0196),
+        size=(.00015,.00048,.0003),rot_z=angle,color=(.72,.83,.89),visual_only=True))
+BODY=replace(BODY,parts=BODY.parts+tuple(witness))
 CAP=BreakawayCap('ampoule_cap',pos=tuple(CAP_ROOT),size=(.009,.009,.020),mass=.001,
               color=(.65,.78,.88),parts=(radial_mesh([(0,.003),(.005,.0045),(.014,.0045),(.020,.003)]),))
 
@@ -56,6 +64,23 @@ for axis in ('X','Y'):
         joints.append(dict(name=name+'_spring',body0='root',body1=name,type='prismatic',axis=axis,
             anchor0=position,anchor1=(0,0,0),lower=0. if sign>0 else -.003,
             upper=.003 if sign>0 else 0.,target=0.,stiffness=5000.,damping=5.,max_force=5.))
+for axis in ('X','Y'):
+    for sign in (-1,1):
+        name='file_'+axis.lower()+('p' if sign>0 else 'n')
+        position=(sign*.00345,0,-.0377) if axis=='X' else (0,sign*.00345,-.0377)
+        size=(.001,.002,.001) if axis=='X' else (.002,.001,.001)
+        vertices=[]
+        for z,inner in ((-.0015,.00135),(.0003,-.0005)):
+            for u,v in ((inner,-.001),(.00255,-.001),(.00255,.001),(inner,.001)):
+                vertices.append((sign*u,v,z) if axis=='X' else (v,sign*u,z))
+        vertices=np.asarray(vertices);centre=(vertices.min(0)+vertices.max(0))/2
+        blade=dict(shape='mesh',pos=centre.tolist(),size=(vertices.max(0)-vertices.min(0)).tolist(),
+            vertices=(vertices-centre).tolist(),faces=((0,3,2,1),(4,5,6,7),(0,1,5,4),(1,2,6,5),(2,3,7,6),(3,0,4,7)),
+            color=(.7,.7,.7),contact_offset=.00005)
+        links.append(dict(name=name,mass=.0005,pos=position,parts=(blade,)))
+        joints.append(dict(name=name+'_spring',body0='root',body1=name,type='prismatic',axis=axis,
+            anchor0=position,anchor1=(0,0,0),lower=0. if sign>0 else -.003,
+            upper=.003 if sign>0 else 0.,target=0.,stiffness=500.,damping=.5,max_force=1.))
 OPENER=Articulated('opener',pos=tuple(RACK_ROOT),size=(.024,.024,.083),mass=.016,
                    color=(.15,.35,.75),parts=tuple(walls),links=tuple(links),joints=tuple(joints))
 
@@ -84,7 +109,7 @@ _scorer=Scorer();_score=0.;_diag={}
 
 def reset_history():
     global _scorer,_score,_diag
-    _scorer=Scorer();_score=0.;_diag={};contact_monitor.reset()
+    _scorer=Scorer();_score=0.;_diag={};contact_monitor.reset();scoring_collar.reset()
 
 def array(x):
     if hasattr(x,'torch'):x=x.torch
@@ -94,7 +119,7 @@ def array(x):
 def physical_vertices(parts):
     signs=np.array([[x,y,z] for x in (-1,1) for y in (-1,1) for z in (-1,1)])
     return np.concatenate([np.asarray(p['vertices'])+p['pos'] if p.get('shape')=='mesh'
-                           else signs*np.asarray(p['size'])/2+p['pos'] for p in parts])
+                           else signs*np.asarray(p['size'])/2+p['pos'] for p in parts if not p.get('visual_only')])
 
 MOTION_GEOMETRY={'ampoule_body:':physical_vertices(BODY.parts),
                  'ampoule_cap:':physical_vertices(CAP.parts),'opener:root':physical_vertices(OPENER.parts)}
@@ -131,14 +156,17 @@ def observe(states,t,base):
     body_in_holder=bool(np.max(np.abs(body[:2]-AXY))<.002 and abs(body[2]-BODY_ROOT[2])<.002 and upright<5)
     tool_in_rack=bool(np.max(np.abs(tool[:3]-RACK_ROOT))<.003 and rt[2,2]>math.cos(math.radians(5)))
     slow=contact['observed_rest']['settled']
+    scoring_collar.bind(base)
+    abrasion=scoring_collar.report()
     sample=Sample(float(t),gap,contained,covered,upright,body_in_holder,tool_in_rack,slow,
         all(finger_open) and contact['objects_clear'],rim_contact=contact['rim'],cap_contact=contact['cap'],
         dropped=min(states['ampoule_body'].low[2],states['ampoule_cap'].low[2])<TOP-.002,
         opener_outside_table=states['opener'].low[2]<TOP-.002,neck_broken=contact['neck_broken'],
-        cap_escape=contact['cap_escape'],monitor_valid=contact['valid'])
+        cap_escape=contact['cap_escape'],monitor_valid=contact['valid'],neck_scored=abrasion['scored'])
     _score=_scorer.update(sample)
+
     _diag=dict(score=_score,reason=_scorer.reason,body_pose=body.tolist(),cap_pose=cap.tolist(),
-               tool_pose=tool.tolist(),neck_gap_m=gap,cap_local=caplocal.tolist(),contacts=contact)
+               tool_pose=tool.tolist(),neck_gap_m=gap,cap_local=caplocal.tolist(),contacts=contact,abrasion=abrasion)
 
 def score(states):return _score
 def success(states):return _score==1.
@@ -152,14 +180,22 @@ def demo():
     insert=(*AXY,INSERT_ROOT[2]+.012+D-.003)
     angle=math.radians(20.)
     neck=np.array([*AXY,TOP+.044])
-    lever=insert[2]-neck[2]
+    cleared=(insert[0],insert[1],insert[2]+.0015)
+    lever=cleared[2]-neck[2]
     broken=tuple(neck+np.array([0.,-lever*math.sin(angle),lever*math.cos(angle)]))
     right=[Waypoint(1.5,(source[0],source[1],TOP+.155),O),Waypoint(1.5,source,O),
       Waypoint(.8,source,C),Waypoint(1.2,(source[0],source[1],TOP+.155),C),
       Waypoint(2.,(AXY[0],AXY[1],TOP+.155),C),
       Waypoint(2.,(AXY[0],AXY[1],TOP+.125),C),
       Waypoint(.8,(AXY[0],AXY[1],TOP+.125),C),Waypoint(2.5,insert,C,'seat cap inside opener'),
-      Waypoint(1.,insert,C),OrientedWaypoint(1.5,broken,C,roll=angle),
+      Waypoint(1.,insert,C),
+      OrientedWaypoint(1.,insert,C,yaw=math.radians(-12.)),
+      OrientedWaypoint(3.,insert,C,yaw=math.radians(102.)),
+      OrientedWaypoint(3.,insert,C,yaw=math.radians(-12.)),
+      OrientedWaypoint(3.,insert,C,yaw=math.radians(102.)),
+      OrientedWaypoint(3.,insert,C,yaw=0.),
+      Waypoint(1.,cleared,C,'clear the scoring edge from the body shoulder'),
+      OrientedWaypoint(1.5,broken,C,roll=angle),
       OrientedWaypoint(1.5,(broken[0],broken[1],broken[2]+.040),C,roll=angle),
       Waypoint(1.5,(broken[0],broken[1],TOP+.155),C),
       Waypoint(2.,(RXY[0],RXY[1],TOP+.155),C),Waypoint(1.5,source,C),
@@ -173,5 +209,5 @@ def demo():
     def side(seconds,pos,opening):
         return OrientedWaypoint(seconds,pos,opening,yaw=-math.pi/2,roll=math.radians(-75.))
     left=[side(1.5,away,O),side(1.5,hold,O),side(.8,hold,-.0045),
-          side(16.5,hold,-.0045),side(.8,hold,O),side(1.5,away,O),side(3.,away,O)]
+          side(30.5,hold,-.0045),side(.8,hold,O),side(1.5,away,O),side(3.,away,O)]
     return dict(left=left,right=right)
