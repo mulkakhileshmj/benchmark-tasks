@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "pr71-visible-instrument"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = ["numpy", "opencv-python-headless"]
+[project.entry-points."inspect_robots.policies"]
+pr71_visible = "visible_policy:policy"
+[tool.setuptools]
+py-modules = ["visible_policy"]

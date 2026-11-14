@@ -1,0 +1,21 @@
+{
+  "category": "Impact on jobs",
+  "claim": "Reference-check an angle gauge before adjusting equipment level.",
+  "sources": [
+    {
+      "url": "https://www.onetonline.org/link/details/49-9071.00",
+      "supports": "Equipment alignment and balancing is classified as a core maintenance task."
+    },
+    {
+      "url": "https://www.bls.gov/emp/skills/mechanical.htm",
+      "supports": "2025 employment for general maintenance and repair workers is 1,621,800. This is an occupation total."
+    },
+    {
+      "url": "https://www.stabila.com/files/default/pdf/en/mptech196dl_mptech196mdl_manual_en.pdf",
+      "supports": "A real digital level has accuracy-check and calibration procedures. This benchmark does not implement that product or its full procedure."
+    }
+  ],
+  "limit": "Direct evidence supports the broader equipment-alignment task. Frequency of this exact biased-gauge/button fixture is unquantified. A successful fixed-layout trial does not establish occupational automation coverage.",
+  "checked_date": "2026-11-14",
+  "acceptance": "Unreviewed local package; acceptance is not established"
+}

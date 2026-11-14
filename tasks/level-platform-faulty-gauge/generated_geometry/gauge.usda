@@ -1,0 +1,45 @@
+#usda 1.0
+(
+    defaultPrim = "part"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "part" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "PhysxRigidBodyAPI", "PhysxContactReportAPI"]
+)
+{
+    bool physics:kinematicEnabled = 0
+    float physics:mass = 0.16
+    bool physics:rigidBodyEnabled = 1
+    float physxContactReport:threshold = 0
+    bool physxRigidBody:enableCCD = 1
+    float physxRigidBody:sleepThreshold = 0
+
+    def Cube "p0" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </part/material_0> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        float physxCollision:contactOffset = 0.00005
+        float physxCollision:restOffset = 0
+        color3f[] primvars:displayColor = [(0.9, 0.7, 0.05)]
+        double size = 1
+        float3 xformOp:scale = (0.05, 0.05, 0.05)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Material "material_0" (
+        prepend apiSchemas = ["PhysicsMaterialAPI"]
+    )
+    {
+        float physics:dynamicFriction = 0.5
+        float physics:restitution = 0
+        float physics:staticFriction = 0.5
+    }
+}
+

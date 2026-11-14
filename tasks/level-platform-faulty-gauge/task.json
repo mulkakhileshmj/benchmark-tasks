@@ -1,0 +1,19 @@
+{
+  "title": "Level a platform with a gauge that may read wrong",
+  "category": "Impact on jobs",
+  "keywords": [
+    "instrument calibration",
+    "zero error",
+    "levelling",
+    "buttons"
+  ],
+  "instruction": "The digital angle gauge may not read true; its reading appears on the red display, in degrees. The grey granite block marked REF is exactly level. Make the platform truly level, to within 0.15 degrees, using the UP and DOWN buttons of its levelling foot.",
+  "context": "Equipment alignment is a core task of general maintenance workers (O*NET 49-9071). This fixture tests reference checking and closed-loop levelling, a bounded subskill of that work. BLS reports 1.62 million workers in the occupation; that total does not estimate how many perform this exact procedure. See IMPORTANCE.md for evidence and limits.",
+  "setup": "Official bimanual YAM station. Fixed reference block, free 50 mm angle gauge, physical UP/DOWN spring buttons and a motorised hinged platform. The public seven-segment display uses four colored corner fiducials for RGB reading. All part positions and dimensions are in task.py and review_native_common.py. Initial platform tilt is 1.5 degrees and its gauge zero offset is 0.8 degrees for this fixed development layout.",
+  "scoring": "0.25 after a reference reading, 0.5 after a platform reading, 0.75 after both. Readings require 1 second stationary with hands clear. Full score additionally requires true tilt within 0.15 degrees and hands clear for 1 second. Multiply the current stage by max(0, 1 - 0.1*(total presses - absolute net presses) - 0.1*max(0,total presses-12)). Final-state score.",
+  "run_limit": "2,400 control steps at 20 Hz (120 seconds).",
+  "reset_notes": "Fresh process per trial, seed 0 and object_jitter=0. Restore the exact fixed development layout and native joint coordinates specified in task.py. The initial layout and parameter assignments are fixed; per-trial randomisation is not implemented.",
+  "fidelity": "Native PhysX rigid bodies, hinged platform, spring buttons and motor targets. Fixed initial tilt 1.5 degrees and gauge zero offset 0.8 degrees. Display shows rigid gauge pitch plus offset. Granite and thermal properties are visual approximations. No real instrument accuracy certification. Scripted policy reads RGB pixels. Dream-1 receives camera/joint observations.",
+  "scores": "Dream-1: 0.0 in 2,400 steps. Scripted RGB-feedback demo: 1.0 in 1,140 steps.",
+  "media": "M-6BXWW6"
+}
