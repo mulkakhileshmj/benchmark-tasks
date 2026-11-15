@@ -25,6 +25,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 
 from bodykit import (Body, BoxShape, CylShape, allow_matrix_grips, as_numpy, hinge, on_reset, on_step,  # noqa: E402
                      rotation, set_slide_target, set_thread_on, thread)
+from asepsis import AsepsisMonitor  # noqa: E402
 from priming_meter import PrimingMeter  # noqa: E402
 from yam_arena.constants import FINGER_CLOSED, FINGER_OPEN, TCP_OFFSET  # noqa: E402
 from yam_arena.demo import Waypoint, grip_rotation  # noqa: E402
@@ -58,6 +59,11 @@ SPIKE_TIP = 0.0655  # the spike's tip, ahead of the chamber's middle (set frame,
 SEAT = 0.025  # the spike in this deep: its collar on the port's mouth, locked
 K_SPIKE, SLIP_S, D_SPIKE = 1500.0, 0.001, 3.0  # the port's grip on the spike: about 1.5 N to push it further
 CAPTURE_R, CAPTURE_DEG = 0.007, 12.0
+SPIKE_CAP_L, SPIKE_CAP_R = 0.018, 0.005
+SPIKE_CAP_AT = SET_AT + np.array([0.0, SPIKE_TIP - SPIKE_CAP_L / 2, 0.0])
+SPIKE_CAP_BREAK = 0.15  # N: low-force pull-off protective cap
+SPIKE_CAP_OFF = 0.006
+CHAMBER_HORIZONTAL_DEG = 12.0
 
 # -- priming: measured finger compression produces a continuous liquid-column height ---------------------------------
 SEGMENTS = 6
@@ -110,6 +116,31 @@ def _cap() -> Body:
         BoxShape((0.0, -0.002, 0.014), (0.010, 0.010, 0.020), BLUE)])
 
 
+def _spike_cap() -> Body:
+    """Protective cap over the sterile giving-set spike, with a raised grip tab."""
+    return Body.build("spike_cap", pos=tuple(SPIKE_CAP_AT.tolist()), mass=0.003, friction=(1.0, 0.9), color=NAVY,
+                      shapes=[CylShape((0.0, 0.0, 0.0), SPIKE_CAP_R, SPIKE_CAP_L, NAVY, axis="Y"),
+                              BoxShape((0.0, 0.0, 0.010), (0.010, 0.010, 0.014), NAVY)])
+
+
+def _sterile_cradle() -> Body:
+    """Fixed molded presentation cradle supporting only the capped set's chamber and tubing."""
+    return Body.build("sterile_cradle", pos=(SET_AT[0], SET_AT[1] - 0.025, TOP), mass=0.15, kinematic=True,
+                      friction=(0.8, 0.7), color=WHITE,
+                      shapes=[BoxShape((0.0, 0.0, 0.004), (0.055, 0.110, 0.008), WHITE),
+                              # A shallow 21 mm-wide channel supports the lower half of the 20 mm chamber. Its
+                              # 13 mm top remains below the crown, leaving the upper half accessible to the pads.
+                              BoxShape((-0.012, 0.0, 0.0105), (0.003, 0.110, 0.005), WHITE),
+                              BoxShape((0.012, 0.0, 0.0105), (0.003, 0.110, 0.005), WHITE),
+                              # Rear stop bears on the closed roller-clamp housing during the cap pull. Like the
+                              # front bumps it remains below the set's equator, so it does not prevent vertical lift.
+                              BoxShape((0.0, -0.052, 0.011), (0.040, 0.004, 0.006), WHITE),
+                              # Low retention bumps steady the capped spike during cap removal without caging the
+                              # chamber; their 14 mm top stays below the chamber's 20 mm top.
+                              BoxShape((-0.010, 0.0495, 0.011), (0.006, 0.003, 0.006), WHITE),
+                              BoxShape((0.010, 0.0495, 0.011), (0.006, 0.003, 0.006), WHITE)])
+
+
 def _giving_set() -> Body:
     """The giving set: spike, drip chamber, a short length of tubing with its roller clamp. Origin in the drip
     chamber's middle; the spike points +y. The chamber is clear (its wall is not drawn): the saline shows in it."""
@@ -140,8 +171,15 @@ def _fluid(k: int) -> Body:
                                                     axis="Y", collide=False)])
 
 
-OBJECTS = [_tray(), _bag(), _cap(), _giving_set(), *[_fluid(k) for k in range(1, SEGMENTS + 1)]]
+OBJECTS = [_tray(), _sterile_cradle(), _bag(), _cap(), _giving_set(), _spike_cap(),
+           *[_fluid(k) for k in range(1, SEGMENTS + 1)]]
+# A molded snap retainer holds the capped set during the low-force cap pull, then releases under the arm's upward
+# pickup. This models a reproducible single-use presentation clip rather than relying on unspecified tray friction.
+hinge("cradle_snap", "sterile_cradle", "giving_set", anchor=tuple(SET_AT.tolist()), axis="Y",
+      limits_deg=(-0.5, 0.5), break_force=1.0)
 hinge("cap_seal", "bag", "cap", anchor=tuple(CAP_AT.tolist()), axis="Y", limits_deg=(-0.5, 0.5), break_force=CAP_BREAK)
+hinge("spike_cap_seal", "giving_set", "spike_cap", anchor=tuple(SPIKE_CAP_AT.tolist()), axis="Y",
+      limits_deg=(-0.5, 0.5), break_force=SPIKE_CAP_BREAK)
 thread("spike_in", "bag", "giving_set", anchor0=tuple(MOUTH.tolist()), axis0=(0.0, 1.0, 0.0),
        anchor1=(0.0, SPIKE_TIP, 0.0), axis1=(0.0, 1.0, 0.0), slide_limits=(-0.05, SEAT), turn_damping=0.002,
        slide_stiffness=K_SPIKE, slide_damping=D_SPIKE, slide_max_force=50.0, play=0.002, tilt_deg=20.0)
@@ -150,8 +188,8 @@ thread("spike_in", "bag", "giving_set", anchor0=tuple(MOUTH.tolist()), axis0=(0.
 # -- followed after every control step --------------------------------------------------------------------------------
 
 def _fresh() -> dict:
-    return {"on": False, "hold": 0.0, "locked": False, "cap_off": False,
-            "meter": PrimingMeter(usable_height=CH_USABLE_H), "tcps": None, "s": {}}
+    return {"on": False, "hold": 0.0, "locked": False, "cap_off": False, "spike_cap_off": False,
+            "meter": PrimingMeter(usable_height=CH_USABLE_H), "asepsis": AsepsisMonitor(), "tcps": None, "s": {}}
 
 
 _EP = _fresh()
@@ -213,15 +251,21 @@ def _follow(env) -> None:
     b = as_numpy(base.scene["bag"].data.root_link_pose_w)[0]
     g = as_numpy(base.scene["giving_set"].data.root_link_pose_w)[0]
     c = as_numpy(base.scene["cap"].data.root_link_pose_w)[0]
-    b_pos, b_rot, g_pos, g_rot, c_pos = b[:3] - origin, rotation(b[3:7]), g[:3] - origin, rotation(g[3:7]), c[:3] - origin
+    sc = as_numpy(base.scene["spike_cap"].data.root_link_pose_w)[0]
+    b_pos, b_rot, g_pos, g_rot, c_pos, sc_pos = (b[:3] - origin, rotation(b[3:7]), g[:3] - origin,
+                                                 rotation(g[3:7]), c[:3] - origin, sc[:3] - origin)
     seat_c = b_pos + b_rot @ (CAP_AT - np.array([BAG_XY[0], BAG_XY[1], TT]))
     if not _EP["cap_off"] and float(np.linalg.norm(c_pos - seat_c)) > CAP_OFF:
         _EP["cap_off"] = True
+    spike_cap_seat = g_pos + g_rot @ np.array([0.0, SPIKE_TIP - SPIKE_CAP_L / 2, 0.0])
+    if not _EP["spike_cap_off"] and float(np.linalg.norm(sc_pos - spike_cap_seat)) > SPIKE_CAP_OFF:
+        _EP["spike_cap_off"] = True
     q = b_rot.T @ (g_pos + g_rot @ np.array([0.0, SPIKE_TIP, 0.0]) - b_pos) - MOUTH  # spike tip from mouth
     off, depth = math.hypot(q[0], q[2]), float(q[1])
     angle = math.degrees(math.acos(max(-1.0, min(1.0, float((b_rot[:, 1]) @ (g_rot[:, 1]))))))
     if not _EP["on"]:
-        if _EP["cap_off"] and off <= CAPTURE_R and 0.0 <= depth <= 0.012 and angle <= CAPTURE_DEG:  # in the port
+        if (_EP["cap_off"] and _EP["spike_cap_off"] and off <= CAPTURE_R and 0.0 <= depth <= 0.012
+                and angle <= CAPTURE_DEG):  # in the port
             set_slide_target("spike_in", depth)
             set_thread_on("spike_in", True)
             _EP["on"], _EP["hold"] = True, depth
@@ -240,9 +284,17 @@ def _follow(env) -> None:
     near = float(np.linalg.norm(tcps[1] - g_pos)) <= SQUEEZE_AT
     mouth_w = b_pos + b_rot @ MOUTH
     chamber_low = g_pos[2] - CH_R
+    horizontal_deg = math.degrees(math.asin(min(1.0, abs(float(g_rot[:, 1] @ np.array([0.0, 0.0, 1.0]))))))
+    orientation_ok = horizontal_deg <= CHAMBER_HORIZONTAL_DEG
     head_ok = mouth_w[2] - chamber_low >= 0.010  # measured liquid region is >=10 mm below the wetted port
     meter = _EP["meter"]
-    meter.observe(fingers[1], near=near and head_ok, locked=_EP["locked"])
+    meter.observe(fingers[1], near=near and head_ok and orientation_ok, locked=_EP["locked"])
+    spike_base = g_pos + g_rot @ np.array([0.0, 0.039, 0.0])
+    spike_tip = g_pos + g_rot @ np.array([0.0, SPIKE_TIP, 0.0])
+    _EP["asepsis"].observe(port_open=_EP["cap_off"], spike_exposed=_EP["spike_cap_off"],
+                           spike_locked=_EP["locked"], port_center=mouth_w, port_radius=PORT_R,
+                           spike_base=spike_base, spike_tip=spike_tip, spike_radius=0.0032,
+                           tcps=tcps, tray_top=TT)
     for k in range(1, SEGMENTS + 1):  # measured saline column, from the outlet end upward
         name = f"saline_{k}"
         seg = CH_USABLE_H / SEGMENTS
@@ -252,7 +304,8 @@ def _follow(env) -> None:
             _place(base, origin, name, (HIDE[0], HIDE[1] + 0.03 * k, HIDE[2]), np.eye(3))
     clear = all(min(float(np.linalg.norm(t - g_pos)), float(np.linalg.norm(t - mouth_w))) >= LET_GO for t in tcps)
     on_tray = (TRAY_X[0] < b_pos[0] < TRAY_X[1] and TRAY_Y[0] < b_pos[1] < TRAY_Y[1] and abs(b_pos[2] - TT) < 0.01)
-    _EP["s"] = {"clear": clear, "on_tray": on_tray}
+    _EP["s"] = {"clear": clear, "on_tray": on_tray, "orientation_ok": orientation_ok,
+                "horizontal_deg": horizontal_deg}
     if _DEBUG["on"]:
         _DEBUG["steps"] += 1
         if _DEBUG["steps"] % 10 == 0:
@@ -260,7 +313,8 @@ def _follow(env) -> None:
                   f"q={np.round(q * 1000, 1).tolist()} "
                   f"off={off * 1000:4.1f}mm angle={angle:4.1f} on={_EP['on']} locked={_EP['locked']} "
                   f"fill_height={meter.fill_height * 1000:.1f}mm spill={meter.spilled} fingerR={fingers[1]:.4f} "
-                  f"near={near} head_ok={head_ok} clear={clear} "
+                  f"near={near} head_ok={head_ok} orientation={horizontal_deg:.1f}deg clear={clear} "
+                  f"spike_cap_off={_EP['spike_cap_off']} contaminated={_EP['asepsis'].contaminated} "
                   f"bag={np.round(b_pos * 1000).astype(int).tolist()} set={np.round(g_pos * 1000).astype(int).tolist()} "
                   f"leftTCP-bag={np.round((tcps[0] - b_pos) * 1000).astype(int).tolist()} "
                   f"rightTCP-set={np.round((tcps[1] - g_pos) * 1000).astype(int).tolist()} "
@@ -273,19 +327,22 @@ def _follow(env) -> None:
 def _status() -> dict:
     st = _EP["s"]
     meter = _EP["meter"]
-    return {"cap_off": _EP["cap_off"], "locked": _EP["locked"], "primed": meter.primed,
+    return {"cap_off": _EP["cap_off"], "spike_cap_off": _EP["spike_cap_off"], "locked": _EP["locked"],
+            "primed": meter.primed, "contaminated": _EP["asepsis"].contaminated,
             "fill_height": meter.fill_height, "spilled": meter.spilled,
-            "clear": bool(st.get("clear")), "on_tray": bool(st.get("on_tray")), "home": _arms_home()}
+            "orientation_ok": bool(st.get("orientation_ok")), "clear": bool(st.get("clear")),
+            "on_tray": bool(st.get("on_tray")), "home": _arms_home()}
 
 
 def _points(s) -> float:
-    if s["spilled"]:
+    if s["spilled"] or s["contaminated"]:
         return 0.0
-    if s["locked"] and s["primed"] and s["clear"] and s["on_tray"] and s["home"]:
+    if (s["cap_off"] and s["spike_cap_off"] and s["locked"] and s["primed"] and s["orientation_ok"]
+            and s["clear"] and s["on_tray"] and s["home"]):
         return 1.0
-    if s["locked"]:
+    if s["cap_off"] and s["spike_cap_off"] and s["locked"]:
         return 0.5
-    return 0.25 if s["cap_off"] else 0.0
+    return 0.25 if s["cap_off"] and s["spike_cap_off"] else 0.0
 
 
 def score(objects) -> float:
@@ -334,6 +391,7 @@ TAB_IN = 0.006  # the right TCP this far below the cap tab's top
 CHAMBER_UP = 0.006  # the right TCP this far above the drip chamber's axis
 PUSH_PAST = 0.025  # aim past the seat (the hand lags)
 DROP_AT = np.array([0.26, -0.13, TT + 0.05])
+SPIKE_CAP_DROP = np.array([0.47, 0.05, TT + 0.05])  # forward: never crosses the exposed spike or chamber
 LEAD_S, LEAD_STEPS = 3.0, 15
 SET_OFF = np.array([-0.009, 0.0, -0.003])  # where the spike's tip ends up off the port's mouth if aimed straight at it
 # (measured: the bag turns a little about the held tab as the cap is pulled, and the set hangs low in the grip)
@@ -410,13 +468,22 @@ def _right(start: float) -> tuple[list[Waypoint], float]:
             _w(1.5, tab + [0.0, -0.04, 0.0], FINGER_CLOSED, "pull the cap straight off the port", X_GRIP),
             _w(1.2, DROP_AT, FINGER_CLOSED, "carry it out of the way", X_GRIP),
             _w(0.4, DROP_AT, FINGER_OPEN, "drop it on the tray", X_GRIP)]
+    spike_cap_tab = SPIKE_CAP_AT + [0.0, 0.0, 0.015]
+    out += [_w(1.0, spike_cap_tab + [0.0, 0.0, 0.035], FINGER_OPEN,
+               "over the giving-set spike cap", X_GRIP),
+            _w(0.7, spike_cap_tab, FINGER_OPEN, "down round the spike-cap tab", X_GRIP),
+            _w(2.0, spike_cap_tab, FINGER_CLOSED, "close fully and settle on the spike-cap tab", X_GRIP),
+            _w(1.5, spike_cap_tab + [0.0, 0.030, 0.0], FINGER_CLOSED,
+               "pull the protective cap off without touching the spike", X_GRIP),
+            _w(1.0, SPIKE_CAP_DROP, FINGER_CLOSED, "carry the spike cap away", X_GRIP),
+            _w(0.4, SPIKE_CAP_DROP, FINGER_OPEN, "drop the spike cap away from the sterile interfaces", X_GRIP)]
     grip = SET_AT + [0.0, 0.0, CHAMBER_UP]
     mouth = np.array([BAG_XY[0], BAG_XY[1], TT]) + MOUTH
     line = np.array([mouth[0], mouth[1] - SPIKE_TIP - 0.012, mouth[2] + CHAMBER_UP]) - SET_OFF
     seated = line + [0.0, 0.012 + SEAT + PUSH_PAST, 0.0]
     out += [_w(1.2, grip + [0.0, 0.0, 0.04], FINGER_OPEN, "over the drip chamber", X_GRIP),
             _w(0.8, grip, FINGER_OPEN, "down round it", X_GRIP),
-            _w(0.5, grip, FINGER_CLOSED, "take the giving set", X_GRIP),
+            _w(2.5, grip, FINGER_CLOSED, "close fully and settle on the drip chamber", X_GRIP),
             _w(1.0, grip + [0.0, 0.0, 0.03], FINGER_CLOSED, "lift it", X_GRIP),
             _w(1.5, line + [0.0, 0.0, 0.02], FINGER_CLOSED, "line the spike up with the port", X_GRIP),
             _w(0.8, line, FINGER_CLOSED, "the spike at the port's mouth", X_GRIP),

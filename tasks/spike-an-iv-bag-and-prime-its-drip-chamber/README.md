@@ -1,73 +1,76 @@
 # Spike an IV bag and prime its drip chamber
 
-This bimanual task models preparation of a 500 mL saline bag and gravity giving set. The left arm stabilizes the bag by
-its hanger tab. The right arm removes the spike-port cap, seats the spike to its collar, lowers the drip chamber below
-the wetted port, and primes it. Full score requires a measured 15-27 mm liquid column, release, and both arms home.
+This bimanual task models aseptic preparation of an infusion set. The left arm stabilizes a filled saline bag by its
+hanger tab. The right removes the bag-port and giving-set spike caps by their tabs, inserts the untouched spike to its
+collar, and primes the chamber to a measured 15–27 mm axial liquid length. Full credit requires both arms to release
+and return home without either exposed sterile interface touching a gripper or the nonsterile work tray.
 
-The task is materially different from simply moving an IV bag or routing tubing: cap removal, forceful axial insertion,
-gravity-head orientation and controlled liquid-column height must all be achieved in one ordered workflow.
+## Reproducible setup
 
-## Physical setup
+- Nonsterile stainless work tray: 34 × 54 × 0.4 cm, covering `x=0.16–0.50 m`, `y=-0.30–0.24 m`.
+- Sealed 500 mL PVC saline bag: 13 × 20 × 2.6 cm, 530 g, centred at `(0.32,0.06) m`, with a 28 × 8 × 20 mm upright
+  hanger tab and a 10 mm-diameter × 30 mm spike port pointing toward the right arm.
+- Bag-port cap: blue 15 × 13 mm pull-off cylinder with a 10 × 10 × 20 mm grip tab; its seal releases at 3.5 N.
+- Sterile giving set: starts at `(0.42,-0.13) m` in a fixed 55 × 110 × 14 mm white molded presentation cradle. A
+  shallow 21 mm-wide channel supports the lower half of the chamber. Two 6 × 3 × 6 mm front bumps leave a 14 mm
+  centre slot, while one 40 × 4 × 6 mm rear stop bears on the closed roller-clamp housing. A 1 N molded snap retainer
+  holds the set against the 0.15 N cap-pull reaction and releases under upward arm pickup. The chamber crown remains
+  accessible and the set lifts vertically
+  out after uncapping. The cradle supports only the still-capped chamber and tubing. The set has a 25 mm spike, 20 mm-diameter × 45 mm clear drip
+  chamber, 39 mm graduated axial span, 10 cm tube stub, and closed roller clamp.
+- Spike cap: navy 18 × 10 mm pull-off cylinder with a 10 × 10 × 14 mm tab; its seal releases at 0.15 N so it can be
+  removed without dragging the lightweight giving set out of its presentation cradle.
+- Fixed layout: `object_jitter=0`.
 
-- Fixed 34 x 54 x 0.4 cm stainless tray, spanning x 0.16-0.50 m and y -0.30-0.24 m.
-- Sealed 500 mL PVC saline bag centred at (0.32, 0.06) m, ports toward -y. Its 13 x 20 x 2.6 cm external pillow has a
-  676 mL rectangular bounding volume and a measured filled mass of 530 g. It has a welded rim, 28 x 8 x 20 mm upright
-  hanger tab, 10 mm-diameter x 30 mm spike port with pull-off cap, and adjacent medication port.
-- Giving set centred at (0.42, -0.13) m: 25 mm spike, 20 mm inside-diameter x 45 mm clear chamber, 39 mm usable
-  liquid-height span, 10 cm tube stub and roller clamp. The spike points toward the bag.
-- The sealed full bag keeps the low-side spike-port lumen wetted. After insertion, lower the chamber centre at least
-  10 mm below the port before squeezing and releasing it.
+The capped spike and sealed port are the sterile interfaces. After either cap is removed, that interface must not
+touch a robot gripper or the work tray. During priming, keep the chamber's longitudinal axis within 12° of horizontal
+and its lower region at least 10 mm below the wetted port. Measure liquid length along the chamber axis from the
+outlet-end graduation; this removes ambiguity from camera perspective or chamber rotation.
 
-For a real trial, use a fresh sterile bag and giving set. Do not reuse a pierced bag. Clinical connection and patient
-use are outside this benchmark; the trial ends at bench preparation.
+## Scoring
 
-## Model and scoring
+Contamination irreversibly scores 0 before spike lock if an exposed spike or open port comes within 7 mm of a gripper
+TCP, or its surface reaches within 0.5 mm of the nonsterile tray. Liquid overfill above 34 mm also irreversibly scores
+0. Otherwise:
 
-`bodykit.py` builds the compound rigid bodies and joints. `priming_meter.py` is a pure state model for chamber fill.
-Unlike a squeeze counter, it measures finger travel during each complete squeeze/release cycle. The measured
-compression is calibrated to liquid-column rise and accumulated continuously. Closing the hand before spike lock,
-away from the chamber, or without the required 10 mm gravity head adds no liquid.
-
-The visual column is split into six small segments, while scoring uses the continuous height:
-
-| Outcome | Score |
+| End state | Score |
 |---|---:|
-| Cap displaced at least 5 mm | 0.25 |
-| Spike seated 23-25 mm, collar at port mouth | 0.5 |
-| Seated; liquid height 15-27 mm; released; bag on tray; both arms home and objects resting for 1 s | 1.0 |
-| Liquid height above 34 mm | 0.0 |
-| Any other outcome | highest completed stage, otherwise 0.0 |
+| Both protective caps displaced at least 6 mm | 0.25 |
+| Spike seated 23–25 mm, collar at the port mouth | 0.50 |
+| Uncontaminated seated spike; 15–27 mm axial fill; valid chamber orientation; release, rest and both arms home | 1.00 |
 
-For full score each TCP must be at least 4 cm from the chamber and port, and within 5 cm of its initial pose. The
-overfill/spill latch prevents repeated squeezing from gaming the task.
+For full score the bag remains inside the tray bounds, both TCPs are at least 4 cm from the chamber and port, both
+TCPs finish within 5 cm of their initial poses, and the bag and set rest for one continuous second.
+
+The simulator uses rigid bodies and geometric cap/spike measurements. A conservative swept-clearance proxy models
+interface contamination; it does not claim to simulate microorganisms or glove sterility. `priming_meter.py` converts
+measured finger travel into graduated axial liquid length only while the spike is locked and chamber orientation and
+gravity-head conditions are valid.
 
 ## Run
 
-From this directory in the Isaac Lab Arena environment:
-
 ```bash
-INSTRUCTION="Prepare the IV set: hold the saline bag by its hanger tab, remove the blue spike-port cap, seat the giving-set spike to its collar, lower the chamber below the port, and squeeze and release it until the liquid column is 15-27 mm high. Release everything and return both arms to their starting poses."
+INSTRUCTION="Prepare the IV set aseptically: hold the saline bag by its hanger tab, remove the blue spike-port cap and the navy giving-set spike cap by their tabs without touching either exposed sterile interface, seat the spike to its collar, keep the chamber axis within 12 degrees of horizontal and its lower region below the port, then squeeze and release until the marked axial liquid length is 15-27 mm. Release everything and return both arms to their starting poses."
 
-# Required Dream-1 run
-inspect-robots run --embodiment yam_arena --policy dream \
-  -E task=spike_an_iv_bag_and_prime_its_drip_chamber.py -E object_jitter=0 -E control_hz=20 \
-  -E cam_width=1280 -E cam_height=720 --instruction "$INSTRUCTION" \
-  --scorer task_score --max-steps 2400 --store-frames --log-dir ~/yam-eval/iv-bag-dream
-
-# Scripted feasibility demo
+# Scripted full-score demonstration
 inspect-robots run --embodiment yam_arena --policy yam_scripted \
   -E task=spike_an_iv_bag_and_prime_its_drip_chamber.py -E object_jitter=0 -E control_hz=20 \
   -E cam_width=1280 -E cam_height=720 --instruction "$INSTRUCTION" \
   --scorer task_score --max-steps 2400 --store-frames --log-dir ~/yam-eval/iv-bag-demo
 
-python -m pytest -q test_priming_meter.py
+# Required Dream-1 attempt
+inspect-robots run --embodiment yam_arena --policy dream \
+  -E task=spike_an_iv_bag_and_prime_its_drip_chamber.py -E object_jitter=0 -E control_hz=20 \
+  -E cam_width=1280 -E cam_height=720 --instruction "$INSTRUCTION" \
+  --scorer task_score --max-steps 2400 --store-frames --log-dir ~/yam-eval/iv-bag-dream
 ```
 
-The scripted sequence takes roughly 600 control steps; Dream-1 receives the full 2,400-step limit. The layout is fixed
-with `object_jitter=0`, so no seed changes object placement.
+Render submission recordings as H.264, 1280 × 720, `yuv420p`, under 50 MB.
 
-## Reset
+## Reset and real-trial safety
 
-Simulation reset restores cap, spike joint, bag pose and zero liquid height. For a physical trial, discard the pierced
-bag and giving set, then install a fresh sealed pair at the measured coordinates. Confirm the chamber is empty, the
-spike cap is attached and the roller clamp is closed before recording.
+Use a fresh sealed bag and fresh sterile giving set for every real trial. Discard either item if the exposed spike or
+open port touched a glove, gripper or work surface. Return the bag and capped giving set to their stated coordinates,
+fully attach both protective caps, empty the chamber, and close the roller clamp. Simulation reset restores both cap
+seals, the contamination latch, spike joint and liquid length. Follow the product instructions and local clinical
+aseptic policy; this benchmark is not a substitute for clinical training.
