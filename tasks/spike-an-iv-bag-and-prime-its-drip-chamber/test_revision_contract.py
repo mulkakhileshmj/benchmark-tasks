@@ -18,7 +18,8 @@ def test_setup_defines_aseptic_presentation_and_orientation():
     setup = TASK["setup"].lower()
     assert "molded cradle" in setup
     assert "nonsterile" in setup
-    assert "12 degrees of horizontal" in setup
+    assert "12 degrees of vertical" in setup
+    assert "fingertip" in setup
     assert "outlet end" in setup
 
 

@@ -21,7 +21,6 @@ class AsepsisMonitor:
     """Latch contamination after either sterile interface becomes exposed."""
 
     contaminated: bool = False
-    gripper_clearance: float = 0.007
     tray_clearance: float = 0.0005
 
     def observe(
@@ -35,20 +34,28 @@ class AsepsisMonitor:
         spike_base,
         spike_tip,
         spike_radius: float,
-        tcps,
+        gripper_surfaces,
         tray_top: float,
+        gripper_contact: bool = False,
     ) -> None:
         if self.contaminated:
+            return
+        if gripper_contact:
+            self.contaminated = True
             return
         port_center = np.asarray(port_center, float)
         spike_base, spike_tip = np.asarray(spike_base, float), np.asarray(spike_tip, float)
         if port_open and not spike_locked:
             if port_center[2] - port_radius <= tray_top + self.tray_clearance:
                 self.contaminated = True
-            if any(np.linalg.norm(np.asarray(t, float) - port_center) <= self.gripper_clearance for t in tcps):
+            # Each tuple is the measured centre and conservative collision radius of one physical palm/finger link.
+            # Expanding the sterile interface by that radius tests surface-to-surface contact, not TCP distance.
+            if any(np.linalg.norm(np.asarray(c, float) - port_center) <= port_radius + float(r)
+                   for c, r in gripper_surfaces):
                 self.contaminated = True
         if spike_exposed and not spike_locked:
             if min(spike_base[2], spike_tip[2]) - spike_radius <= tray_top + self.tray_clearance:
                 self.contaminated = True
-            if any(point_segment_distance(t, spike_base, spike_tip) <= self.gripper_clearance for t in tcps):
+            if any(point_segment_distance(c, spike_base, spike_tip) <= spike_radius + float(r)
+                   for c, r in gripper_surfaces):
                 self.contaminated = True

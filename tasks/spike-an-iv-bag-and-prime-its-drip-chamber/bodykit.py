@@ -252,13 +252,21 @@ def _author_hinges(stage, prim_path: str, spec) -> None:
         joint = UsdPhysics.RevoluteJoint.Define(stage, f"{prim_path}/{h.name}")
         joint.CreateBody0Rel().SetTargets([f"{parent}/{h.body0}/body"])
         joint.CreateBody1Rel().SetTargets([f"{prim_path}/body"])
-        joint.CreateLocalPos0Attr(Gf.Vec3f(*(np.asarray(h.anchor, float) - np.asarray(b0.pos, float)).tolist()))
-        if b1.start_xyzw is not None:  # its origin is on the hinge line; the hinge's 0 is body1 unrotated
-            joint.CreateLocalPos1Attr(Gf.Vec3f(0.0, 0.0, 0.0))
-        else:
-            joint.CreateLocalPos1Attr(Gf.Vec3f(*(np.asarray(h.anchor, float) - np.asarray(b1.pos, float)).tolist()))
+        # ``anchor`` is in the initial world frame.  Express it in each body's frame so breakable seals also work
+        # on realistically oriented parts (for example a cap on a downward-facing IV-bag port).
+        q0 = b0.start_xyzw if b0.start_xyzw is not None else (0.0, 0.0, math.sin(b0.yaw / 2), math.cos(b0.yaw / 2))
+        local0 = rotation(q0).T @ (np.asarray(h.anchor, float) - np.asarray(b0.pos, float))
+        joint.CreateLocalPos0Attr(Gf.Vec3f(*local0.tolist()))
+        q1 = b1.start_xyzw if b1.start_xyzw is not None else (
+            0.0, 0.0, math.sin(b1.yaw / 2), math.cos(b1.yaw / 2))
+        local1 = rotation(q1).T @ (np.asarray(h.anchor, float) - np.asarray(b1.pos, float))
+        joint.CreateLocalPos1Attr(Gf.Vec3f(*local1.tolist()))
+        # Joint frames must agree in world space at reset.  Keep body0's local frame
+        # (so the declared axis remains body0-local) and express that same frame in
+        # body1.  This avoids snapping a pre-rotated child to its parent's attitude.
+        qrel = _quat_from_matrix(rotation(q1).T @ rotation(q0))
         joint.CreateLocalRot0Attr(Gf.Quatf(1.0, 0.0, 0.0, 0.0))
-        joint.CreateLocalRot1Attr(Gf.Quatf(1.0, 0.0, 0.0, 0.0))
+        joint.CreateLocalRot1Attr(Gf.Quatf(float(qrel[3]), float(qrel[0]), float(qrel[1]), float(qrel[2])))
         joint.CreateAxisAttr(h.axis)
         if h.limits_deg is not None:
             joint.CreateLowerLimitAttr(float(h.limits_deg[0]))
@@ -509,14 +517,19 @@ def _author_glues(stage, prim_path: str, spec) -> None:
     for g in _GLUES:
         if g.body1 != spec.name:
             continue
-        b0 = _SPECS[g.body0]
+        b0, b1 = _SPECS[g.body0], spec
         joint = UsdPhysics.FixedJoint.Define(stage, f"{prim_path}/{g.name}")
         joint.CreateBody0Rel().SetTargets([f"{parent}/{g.body0}/body"])
         joint.CreateBody1Rel().SetTargets([f"{prim_path}/body"])
-        joint.CreateLocalPos0Attr(Gf.Vec3f(*(np.asarray(g.anchor, float) - np.asarray(b0.pos, float)).tolist()))
-        joint.CreateLocalPos1Attr(Gf.Vec3f(*(np.asarray(g.anchor, float) - np.asarray(spec.pos, float)).tolist()))
+        q0 = b0.start_xyzw if b0.start_xyzw is not None else (0.0, 0.0, math.sin(b0.yaw / 2), math.cos(b0.yaw / 2))
+        q1 = b1.start_xyzw if b1.start_xyzw is not None else (0.0, 0.0, math.sin(b1.yaw / 2), math.cos(b1.yaw / 2))
+        local0 = rotation(q0).T @ (np.asarray(g.anchor, float) - np.asarray(b0.pos, float))
+        local1 = rotation(q1).T @ (np.asarray(g.anchor, float) - np.asarray(b1.pos, float))
+        joint.CreateLocalPos0Attr(Gf.Vec3f(*local0.tolist()))
+        joint.CreateLocalPos1Attr(Gf.Vec3f(*local1.tolist()))
         joint.CreateLocalRot0Attr(Gf.Quatf(1.0, 0.0, 0.0, 0.0))
-        joint.CreateLocalRot1Attr(Gf.Quatf(1.0, 0.0, 0.0, 0.0))
+        qrel = _quat_from_matrix(rotation(q1).T @ rotation(q0))
+        joint.CreateLocalRot1Attr(Gf.Quatf(float(qrel[3]), float(qrel[0]), float(qrel[1]), float(qrel[2])))
         joint.CreateJointEnabledAttr(True)
         joint.CreateExcludeFromArticulationAttr(True)
         _GLUE_PATHS[g.name] = f"{prim_path}/{g.name}"
